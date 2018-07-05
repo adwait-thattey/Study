@@ -1,0 +1,35 @@
+Regular Expressions
+Clssifier
+Training Set
+    Rote Learning
+    Linear Classifier : 
+        Perceptron
+        SVM
+
+Haptik - App IIIT-H
+
+    KNN : K nearest neighbours
+        Nearest Distance :
+                            1. Euclidian Distance : <normal cartesian distnce>
+                            2. Manhattan Distance
+            Scale for distance measurement :
+                1. Feature Scaling Methods :
+                        Standard scalar
+                        Min-Max scalar
+                        Max abs value scalar
+
+                2. Regression with KNN
+                        OverFitting
+                
+                
+                
+                        Python lib : sklearn.preprocessing import StadardScalar
+                                        X = StandardScalar()
+                                methods : fit , transform
+
+                                    from sklearn.neighbours import KNeighboursClssifier
+                                    KNN = KNeighboursClassifier(n_neighbours = 3)
+
+                                    KNN = KNN.fit(X_Data,Y_Data)
+                                    X_data is the data matrix , Y_data is the class labels
+                                    y_predict = KNN.predict(X_Data)
