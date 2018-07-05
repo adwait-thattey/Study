@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>Problem 12</title>
+		<style>
+			body {background-color:black;color:#00FF00;}
+			td {height:60px;font-size:30px;font-style:italic;}
+			input,textarea {font-style:italic;background-color:#00FF00;color:red;height:40px;font-size:30px;}
+			
+		</style>
+	</head>
+
+	<body>
+		<center>
+		<form >
+			<fieldset>
+				<legend style="color:red;font-size:25px;">Problem 12</legend>
+				<table>
+					<tr>
+						<td>First Name :</td>
+						<td><input required autocomplete="off" type="Text" size="40px" name="fname" placeholder="Autofocus on this box" autofocus></td>
+					</tr>
+					<tr>
+						<td>Last Name :</td>
+						<td><input autocomplete="off" type="Text" size="40px" placeholder="Required Field" name="lname"></td>
+					</tr>
+					<tr>
+						<td>Email Id : </td>
+						<td><input required autocomplete="off" type="email" size="40px" placeholder="Example: abc@xyz.com " name="em"></td>
+					</tr>
+					<tr>
+						<td>Date of Birth :</td>
+						<td><input type="date" required name="q" min="1995-01-01" max="2016-01-01" value="1995-01-01"></td>
+					</tr>
+					<tr>
+						<td>Contact Number :</td>
+						<td><input type="number" name="con" minlength="10" size="40px" maxlength="10"></td>
+					</tr>
+					
+					<tr>
+						<td>Enter a number that is multiple of 5 :</td>
+						<td><input type="number" name="mul5" size="40px" step="5"></td>
+					</tr>
+			
+				
+				</table>
+						
+				<br><br><input type="reset" value="reset" width="20px">&nbsp; 
+				<input type="submit" formmethod="GET" formaction="http:\\www.google.com\search" size="10px" value="submit">
+				
+			
+			
+			</fieldset>
+		
+		</form>
+		
+		
+		<p style="color:yellow;font-weight:bold;font-style:italic;font-size:20px;">
+		 Autocomplete is kept off for first 3 inputs.<br>
+		 Autofocus is used for 1st input.<br>
+		 Min,max is used for date. <br>
+		 Size is used for all inputs.<br>
+		 Formaction,Formmethod for submit button.<br>
+		 Height,Width,placeholder for all inputs.<br>
+		 First 3 inputs are <strong>required</strong><br>
+		 step is used in last input.
+		</p>
+		</center>
+	</body>
+
+
+</html>

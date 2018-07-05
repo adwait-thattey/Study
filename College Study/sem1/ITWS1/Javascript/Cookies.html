@@ -1,0 +1,42 @@
+<html>
+   <head>
+   
+      <script type="text/javascript">
+         <!--
+            function ReadCookie()
+            {
+               var allcookies = document.cookie;
+               document.write ("All Cookies : " + allcookies );
+               
+               // Get all the cookies pairs in an array
+               cookiearray = allcookies.split(';');
+               
+               // Now take key value pair out of this array
+               for(var i=0; i<cookiearray.length; i++){
+                  name = cookiearray[i].split('=')[0];
+                  value = cookiearray[i].split('=')[1];
+                  document.write ("<br><br>Key is : " + name + " and Value is : " + value);
+               }
+            }
+
+            function setCookie(cname, cvalue) {
+                var d = new Date();
+                d.setTime(d.getTime() + 1110000);
+                var expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";path=/";
+            }
+         //-->
+
+         setCookie("name","Adwait");
+      </script>
+      
+   </head>
+   <body>
+      
+      <form name="myform" action="">
+         <p> click the following button and see the result:</p>
+         <input type="button" value="Get Cookie" onclick="ReadCookie()"/>
+      </form>
+      
+   </body>
+</html>

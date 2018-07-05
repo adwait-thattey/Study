@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>How do you use SPI on an Arduino? - Arduino Stack Exchange</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/arduino/img/favicon.ico?v=9b9d74e64022">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/arduino/img/apple-touch-icon.png?v=f5da75e642c1">
+        <link rel="search" type="application/opensearchdescription+xml" title="Arduino Stack Exchange" href="https://arduino.stackexchange.com/opensearch.xml">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/arduino/img/apple-touch-icon@2.png?v=0df978e71641">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="arduino.stackexchange.com">
+        <meta name="twitter:site" content="@StackArduino">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="How do you use SPI on an Arduino?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="With reference to the Arduino Uno, Mega2560, Leonardo and similar boards:
+How does SPI work?
+How fast is SPI?
+How do I connect between a master and a slave?
+How do I make an SPI slave?
+Please note: ">
+        <script src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/quant.js"></script><script async="" src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/beacon.js"></script><script async="" src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/analytics.js"></script><script src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/jquery.min.js"></script>
+        <script src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/stub.en.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/stacks.css">
+
+        <link rel="stylesheet" type="text/css" href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/primary.css">
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How do you use SPI on an Arduino?&#39;" href="https://arduino.stackexchange.com/feeds/question/16348">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:16348});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('540', '16348');
+                // TODO: There's a CR for replacing this with inline info on the question for moderators
+                // https://trello.com/c/ynDHhvrB/158-cr-move-the-mod-info-out-of-the-margin-and-into-the-post-estimate-needed
+                // Before we roll out the sidebar everywhere (or at least shortly after that?), we should implement it.
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+             
+        
+                <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('540');
+                StackExchange.realtime.subscribeToTopBarNotifications('540');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","serverTime":1521402496,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Arduino Stack Exchange","description":"Q&A for developers of open-source hardware and software that is compatible with Arduino","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":540,"childUrl":"https://arduino.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"4e3933d834f91ab944126bda7768a7044453b43fb80fca191d44212d44945cff","tid":"bbd63e77-263f-84a4-c526-0d3178394e96","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"commentHighlightingWithCSS":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"topBar":{},"snippets":{"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"},"subscriptions":{}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"1267e9aba98c","js/moderator.en.js":"b0106b7686fc","js/full-anon.en.js":"3329da2297dc","js/full.en.js":"b425ac95b5bf","js/wmd.en.js":"b40f39dabb6e","js/third-party/jquery.autocomplete.min.js":"bdb258e949a8","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"81eb5d269ca5","js/help.en.js":"a1c2d4ed1321","js/tageditor.en.js":"c8b9a9cf279a","js/tageditornew.en.js":"de3c466a8499","js/inline-tag-editing.en.js":"906a043ce5b0","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"0f3e09a75fea","js/tagsuggestions.en.js":"bb4721d888d2","js/post-validation.en.js":"ae3bdc8f4e70","js/explore-qlist.en.js":"d36f2b82bffa","js/events.en.js":"cf13ffa38518","js/keyboard-shortcuts.en.js":"94fb95a7a049","js/external-editor.en.js":"0f79a59c18cc","js/adops.en.js":"22a9bd59b1e9","js/external-editor.en.js":"0f79a59c18cc"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css">&lt;style&gt;body,.top-bar{margin-top:1.9em}&lt;/style&gt;</noscript>
+    <script async="" src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/full-anon.en.js"></script><script async="" src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/post-validation.en.js"></script><script async="" src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/prettify-full.en.js"></script></head>
+    <body class="question-page new-topbar">
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _scrolling">
+    <div class="-container">
+        <div class="-main">
+                            <a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="-logo js-gps-track js-network-logo" data-gps-track="stack_exchange_popup.show">
+                    <svg aria-hidden="true" class="svg-icon native iconLogoSEAlternativeSm" width="110" height="15" viewBox="0 0 110 15"><g><path d="M50.4 11.92l-1.98-3.23-1.05 1.17v2.06h-1.42V2.08h1.42v6.07l2.76-3.24h1.73L49.4 7.66l2.77 4.26h-1.76zm-7.86.08c-1.6 0-3.16-.97-3.16-3.6 0-2.62 1.56-3.57 3.16-3.57.97 0 1.66.28 2.33.98l-.98.94c-.45-.48-.8-.66-1.35-.66s-1.01.22-1.32.62c-.3.39-.42.88-.42 1.7 0 .81.11 1.32.42 1.71.3.4.77.62 1.32.62s.9-.18 1.35-.66l.98.93c-.67.7-1.36.99-2.33.99zm-5.7-3.18h-1.67c-.84 0-1.27.38-1.27 1.01 0 .64.4 1 1.3 1 .54 0 .95-.05 1.33-.4.2-.21.3-.54.3-1.04v-.57zm.02 3.1v-.64c-.51.51-1 .72-1.88.72-.89 0-1.47-.2-1.9-.64a2.13 2.13 0 0 1-.57-1.5c0-1.17.83-2.02 2.45-2.02h1.87v-.5c0-.88-.44-1.3-1.55-1.3-.78 0-1.16.17-1.55.67l-.94-.87c.67-.77 1.37-1 2.55-1 1.94 0 2.92.8 2.92 2.4v4.68h-1.4zm-6.44 0c-1.33 0-1.95-.94-1.95-1.95V6.12h-.8V5.04h.8V2.9h1.43v2.13h1.37v1.08H29.9V9.9c0 .51.25.82.78.82h.59v1.2h-.85zm-6.9.08c-1.5 0-2.57-.35-3.52-1.3l1-.98a3.3 3.3 0 0 0 2.55.94c1.3 0 2.06-.55 2.06-1.5 0-.43-.13-.8-.4-1.03-.25-.23-.5-.33-1.09-.41l-1.17-.17a3.43 3.43 0 0 1-1.89-.79 2.43 2.43 0 0 1-.72-1.87c0-1.72 1.25-2.89 3.32-2.89 1.32 0 2.24.33 3.1 1.12l-.97.94a2.94 2.94 0 0 0-2.17-.76c-1.17 0-1.82.66-1.82 1.53 0 .36.12.68.38.91.25.22.66.39 1.12.46l1.13.16c.93.14 1.44.36 1.86.74.55.47.81 1.17.81 2.01 0 1.81-1.5 2.89-3.58 2.89z" fill="#FFF"></path><path d="M107.4 6.88c-.2-.44-.61-.76-1.23-.76-.63 0-1.04.32-1.23.76-.12.27-.16.46-.17.79h2.8a2 2 0 0 0-.17-.8zm-2.63 2.04c0 .94.58 1.63 1.6 1.63.81 0 1.21-.23 1.68-.69l1.11 1.08a3.52 3.52 0 0 1-2.8 1.16c-1.74 0-3.4-.8-3.4-3.76 0-2.39 1.3-3.74 3.2-3.74 2.06 0 3.22 1.5 3.22 3.5v.82h-4.61zm-5.68-2.67c-1.1 0-1.2.92-1.2 1.9 0 .96.1 1.9 1.2 1.9 1.08 0 1.21-.94 1.21-1.9 0-.98-.13-1.9-1.21-1.9zm-.19 8.53c-1.13 0-1.9-.22-2.67-.96l1.14-1.15c.41.4.83.56 1.45.56 1.1 0 1.48-.77 1.48-1.51v-.75c-.48.53-1.03.73-1.75.73s-1.34-.24-1.76-.65c-.69-.68-.74-1.63-.74-2.9 0-1.29.05-2.21.74-2.9a2.5 2.5 0 0 1 1.77-.65c.78 0 1.29.21 1.8.77V4.7h1.78v7.05c0 1.76-1.26 3.04-3.24 3.04zm-5.58-2.77V7.58c0-1-.63-1.33-1.21-1.33s-1.23.33-1.23 1.33v4.43h-1.84V4.7h1.8v.67c.47-.5 1.15-.76 1.83-.76.74 0 1.33.24 1.74.65.6.59.75 1.28.75 2.08V12h-1.84zm-7.14-3.1h-1.46c-.66 0-1.03.32-1.03.84 0 .5.34.84 1.06.84.51 0 .84-.04 1.16-.35.2-.18.27-.48.27-.93v-.4zm.04 3.1v-.63c-.5.49-.96.7-1.8.7-.84 0-1.45-.21-1.89-.65-.4-.4-.6-1-.6-1.64 0-1.17.8-2.12 2.51-2.12h1.74V7.3c0-.8-.4-1.15-1.37-1.15-.7 0-1.03.17-1.42.6l-1.17-1.14c.72-.78 1.43-1 2.66-1 2.06 0 3.14.86 3.14 2.58V12h-1.8zm-7 0V7.54c0-.97-.62-1.3-1.2-1.3-.57 0-1.18.34-1.18 1.3v4.47H75V2h1.84v3.36c.5-.5 1.11-.76 1.76-.76 1.62 0 2.47 1.13 2.47 2.67v4.74h-1.84zm-7.7.09c-1.48 0-3.3-.8-3.3-3.76 0-2.97 1.82-3.74 3.3-3.74 1 0 1.77.31 2.42.99L72.7 6.82c-.38-.4-.7-.57-1.19-.57-.44 0-.78.15-1.05.47-.28.36-.4.85-.4 1.62 0 .77.12 1.28.4 1.63.27.33.61.48 1.05.48.48 0 .8-.17 1.19-.58l1.24 1.23c-.65.67-1.41 1-2.43 1zm-6.07-.1l-1.36-2.2-1.34 2.2h-2.2l2.54-3.74-2.45-3.58h2.2l1.25 2.1 1.26-2.1h2.2l-2.44 3.58L67.65 12h-2.2zm-12.46 0V2h6.63v1.74h-4.66V6.1h3.97v1.75h-3.97v2.43h4.66V12H53z" fill="#2F96E8"></path><path d="M2 1h8a2 2 0 0 1 2 2H0c0-1.1.9-2 2-2z" fill="#8FD8F7"></path><path d="M0 10h12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm7 2v3l3-3z" fill="#155397"></path><path fill="#46A2D9" d="M0 4h12v2H0z"></path><path fill="#2D6DB5" d="M0 7h12v2H0z"></path></g></svg>
+                </a>
+                <div class="topbar-dialog network-logo-dialog js-network-logo-dialog dno">
+                    <div class="dialog-content">
+                        <h4 class="bold">Stack Exchange Network</h4>
+                        <p>
+                            Stack Exchange network consists of 172 Q&amp;A communities including <a href="https://stackoverflow.com/">Stack Overflow</a>, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers.
+                        </p>
+                        <a class="btn-secondary" href="https://stackexchange.com/" data-gps-track="stack_exchange_popup.click">Visit Stack Exchange</a>
+                        <a class="icon-close js-close-button"><svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg></a>
+                    </div>
+                </div>
+
+
+                <nav class="navigation" role="navigation" aria-label="site navigation">
+                    <ol class="-list">
+                    </ol>
+                </nav>
+
+        </div>
+
+            <form id="search" action="https://arduino.stackexchange.com/search" method="get" class="searchbar" autocomplete="off" role="search">
+                    <input name="q" type="text" placeholder="Search on Arduino…" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                    <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+            </form>
+
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://arduino.stackexchange.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://arduino.stackexchange.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="https://chat.stackexchange.com/?tab=site&amp;host=arduino.stackexchange.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+    <a href="https://arduino.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="540" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-arduino site-icon" title="Arduino"></div>
+        Arduino
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://arduino.meta.stackexchange.com/" class="site-link js-gps-track" data-id="541" data-gps-track="site.switch({ target_site:541, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-arduinometa site-icon" title="Arduino Meta"></div>
+        Arduino Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://arduino.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2farduino.stackexchange.com%2fquestions%2f16348%2fhow-do-you-use-spi-on-an-arduino" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://arduino.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2farduino.stackexchange.com%2fquestions%2f16348%2fhow-do-you-use-spi-on-an-arduino" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://arduino.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://arduino.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://arduino.meta.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+        </div>
+        <ol class="-list">
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item"><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 172 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+        </ol>
+    </nav>
+            <div class="-ctas">
+                        <a href="https://arduino.stackexchange.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2farduino.stackexchange.com%2fquestions%2f16348%2fhow-do-you-use-spi-on-an-arduino" class="login-link btn-clear" rel="nofollow">Log In</a>
+                        <a href="https://arduino.stackexchange.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2farduino.stackexchange.com%2fquestions%2f16348%2fhow-do-you-use-spi-on-an-arduino" class="login-link btn-topbar-primary" rel="nofollow" data-ga="[&quot;Sign Up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign Up</a>
+
+            </div>
+</div>
+
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+
+
+    <div class="container  ">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://arduino.stackexchange.com/" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Arduino
+                    </a>
+                </div>
+                <div id="hmenus">
+                    <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                        <ul>
+                                <li class="youarehere">
+        <a id="nav-questions" href="https://arduino.stackexchange.com/questions" class="js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                <li>
+        <a id="nav-tags" href="https://arduino.stackexchange.com/tags" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                <li>
+        <a id="nav-users" href="https://arduino.stackexchange.com/users" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                <li>
+        <a id="nav-badges" href="https://arduino.stackexchange.com/help/badges" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered" href="https://arduino.stackexchange.com/unanswered" class="js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                        </ul>
+                    </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion" href="https://arduino.stackexchange.com/questions/ask">Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+        <div id="content">
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/arduino/img/apple-touch-icon.png?v=f5da75e642c1">
+
+
+<div id="herobox" class="js-dismissable-hero" data-campaign-name="nso">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Arduino Stack Exchange is a question and answer site for developers of open-source hardware and software that is compatible with Arduino. Join them; it only takes a minute:
+            <br>
+            <br>
+            <a href="https://arduino.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2farduino.stackexchange.com%2fquestions%2f16348%2fhow-do-you-use-spi-on-an-arduino" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        StackExchange.Hero.init("nso", "a");
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+
+        $('.js-dismissable-hero #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+              });
+
+            StackExchange.Hero.dismiss();
+
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".js-dismissable-hero").fadeOut("fast", function () {
+                        $(".js-dismissable-hero").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+</script>    <div class="inner-content clearfix">
+        <div id="question-header">
+                    <h1 itemprop="name"><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino" class="question-hyperlink">How do you use SPI on an Arduino?</a></h1>
+
+            
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="16348" id="question">
+
+        
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16348">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">25</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#">favorite</a>
+        <div class="favoritecount"><b>29</b></div>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    <div class="post-text" itemprop="text">
+
+<p>With reference to the Arduino Uno, Mega2560, Leonardo and similar boards:</p>
+
+<ul>
+<li>How does SPI work?</li>
+<li>How fast is SPI?</li>
+<li>How do I connect between a master and a slave?</li>
+<li>How do I make an SPI slave?</li>
+</ul>
+
+<hr>
+
+<p><em>Please note: This is intended as a reference question.</em></p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://arduino.stackexchange.com/questions/tagged/arduino-uno" class="post-tag js-gps-track" title="show questions tagged &#39;arduino-uno&#39;" rel="tag">arduino-uno</a> <a href="https://arduino.stackexchange.com/questions/tagged/arduino-mega" class="post-tag js-gps-track" title="show questions tagged &#39;arduino-mega&#39;" rel="tag">arduino-mega</a> <a href="https://arduino.stackexchange.com/questions/tagged/c%2b%2b" class="post-tag js-gps-track" title="show questions tagged &#39;c++&#39;" rel="tag">c++</a> <a href="https://arduino.stackexchange.com/questions/tagged/arduino-leonardo" class="post-tag js-gps-track" title="show questions tagged &#39;arduino-leonardo&#39;" rel="tag">arduino-leonardo</a> <a href="https://arduino.stackexchange.com/questions/tagged/spi" class="post-tag js-gps-track" title="show questions tagged &#39;spi&#39;" rel="tag">spi</a> 
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://arduino.stackexchange.com/q/16348" title="short permalink to this question" class="short-link" id="link-post-16348">share</a><span class="lsep">|</span><a href="https://arduino.stackexchange.com/posts/16348/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </div>
+
+    <div class="post-signature owner grid--cell fl0">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2015-09-26 01:06:58Z" class="relativetime">Sep 26 '15 at 1:06</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://arduino.stackexchange.com/users/10794/nick-gammon"><div class="gravatar-wrapper-32"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/6fef66445955c19e7768a09672d2ba4c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://arduino.stackexchange.com/users/10794/nick-gammon">Nick Gammon</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 25,151" dir="ltr">25.2k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="36 silver badges"><span class="badge2"></span><span class="badgecount">36</span></span><span title="88 bronze badges"><span class="badge3"></span><span class="badgecount">88</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+
+                
+    <div class="post-layout--right">
+	    <div id="comments-16348" class="comments js-comments-container  dno">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                </ul>
+	    </div>
+
+        <div id="comments-link-16348" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" onclick=""></a>
+        </div>         
+    </div>        </div>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="1">
+                                1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere " href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+    </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="16349"></a>
+<div id="answer-16349" class="answer accepted-answer" data-answerid="16349" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16349">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">54</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="The question owner accepted this as the best answer Jan 20 &#39;16 at 2:56.">accepted</span>
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<h2>Introduction to SPI</h2>
+
+
+
+<p>The <a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus" rel="noreferrer">Serial Peripheral Interface Bus</a> (SPI) interface is used for communication between multiple devices over short distances, and at high speed.</p>
+
+<p>Typically there is a single "master" device, which initiates communications and supplies the clock which controls the data transfer rate. There can be one or more slaves. For more than one slave, each one has its own "slave select" signal, described later.</p>
+
+<hr>
+
+<h2>SPI signals</h2>
+
+<p>In a full-blown SPI system you will have four signal lines:</p>
+
+<ul>
+<li>Master Out, Slave In (<strong>MOSI</strong>) - which is the data going from the master to the slave</li>
+<li>Master In, Slave Out (<strong>MISO</strong>) - which is the data going from the slave to the master</li>
+<li>Serial Clock (<strong>SCK</strong>) - when this toggles both the master and the slave sample the next bit</li>
+<li>Slave Select (<strong>SS</strong>) - this tells a particular slave to go "active"</li>
+</ul>
+
+<p>When multiple slaves are connected to the MISO signal they are expected to tri-state (keep at high impedance) that MISO line until they are selected by Slave Select being asserted. Normally Slave Select (SS) goes low to assert it. That is, it is active low. Once a particular slave is selected it should configure the MISO line as an output so it can send data to the master.</p>
+
+<p>This image shows the way that data is exchanged as one byte is sent:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/6cTce.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/6cTce.png" alt="SPI protocol showing 4 signals"></a></p>
+
+<p>Note that three signals are outputs from the master (MOSI, SCK, SS) and one is an input (MISO).</p>
+
+<hr>
+
+<h2>Timing</h2>
+
+<p>The sequence of events is:</p>
+
+<ul>
+<li><code>SS</code> goes low to assert it and activate the slave</li>
+<li>The <code>SCK</code> line toggles to indicate when the data lines should be sampled</li>
+<li>The data is sampled by both master and slave on the <strong>leading</strong> edge of <code>SCK</code> (using the default clock phase)</li>
+<li>Both master and slave prepare for the next bit on the <strong>trailing</strong> edge of <code>SCK</code> (using the default clock phase), by changing <code>MISO</code> / <code>MOSI</code> if necessary</li>
+<li>Once the transmission is over (possibly after multiple bytes have been sent) then <code>SS</code> goes high to de-assert it</li>
+</ul>
+
+<p>Note that:</p>
+
+<ul>
+<li>The most significant bit is sent first (by default)</li>
+<li>Data is sent and received at the same instant (full duplex)</li>
+</ul>
+
+<p>Because data is sent and received on the same clock pulse it is not possible for the slave to respond to the master immediately. SPI protocols usually expect the master to request data on one transmission, and get a response on a subsequent one.</p>
+
+<p>Using the SPI library on the Arduino, doing a single transfer looks like this in code:</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln"> </span><span class="kwd">byte</span><span class="pln"> outgoing </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0xAB</span><span class="pun">;</span><span class="pln">
+ </span><span class="kwd">byte</span><span class="pln"> incoming </span><span class="pun">=</span><span class="pln"> SPI</span><span class="pun">.</span><span class="pln">transfer </span><span class="pun">(</span><span class="pln">outgoing</span><span class="pun">);</span></code></pre>
+
+<hr>
+
+<h2>Sample code</h2>
+
+<p>Example of sending only (ignoring any incoming data):</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;SPI.h&gt;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> setup </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+  </span><span class="pun">{</span><span class="pln">
+  digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">  </span><span class="com">// ensure SS stays high</span><span class="pln">
+  SPI</span><span class="pun">.</span><span class="kwd">begin</span><span class="pln"> </span><span class="pun">();</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln"> </span><span class="com">// end of setup</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> loop </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+  </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">byte</span><span class="pln"> c</span><span class="pun">;</span><span class="pln">
+
+  </span><span class="com">// enable Slave Select</span><span class="pln">
+  digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">    </span><span class="com">// SS is pin 10</span><span class="pln">
+
+  </span><span class="com">// send test string</span><span class="pln">
+  </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">char</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Fab"</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p</span><span class="pun">;</span><span class="pln"> p</span><span class="pun">++)</span><span class="pln">
+    SPI</span><span class="pun">.</span><span class="pln">transfer </span><span class="pun">(</span><span class="pln">c</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="com">// disable Slave Select</span><span class="pln">
+  digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">
+
+  delay </span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln"> </span><span class="com">// end of loop</span></code></pre>
+
+<hr>
+
+<h2>Wiring for output-only SPI</h2>
+
+<p>The above code (which sends only) might be used to drive an output serial shift register. These are output-only devices, so we don't need to worry about any incoming data. In their case the SS pin might be called the "store" or "latch" pin.</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/bbmei.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/bbmei.png" alt="SPI protocol showing 3 signals"></a></p>
+
+<p>Examples of this are the 74HC595 serial shift register, and various LED strips, just to mention a couple. For example, this 64 pixel LED display driven by a MAX7219 chip:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/OeBsB.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/OeBsB.png" alt="64 pixel LED display"></a></p>
+
+<p>In this case you can see that the board maker has used slightly different signal names:</p>
+
+<ul>
+<li>DIN (Data In) is MOSI (Master Out, Slave In)</li>
+<li>CS (Chip Select) is SS (Slave Select)</li>
+<li>CLK (Clock) is SCK (Serial Clock)</li>
+</ul>
+
+<p>Most boards will follow a similar pattern. Sometimes DIN is just DI (Data In).</p>
+
+<p>Here is another example, this time a 7-segment LED display board (also based on the MAX7219 chip):</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/CvhRc.jpg" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/CvhRc.jpg" alt="7-segment LED display"></a></p>
+
+<p>This uses exactly the same signal names as the other board. In both of these cases you can see that the board only needs 5 wires to it, the three for SPI, plus power and ground.</p>
+
+<hr>
+
+<h2>Clock phase and polarity</h2>
+
+<p>There are four way you can sample the SPI clock.</p>
+
+<p>The SPI protocol allows for variations on the polarity of the clock pulses. CPOL is clock polarity, and CPHA is clock phase.</p>
+
+<ul>
+<li>Mode 0 (the default) - clock is normally low (CPOL = 0), and the data is sampled on the transition from low to high (leading edge) (CPHA = 0)</li>
+<li>Mode 1 - clock is normally low (CPOL = 0), and the data is sampled on the transition from high to low (trailing edge) (CPHA = 1)</li>
+<li>Mode 2 - clock is normally high (CPOL = 1), and the data is sampled on the transition from high to low (leading edge) (CPHA = 0)</li>
+<li>Mode 3 - clock is normally high (CPOL = 1), and the data is sampled on the transition from low to high (trailing edge) (CPHA = 1)</li>
+</ul>
+
+<p>These are illustrated in this graphic:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/MHkRd.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/MHkRd.png" alt="SPI clock phase and polarity"></a></p>
+
+<p>You should refer to the datasheet for your device to get the phase and polarity correct. There will usually be a diagram which shows how to sample the clock. For example, from the datasheet for the 74HC595 chip:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/IdlVA.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/IdlVA.png" alt="74HC595 clock"></a></p>
+
+<p>As you can see the clock is normally low (CPOL = 0) and it is sampled on the leading edge (CPHA = 0) so this therefore is SPI mode 0.</p>
+
+<p>You can change the clock polarity and phase in code like this (choose one only, of course):</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">SPI</span><span class="pun">.</span><span class="pln">setDataMode </span><span class="pun">(</span><span class="pln">SPI_MODE0</span><span class="pun">);</span><span class="pln">
+SPI</span><span class="pun">.</span><span class="pln">setDataMode </span><span class="pun">(</span><span class="pln">SPI_MODE1</span><span class="pun">);</span><span class="pln">
+SPI</span><span class="pun">.</span><span class="pln">setDataMode </span><span class="pun">(</span><span class="pln">SPI_MODE2</span><span class="pun">);</span><span class="pln">
+SPI</span><span class="pun">.</span><span class="pln">setDataMode </span><span class="pun">(</span><span class="pln">SPI_MODE3</span><span class="pun">);</span></code></pre>
+
+<p>This method is deprecated in versions 1.6.0 onwards of the Arduino IDE. For recent versions you change the clock mode in the <code>SPI.beginTransaction</code> call, like this:</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">SPI</span><span class="pun">.</span><span class="pln">beginTransaction </span><span class="pun">(</span><span class="typ">SPISettings</span><span class="pln"> </span><span class="pun">(</span><span class="lit">2000000</span><span class="pun">,</span><span class="pln"> MSBFIRST</span><span class="pun">,</span><span class="pln"> SPI_MODE0</span><span class="pun">));</span><span class="pln">  </span><span class="com">// 2 MHz clock, MSB first, mode 0</span></code></pre>
+
+<hr>
+
+<h2>Data order</h2>
+
+<p>The default is most-significant bit first, however you can tell the hardware to process the least significant bit first like this:</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">SPI</span><span class="pun">.</span><span class="pln">setBitOrder </span><span class="pun">(</span><span class="pln">LSBFIRST</span><span class="pun">);</span><span class="pln">   </span><span class="com">// least significant bit first</span><span class="pln">
+SPI</span><span class="pun">.</span><span class="pln">setBitOrder </span><span class="pun">(</span><span class="pln">MSBFIRST</span><span class="pun">);</span><span class="pln">   </span><span class="com">// most significant bit first</span></code></pre>
+
+<p>Again, this is deprecated in versions 1.6.0 onwards of the Arduino IDE. For recent versions you change the bit order in the <code>SPI.beginTransaction</code> call, like this:</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">SPI</span><span class="pun">.</span><span class="pln">beginTransaction </span><span class="pun">(</span><span class="typ">SPISettings</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1000000</span><span class="pun">,</span><span class="pln"> LSBFIRST</span><span class="pun">,</span><span class="pln"> SPI_MODE2</span><span class="pun">));</span><span class="pln">  </span><span class="com">// 1 MHz clock, LSB first, mode 2</span></code></pre>
+
+<hr>
+
+<h2>Speed</h2>
+
+<p>The default setting for SPI is to use the system clock speed divided by four, that is, one SPI clock pulse every 250 ns, assuming a 16 MHz CPU clock. You can change the clock divider by using <code>setClockDivider</code> like this:</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">SPI</span><span class="pun">.</span><span class="pln">setClockDivider </span><span class="pun">(</span><span class="pln">divider</span><span class="pun">);</span></code></pre>
+
+<p>Where "divider" is one of:</p>
+
+<ul>
+<li>SPI_CLOCK_DIV2</li>
+<li>SPI_CLOCK_DIV4</li>
+<li>SPI_CLOCK_DIV8</li>
+<li>SPI_CLOCK_DIV16</li>
+<li>SPI_CLOCK_DIV32</li>
+<li>SPI_CLOCK_DIV64</li>
+<li>SPI_CLOCK_DIV128</li>
+</ul>
+
+<p>The fastest rate is "divide by 2" or one SPI clock pulse every 125 ns, assuming a 16 MHz CPU clock. This would therefore take 8 * 125 ns or 1 µs to transmit one byte.</p>
+
+<p>This method is deprecated in versions 1.6.0 onwards of the Arduino IDE. For recent versions you change the transfer speed in the <code>SPI.beginTransaction</code> call, like this:</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">SPI</span><span class="pun">.</span><span class="pln">beginTransaction </span><span class="pun">(</span><span class="typ">SPISettings</span><span class="pln"> </span><span class="pun">(</span><span class="lit">4000000</span><span class="pun">,</span><span class="pln"> MSBFIRST</span><span class="pun">,</span><span class="pln"> SPI_MODE0</span><span class="pun">));</span><span class="pln">  </span><span class="com">// 4 MHz clock, MSB first, mode 0</span></code></pre>
+
+<p>However empirical testing shows that it is necessary to have two clock pulses between bytes, so the maximum rate at which bytes can be clocked out is 1.125 µs each (with a clock divider of 2).</p>
+
+<p>To summarize, each byte can be sent at a maximum rate of one per 1.125 µs (with a 16 MHz clock) giving a theoretical maximum transfer rate of 1/1.125 µs, or 888,888 bytes per second (excluding overhead like setting SS low and so on).</p>
+
+<hr>
+
+<h2>Connecting to Arduino</h2>
+
+<h3>Arduino Uno</h3>
+
+<p>Connecting via digital pins 10 to 13:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/QJx5X.jpg" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/QJx5X.jpg" alt="Arduino Uno SPI pins"></a></p>
+
+<p>Connecting via the ICSP header:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/0c2a8.jpg" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/0c2a8.jpg" alt="ICSP pinouts - Uno"></a></p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/NH4o9.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/NH4o9.png" alt="ICSP header"></a></p>
+
+<h3>Arduino Atmega2560</h3>
+
+<p>Connecting via digital pins 50 to 52:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/zEhcv.jpg" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/zEhcv.jpg" alt="Arduino Mega2560 SPI pins"></a></p>
+
+<p>You can also use the ICSP header, similar to the Uno above.</p>
+
+<h3>Arduino Leonardo</h3>
+
+<p>The Leonardo and Micro do not expose the SPI pins on the digital pins, unlike the Uno and Mega. Your only option is to use the ICSP header pins, as illustrated above for the Uno.</p>
+
+<hr>
+
+<h2>Multiple slaves</h2>
+
+<p>A master can communicate with multiple slaves (however only one at a time). It does this by asserting SS for one slave and de-asserting it for all the others. The slave which has SS asserted (usually this means LOW) configures its MISO pin as an output so that slave, and that slave alone, can respond to the master. The other slaves ignore any incoming clock pulses if SS is not asserted. Thus you need one additional signal for each slave, like this:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/x4uKM.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/x4uKM.png" alt="Multiple SPI slaves"></a></p>
+
+<p>In this graphic you can see that MISO, MOSI, SCK are shared between both slaves, however each slave has its own SS (slave select) signal.</p>
+
+<hr>
+
+<h2>Protocols</h2>
+
+<p>The SPI spec does not specify protocols as such, so it is up to individual master/slave pairings to agree on what the data means. Whilst you can send and receive bytes simultaneously, the received byte cannot be a direct response to the sent byte (as they are being assembled simultaneously).</p>
+
+<p>So it would be more logical for one end to send a request (eg. 4 might mean "list the disk directory") and then do transfers (perhaps just sending zeros outwards) until it receives a complete response. The response might terminate with a newline, or 0x00 character.</p>
+
+<p>Read the datasheet for your slave device to see what protocol sequences it expects.</p>
+
+<hr>
+
+<h2>How to make an SPI slave</h2>
+
+<p>The earlier example shows the Arduino as the master, sending data to a slave device. This example shows how the Arduino can be a slave.</p>
+
+<h3>Hardware setup</h3>
+
+<p>Connect two Arduino Unos together with the following pins connected to each other:</p>
+
+<ul>
+<li>10 (SS)</li>
+<li>11 (MOSI)</li>
+<li>12 (MISO)</li>
+<li><p>13 (SCK)</p></li>
+<li><p>+5v (if required)</p></li>
+<li>GND (for signal return)</li>
+</ul>
+
+<p>On the Arduino Mega, the pins are 50 (MISO), 51 (MOSI), 52 (SCK), and 53 (SS).</p>
+
+<p>In any case, MOSI at one end is connected to MOSI at the other, you <strong>don't</strong> swap them around (that is you <strong>do not have</strong> MOSI &lt;-&gt; MISO). The software configures one end of MOSI (master end) as an output, and the other end (slave end) as an input.</p>
+
+<h3>Master example</h3>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;SPI.h&gt;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> setup </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+
+  digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">  </span><span class="com">// ensure SS stays high for now</span><span class="pln">
+
+  </span><span class="com">// Put SCK, MOSI, SS pins into output mode</span><span class="pln">
+  </span><span class="com">// also put SCK, MOSI into LOW state, and SS into HIGH state.</span><span class="pln">
+  </span><span class="com">// Then put SPI hardware into Master mode and turn SPI on</span><span class="pln">
+  SPI</span><span class="pun">.</span><span class="kwd">begin</span><span class="pln"> </span><span class="pun">();</span><span class="pln">
+
+  </span><span class="com">// Slow down the master a bit</span><span class="pln">
+  SPI</span><span class="pun">.</span><span class="pln">setClockDivider</span><span class="pun">(</span><span class="pln">SPI_CLOCK_DIV8</span><span class="pun">);</span><span class="pln">
+
+</span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of setup</span><span class="pln">
+
+
+</span><span class="kwd">void</span><span class="pln"> loop </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+
+  </span><span class="kwd">char</span><span class="pln"> c</span><span class="pun">;</span><span class="pln">
+
+  </span><span class="com">// enable Slave Select</span><span class="pln">
+  digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">    </span><span class="com">// SS is pin 10</span><span class="pln">
+
+  </span><span class="com">// send test string</span><span class="pln">
+  </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">char</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Hello, world!\n"</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p</span><span class="pun">;</span><span class="pln"> p</span><span class="pun">++)</span><span class="pln">
+    SPI</span><span class="pun">.</span><span class="pln">transfer </span><span class="pun">(</span><span class="pln">c</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="com">// disable Slave Select</span><span class="pln">
+  digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">
+
+  delay </span><span class="pun">(</span><span class="lit">1000</span><span class="pun">);</span><span class="pln">  </span><span class="com">// 1 seconds delay</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of loop</span></code></pre>
+
+<h3>Slave example</h3>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;SPI.h&gt;</span><span class="pln">
+
+</span><span class="kwd">char</span><span class="pln"> buf </span><span class="pun">[</span><span class="lit">100</span><span class="pun">];</span><span class="pln">
+</span><span class="kwd">volatile</span><span class="pln"> </span><span class="kwd">byte</span><span class="pln"> pos</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">volatile</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln"> process_it</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> setup </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="typ">Serial</span><span class="pun">.</span><span class="kwd">begin</span><span class="pln"> </span><span class="pun">(</span><span class="lit">115200</span><span class="pun">);</span><span class="pln">   </span><span class="com">// debugging</span><span class="pln">
+
+  </span><span class="com">// turn on SPI in slave mode</span><span class="pln">
+  SPCR </span><span class="pun">|=</span><span class="pln"> bit </span><span class="pun">(</span><span class="pln">SPE</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="com">// have to send on master in, *slave out*</span><span class="pln">
+  pinMode </span><span class="pun">(</span><span class="pln">MISO</span><span class="pun">,</span><span class="pln"> OUTPUT</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="com">// get ready for an interrupt</span><span class="pln">
+  pos </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">   </span><span class="com">// buffer empty</span><span class="pln">
+  process_it </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+
+  </span><span class="com">// now turn on interrupts</span><span class="pln">
+  SPI</span><span class="pun">.</span><span class="pln">attachInterrupt</span><span class="pun">();</span><span class="pln">
+
+</span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of setup</span><span class="pln">
+
+
+</span><span class="com">// SPI interrupt routine</span><span class="pln">
+ISR </span><span class="pun">(</span><span class="pln">SPI_STC_vect</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+</span><span class="kwd">byte</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> SPDR</span><span class="pun">;</span><span class="pln">  </span><span class="com">// grab byte from SPI Data Register</span><span class="pln">
+
+  </span><span class="com">// add to buffer if room</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">pos </span><span class="pun">&lt;</span><span class="pln"> </span><span class="kwd">sizeof</span><span class="pln"> buf</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+    buf </span><span class="pun">[</span><span class="pln">pos</span><span class="pun">++]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> c</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">// example: newline means time to process buffer</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">c </span><span class="pun">==</span><span class="pln"> </span><span class="str">'\n'</span><span class="pun">)</span><span class="pln">
+      process_it </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of room available</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of interrupt routine SPI_STC_vect</span><span class="pln">
+
+</span><span class="com">// main loop - wait for flag set in interrupt routine</span><span class="pln">
+</span><span class="kwd">void</span><span class="pln"> loop </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">process_it</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+    buf </span><span class="pun">[</span><span class="pln">pos</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">buf</span><span class="pun">);</span><span class="pln">
+    pos </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    process_it </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of flag set</span><span class="pln">
+
+</span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of loop</span></code></pre>
+
+<p>The slave is entirely interrupt-driven, thus it can doing other stuff. The incoming SPI data is collected in a buffer, and a flag set when a "significant byte" (in this case a newline) arrives. This tells the slave to get on and start processing the data.</p>
+
+<h3>Example of connecting master to slave using SPI</h3>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/PB7Ob.jpg" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/PB7Ob.jpg" alt="Arduino SPI master and slave"></a></p>
+
+<hr>
+
+<h2>How to get a response from a slave</h2>
+
+<p>Following on from the code above which sends data from an SPI master to a slave, the example below shows sending data to a slave, having it do something with it, and return a response.</p>
+
+<p>The master is similar to the example above. However an important point is that we need to add a slight delay (something like 20 microseconds). Otherwise the slave doesn't have a chance to react to the incoming data and do something with it.</p>
+
+<p>The example shows sending a "command". In this case "a" (add something) or "s" (subtract something). This is to show that the slave is actually doing something with the data.</p>
+
+<p>After asserting slave-select (SS) to initiate the transaction, the master sends the command, followed by any number of bytes, and then raises SS to terminate the transaction.</p>
+
+<p>A very important point is that the slave cannot respond to an incoming byte at the same moment. The response has to be in the next byte. This is because the bits which are being sent, and the bits which are being received, are being sent simultaneously. Thus to add something to four numbers we need five transfers, like this:</p>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">transferAndWait </span><span class="pun">(</span><span class="str">'a'</span><span class="pun">);</span><span class="pln">  </span><span class="com">// add command</span><span class="pln">
+transferAndWait </span><span class="pun">(</span><span class="lit">10</span><span class="pun">);</span><span class="pln">
+a </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">17</span><span class="pun">);</span><span class="pln">
+b </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">33</span><span class="pun">);</span><span class="pln">
+c </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">42</span><span class="pun">);</span><span class="pln">
+d </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span></code></pre>
+
+<p>First we request action on number 10. But we don't get a response until the next transfer (the one for 17). However "a" will be set to the reply to 10. Finally we end up sending a "dummy" number 0, to get the reply for 42.</p>
+
+<h3>Master (example)</h3>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">  </span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;SPI.h&gt;</span><span class="pln">
+
+  </span><span class="kwd">void</span><span class="pln"> setup </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="kwd">begin</span><span class="pln"> </span><span class="pun">(</span><span class="lit">115200</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">();</span><span class="pln">
+
+    digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">  </span><span class="com">// ensure SS stays high for now</span><span class="pln">
+    SPI</span><span class="pun">.</span><span class="kwd">begin</span><span class="pln"> </span><span class="pun">();</span><span class="pln">
+
+    </span><span class="com">// Slow down the master a bit</span><span class="pln">
+    SPI</span><span class="pun">.</span><span class="pln">setClockDivider</span><span class="pun">(</span><span class="pln">SPI_CLOCK_DIV8</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of setup</span><span class="pln">
+
+  </span><span class="kwd">byte</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">byte</span><span class="pln"> what</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">byte</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> SPI</span><span class="pun">.</span><span class="pln">transfer </span><span class="pun">(</span><span class="pln">what</span><span class="pun">);</span><span class="pln">
+    delayMicroseconds </span><span class="pun">(</span><span class="lit">20</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> a</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="com">// end of transferAndWait</span><span class="pln">
+
+  </span><span class="kwd">void</span><span class="pln"> loop </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">byte</span><span class="pln"> a</span><span class="pun">,</span><span class="pln"> b</span><span class="pun">,</span><span class="pln"> c</span><span class="pun">,</span><span class="pln"> d</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">// enable Slave Select</span><span class="pln">
+    digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">
+
+    transferAndWait </span><span class="pun">(</span><span class="str">'a'</span><span class="pun">);</span><span class="pln">  </span><span class="com">// add command</span><span class="pln">
+    transferAndWait </span><span class="pun">(</span><span class="lit">10</span><span class="pun">);</span><span class="pln">
+    a </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">17</span><span class="pun">);</span><span class="pln">
+    b </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">33</span><span class="pun">);</span><span class="pln">
+    c </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">42</span><span class="pun">);</span><span class="pln">
+    d </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="com">// disable Slave Select</span><span class="pln">
+    digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="str">"Adding results:"</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">a</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">b</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">c</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">d</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="com">// enable Slave Select</span><span class="pln">
+    digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">
+
+    transferAndWait </span><span class="pun">(</span><span class="str">'s'</span><span class="pun">);</span><span class="pln">  </span><span class="com">// subtract command</span><span class="pln">
+    transferAndWait </span><span class="pun">(</span><span class="lit">10</span><span class="pun">);</span><span class="pln">
+    a </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">17</span><span class="pun">);</span><span class="pln">
+    b </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">33</span><span class="pun">);</span><span class="pln">
+    c </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">42</span><span class="pun">);</span><span class="pln">
+    d </span><span class="pun">=</span><span class="pln"> transferAndWait </span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="com">// disable Slave Select</span><span class="pln">
+    digitalWrite</span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="str">"Subtracting results:"</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">a</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">b</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">c</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println </span><span class="pun">(</span><span class="pln">d</span><span class="pun">,</span><span class="pln"> DEC</span><span class="pun">);</span><span class="pln">
+
+    delay </span><span class="pun">(</span><span class="lit">1000</span><span class="pun">);</span><span class="pln">  </span><span class="com">// 1 second delay</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of loop</span></code></pre>
+
+<p>The code for the slave basically does almost everything in the interrupt routine (called when incoming SPI data arrives). It takes the incoming byte, and adds or subtracts as per the remembered "command byte". Note that the response will be "collected" next time through the loop. This is why the master has to send one final "dummy" transfer to get the final reply.</p>
+
+<p>In my example I am using the main loop to simply detect when SS goes high, and clear the saved command. That way, when SS is pulled low again for the next transaction, the first byte is considered the command byte.</p>
+
+<p>More reliably, this would be done with an interrupt. That is, you would physically connect SS to one of the interrupt inputs (eg, on the Uno, connect pin 10 (SS) to pin 2 (an interrupt input), or use a pin-change interrupt on pin 10.</p>
+
+<p>Then the interrupt could be used to notice when SS is being pulled low or high.</p>
+
+<h3>Slave (example)</h3>
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="com">// what to do with incoming data</span><span class="pln">
+</span><span class="kwd">volatile</span><span class="pln"> </span><span class="kwd">byte</span><span class="pln"> command </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> setup </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+  </span><span class="pun">{</span><span class="pln">
+
+  </span><span class="com">// have to send on master in, *slave out*</span><span class="pln">
+  pinMode</span><span class="pun">(</span><span class="pln">MISO</span><span class="pun">,</span><span class="pln"> OUTPUT</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="com">// turn on SPI in slave mode</span><span class="pln">
+  SPCR </span><span class="pun">|=</span><span class="pln"> _BV</span><span class="pun">(</span><span class="pln">SPE</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="com">// turn on interrupts</span><span class="pln">
+  SPCR </span><span class="pun">|=</span><span class="pln"> _BV</span><span class="pun">(</span><span class="pln">SPIE</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of setup</span><span class="pln">
+
+
+</span><span class="com">// SPI interrupt routine</span><span class="pln">
+ISR </span><span class="pun">(</span><span class="pln">SPI_STC_vect</span><span class="pun">)</span><span class="pln">
+  </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">byte</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> SPDR</span><span class="pun">;</span><span class="pln">
+
+  </span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">command</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">// no command? then this is the command</span><span class="pln">
+    </span><span class="kwd">case</span><span class="pln"> </span><span class="lit">0</span><span class="pun">:</span><span class="pln">
+      command </span><span class="pun">=</span><span class="pln"> c</span><span class="pun">;</span><span class="pln">
+      SPDR </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">// add to incoming byte, return result</span><span class="pln">
+    </span><span class="kwd">case</span><span class="pln"> </span><span class="str">'a'</span><span class="pun">:</span><span class="pln">
+      SPDR </span><span class="pun">=</span><span class="pln"> c </span><span class="pun">+</span><span class="pln"> </span><span class="lit">15</span><span class="pun">;</span><span class="pln">  </span><span class="com">// add 15</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">// subtract from incoming byte, return result</span><span class="pln">
+    </span><span class="kwd">case</span><span class="pln"> </span><span class="str">'s'</span><span class="pun">:</span><span class="pln">
+      SPDR </span><span class="pun">=</span><span class="pln"> c </span><span class="pun">-</span><span class="pln"> </span><span class="lit">8</span><span class="pun">;</span><span class="pln">  </span><span class="com">// subtract 8</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="pun">}</span><span class="pln"> </span><span class="com">// end of switch</span><span class="pln">
+
+  </span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of interrupt service routine (ISR) SPI_STC_vect</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> loop </span><span class="pun">(</span><span class="kwd">void</span><span class="pun">)</span><span class="pln">
+  </span><span class="pun">{</span><span class="pln">
+
+  </span><span class="com">// if SPI not active, clear current command</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">digitalRead </span><span class="pun">(</span><span class="pln">SS</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> HIGH</span><span class="pun">)</span><span class="pln">
+    command </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">  </span><span class="com">// end of loop</span></code></pre>
+
+<h3>Example output</h3>
+
+
+
+<pre class="lang-none prettyprint prettyprinted" style=""><code><span class="pln">Adding results:
+25
+32
+48
+57
+Subtracting results:
+2
+9
+25
+34
+Adding results:
+25
+32
+48
+57
+Subtracting results:
+2
+9
+25
+34</span></code></pre>
+
+<h3>Logic analyzer output</h3>
+
+<p>This shows the timing between sending and receiving in the above code:</p>
+
+<p><a href="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/3qtCV.png" rel="noreferrer"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/3qtCV.png" alt="SPI master and slave timing"></a></p>
+
+<hr>
+
+<h2>New functionality in IDE 1.6.0 onwards</h2>
+
+<p>Version 1.6.0 of the IDE has changed the way SPI works, to an extent. You <strong>still need to do</strong> <code>SPI.begin()</code> before using SPI. That sets up the SPI hardware. However now, when you are about to start communicating with a slave you <strong>also</strong> do <code>SPI.beginTransaction()</code> to set up SPI (for this slave) with the correct:</p>
+
+<ul>
+<li>Clock speed</li>
+<li>Bit order</li>
+<li>Clock phase and polarity</li>
+</ul>
+
+<p>When you are done communicating with the slave, you call <code>SPI.endTransaction()</code>. For example:</p>
+
+
+
+<pre class="lang-C++ prettyprint prettyprinted" style=""><code><span class="pln">SPI</span><span class="pun">.</span><span class="pln">beginTransaction </span><span class="pun">(</span><span class="typ">SPISettings</span><span class="pln"> </span><span class="pun">(</span><span class="lit">2000000</span><span class="pun">,</span><span class="pln"> MSBFIRST</span><span class="pun">,</span><span class="pln"> SPI_MODE0</span><span class="pun">));</span><span class="pln">
+digitalWrite </span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">        </span><span class="com">// assert Slave Select</span><span class="pln">
+</span><span class="kwd">byte</span><span class="pln"> foo </span><span class="pun">=</span><span class="pln"> SPI</span><span class="pun">.</span><span class="pln">transfer </span><span class="pun">(</span><span class="lit">42</span><span class="pun">);</span><span class="pln">  </span><span class="com">// do a transfer</span><span class="pln">
+digitalWrite </span><span class="pun">(</span><span class="pln">SS</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">       </span><span class="com">// de-assert Slave Select</span><span class="pln">
+SPI</span><span class="pun">.</span><span class="pln">endTransaction </span><span class="pun">();</span><span class="pln">         </span><span class="com">// transaction over</span></code></pre>
+
+<hr>
+
+<h2>Why use SPI?</h2>
+
+<blockquote>
+  <p>I would add one preliminary question: when/why would you use SPI? A need for multi-master configuration or a very large number of slaves would tilt the scale toward I2C.</p>
+</blockquote>
+
+<p>This is an excellent question. My answers are:</p>
+
+<ul>
+<li>Some devices (quite a few) only support the SPI transfer method. For example the 74HC595 output shift register, the 74HC165 input shift register, the MAX7219 LED driver, and quite a few LED strips that I have seen. So, you might use it because the target device only supports it.</li>
+<li>SPI is really the fastest method available on the Atmega328 (and similar) chips. The fastest rate quoted above is 888,888 bytes per second. Using I<sup>2</sup>C you can only get around 40,000 bytes per second. The overhead of the I<sup>2</sup>C is quite substantial, and if you are trying to interface really quickly, SPI is the preferred choice. Quite a few chip families (eg. MCP23017 and MCP23S17) actually support both I<sup>2</sup>C and SPI so you often can choose between speed, and the ability to have multiple devices on a single bus.</li>
+<li>The SPI and I<sup>2</sup>C devices are both supported in hardware on the Atmega328 so you could conceivably be doing a transfer via SPI simultaneously with I<sup>2</sup>C which would give you a speed boost.</li>
+</ul>
+
+<p>Both methods have their place. I<sup>2</sup>C lets you connect many devices to a single bus (two wires, plus ground) so it would be the preferred choice if you needed to interrogate a substantial number of devices, perhaps fairly infrequently. However the speed of SPI could be more relevant for situations where you need to output rapidly (eg. a LED strip) or input rapidly (eg. an ADC converter).</p>
+
+<hr>
+
+<h2>References</h2>
+
+<ul>
+<li><p><a href="http://www.gammon.com.au/spi" rel="noreferrer">My page about SPI</a> - also has details about bit-banged SPI, and using the USART to gain a second hardware SPI on the Atmega328 chip.</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus" rel="noreferrer">Serial Peripheral Interface Bus - Wikipedia</a></p></li>
+<li><p><a href="http://arduino.cc/en/Reference/SPI" rel="noreferrer">Arduino SPI library reference pages</a></p></li>
+<li><p><a href="http://www.pjrc.com/teensy/td_libs_SPI.html" rel="noreferrer">SPI documentation at PJRC</a></p></li>
+<li><p><a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi" rel="noreferrer">SPI protocol - Sparkfun</a></p></li>
+</ul>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://arduino.stackexchange.com/a/16349" title="short permalink to this answer" class="short-link" id="link-post-16349">share</a><span class="lsep">|</span><a href="https://arduino.stackexchange.com/posts/16349/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://arduino.stackexchange.com/posts/16349/revisions" title="show all edits to this post">edited <span title="2015-09-27 07:00:17Z" class="relativetime">Sep 27 '15 at 7:00</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature owner grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-09-26 01:06:58Z" class="relativetime">Sep 26 '15 at 1:06</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://arduino.stackexchange.com/users/10794/nick-gammon"><div class="gravatar-wrapper-32"><img src="./How do you use SPI on an Arduino_ - Arduino Stack Exchange_files/6fef66445955c19e7768a09672d2ba4c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://arduino.stackexchange.com/users/10794/nick-gammon">Nick Gammon</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 25,151" dir="ltr">25.2k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="36 silver badges"><span class="badge2"></span><span class="badgecount">36</span></span><span title="88 bronze badges"><span class="badge3"></span><span class="badgecount">88</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-16349" class="comments js-comments-container ">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="2" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-30308" class="comment js-comment " data-comment-id="30308">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Are you going to cover the weirdness that is the Due's SPI? Where the configuration of the SPI port is tied to the SS pin used, and there are (IIRC) 4 hardware SS pins assigned to the SPI port?</span>
+                    –&nbsp;<a href="https://arduino.stackexchange.com/users/4143/majenko" title="53,267 reputation" class="comment-user">Majenko<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#comment30308_16349"><span title="2015-09-26 10:49:36Z" class="relativetime-clean">Sep 26 '15 at 10:49</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-30311" class="comment js-comment " data-comment-id="30311">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Other point about the selection: sometimes you really have no choice because the sensor you want/need to use is only available as I2C.</span>
+                    –&nbsp;<a href="https://arduino.stackexchange.com/users/7856/igor-stoppa" title="1,914 reputation" class="comment-user">Igor Stoppa</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#comment30311_16349"><span title="2015-09-26 11:34:49Z" class="relativetime-clean">Sep 26 '15 at 11:34</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-30320" class="comment js-comment " data-comment-id="30320">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>Are you going to cover the weirdness that is the Due's SPI?</code> - I don't know anything about the Due's SPI (apart from presuming the overall protocol is the same). You are welcome to add a reply covering that aspect of it.</span>
+                    –&nbsp;<a href="https://arduino.stackexchange.com/users/10794/nick-gammon" title="25,151 reputation" class="comment-user owner">Nick Gammon<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#comment30320_16349"><span title="2015-09-26 21:22:05Z" class="relativetime-clean">Sep 26 '15 at 21:22</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-30346" class="comment js-comment " data-comment-id="30346">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">When is the audiobook of this answer coming out, and will you be reading it yourself ;)</span>
+                    –&nbsp;<a href="https://arduino.stackexchange.com/users/6740/amadanon-inc" title="2,240 reputation" class="comment-user">AMADANON Inc.</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#comment30346_16349"><span title="2015-09-27 20:52:16Z" class="relativetime-clean">Sep 27 '15 at 20:52</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-30347" class="comment js-comment " data-comment-id="30347">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@AMADANONInc. Perhaps a music video? Or an animation? I'm not sure if my Australian accent would be understandable. :P</span>
+                    –&nbsp;<a href="https://arduino.stackexchange.com/users/10794/nick-gammon" title="25,151 reputation" class="comment-user owner">Nick Gammon<span class="mod-flair" title="moderator">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#comment30347_16349"><span title="2015-09-27 21:23:41Z" class="relativetime-clean">Sep 27 '15 at 21:23</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+        </div>
+    </li>
+                </ul>
+	    </div>
+
+        <div id="comments-link-16349" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" onclick="">show <b>2</b> more comments</a>
+        </div>         
+    </div>    </div>
+</div>
+                    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="https://arduino.stackexchange.com/users/10794/nick-gammon">Nick Gammon</a><span class="mod-flair" title="moderator">♦</span> <span dir="ltr"><span title="2016-09-09 22:23:58Z" class="relativetime">Sep 9 '16 at 22:23</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="https://arduino.stackexchange.com/help/whats-reputation">reputation</a> on this site (the <a href="https://arduino.stackexchange.com/help/privileges/new-user">association bonus does not count</a>).
+<br><br>
+Would you like to answer one of these <a href="https://arduino.stackexchange.com/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?</p>
+    </div>
+
+
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://arduino.stackexchange.com/questions/tagged/arduino-uno" class="post-tag" title="show questions tagged &#39;arduino-uno&#39;" rel="tag">arduino-uno</a> <a href="https://arduino.stackexchange.com/questions/tagged/arduino-mega" class="post-tag" title="show questions tagged &#39;arduino-mega&#39;" rel="tag">arduino-mega</a> <a href="https://arduino.stackexchange.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged &#39;c++&#39;" rel="tag">c++</a> <a href="https://arduino.stackexchange.com/questions/tagged/arduino-leonardo" class="post-tag" title="show questions tagged &#39;arduino-leonardo&#39;" rel="tag">arduino-leonardo</a> <a href="https://arduino.stackexchange.com/questions/tagged/spi" class="post-tag" title="show questions tagged &#39;spi&#39;" rel="tag">spi</a>  or <a href="https://arduino.stackexchange.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2015-09-26 01:06:58Z"><b>2 years, 5 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>90,343 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino?lastactivity" class="lastactivity-link" title="2016-07-11 14:07:49Z">1 year, 8 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+                        
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/19935?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/19935/how-to-use-multiple-mpu9250-to-arduino-lilypad?noredirect=1&amp;lq=1" class="question-hyperlink">How to use Multiple MPU9250 to Arduino Lilypad</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/44291?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/44291/weird-output-from-chained-74hc595-shift-registers?noredirect=1&amp;lq=1" class="question-hyperlink">Weird output from chained 74HC595 shift registers</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/19797?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/19797/is-arduino-uno-spi-comunication-can-be-also-master-and-slave-in-the-same-time?noredirect=1&amp;lq=1" class="question-hyperlink">Is Arduino uno SPI comunication can be also master and slave in the same time?</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/35556?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/35556/miso-pin-issue-in-spi?noredirect=1&amp;lq=1" class="question-hyperlink">MISO pin issue in SPI</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/32750?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/32750/looking-for-learning-resources-to-teach-the-principles-rather-than-follow-thi?noredirect=1&amp;lq=1" class="question-hyperlink">Looking for learning resources to teach the “principles” rather than “follow this” projects</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/31876?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/31876/using-spi-interrupt-causes-two-servos-to-lose-functionality?noredirect=1&amp;lq=1" class="question-hyperlink">Using SPI Interrupt causes two servos to lose functionality</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/32502?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/32502/long-distance-shift-register?noredirect=1&amp;lq=1" class="question-hyperlink">Long Distance Shift Register</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/43991?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/43991/sharing-a-digital-pin-what-to-do-when-two-components-need-a-specific-digital-p?noredirect=1&amp;lq=1" class="question-hyperlink">Sharing a Digital Pin / What to do when two components need a specific Digital Pin?</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/48191?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/48191/multiple-slavesarduino-mega-2560-response-over-spi?noredirect=1&amp;lq=1" class="question-hyperlink">Multiple Slaves(Arduino Mega 2560) response over SPI</a>
+</div>
+<div class="spacer">
+	<a href="https://arduino.stackexchange.com/q/49629?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="https://arduino.stackexchange.com/questions/49629/looking-for-spi-documentation?noredirect=1&amp;lq=1" class="question-hyperlink">Looking for SPI documentation</a>
+</div>					<div class="spacer more">
+				<a href="https://arduino.stackexchange.com/questions/linked/16348?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/9616?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="https://arduino.stackexchange.com/questions/9616/slaving-multiple-arduinos-via-spi?rq=1" class="question-hyperlink">Slaving multiple Arduinos via SPI</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/13148?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://arduino.stackexchange.com/questions/13148/attiny88-as-spi-slave?rq=1" class="question-hyperlink">Attiny88 as SPI slave</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/18612?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="https://arduino.stackexchange.com/questions/18612/spi-interface-between-arduino-uno-and-evk1100?rq=1" class="question-hyperlink">SPI Interface between Arduino UNO and EVK1100</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/19756?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">11</div></a><a href="https://arduino.stackexchange.com/questions/19756/how-does-serial-communications-work-on-the-arduino?rq=1" class="question-hyperlink">How does serial communications work on the Arduino?</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/19797?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://arduino.stackexchange.com/questions/19797/is-arduino-uno-spi-comunication-can-be-also-master-and-slave-in-the-same-time?rq=1" class="question-hyperlink">Is Arduino uno SPI comunication can be also master and slave in the same time?</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/29762?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://arduino.stackexchange.com/questions/29762/arduino-nano-pro-micro-spi-simple-communication?rq=1" class="question-hyperlink">Arduino nano &amp; pro micro SPI simple communication</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/38109?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://arduino.stackexchange.com/questions/38109/receive-data-from-spi-slave?rq=1" class="question-hyperlink">receive data from SPI slave</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/38114?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://arduino.stackexchange.com/questions/38114/how-to-use-spi-buffer?rq=1" class="question-hyperlink">how to use SPI buffer</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/40356?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://arduino.stackexchange.com/questions/40356/spi-mosi-receive-error?rq=1" class="question-hyperlink">SPI MOSI receive error</a></div><div class="spacer js-gps-track"><a href="https://arduino.stackexchange.com/q/48191?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://arduino.stackexchange.com/questions/48191/multiple-slavesarduino-mega-2560-response-over-spi?rq=1" class="question-hyperlink">Multiple Slaves(Arduino Mega 2560) response over SPI</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/107291/glass-arrow-heads" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Glass arrow heads
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="https://money.stackexchange.com/questions/92012/bought-stock-at-higher-price-than-current-price" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Bought stock at higher price than current price
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-hinduism" title="Hinduism Stack Exchange"></div><a href="https://hinduism.stackexchange.com/questions/26077/is-the-law-of-attraction-found-in-hindu-scriptures" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:567 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is "The Law Of attraction" found In Hindu Scriptures?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-cseducators" title="Computer Science Educators Stack Exchange"></div><a href="https://cseducators.stackexchange.com/questions/4425/should-i-teach-that-1-kb-1024-bytes-or-1000-bytes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:678 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I teach that 1 KB = 1024 bytes or 1000 bytes?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/159492/how-old-is-it-roughly" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How old is it roughly?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/181793/is-there-any-point-in-setting-the-secure-cookie-flag-for-hsts-websites" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any point in setting the secure cookie flag for HSTS websites?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2697276/solving-exponential-equation-by-hand" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Solving exponential equation by hand?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="https://stats.stackexchange.com/questions/335197/why-kl-divergence-is-non-negative" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why KL divergence is non-negative?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-health" title="Health Stack Exchange"></div><a href="https://health.stackexchange.com/questions/15673/does-relighting-a-cigarette-have-a-harsher-effect-on-your-health" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:607 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does relighting a cigarette have a harsher effect on your health?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/183751/why-did-pratchett-name-maurice-maurice" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Pratchett name Maurice Maurice?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2697020/integrating-the-following-function" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Integrating the following function
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/421857/how-to-generate-accents-similar-to-ddot-dddot-with-marks-other-than-dot" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to generate accents similar to `\ddot, \dddot` with marks other than \dot?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/181580/why-is-math-random-not-designed-to-be-cryptographically-secure" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is Math.random() not designed to be cryptographically secure?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/159518/what-is-my-exponential-potential" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is my exponential potential?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/105551/is-it-ethical-to-omit-the-phd-credential-from-my-resume" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it ethical to omit the PhD credential from my resume?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/111146/what-is-the-easiest-place-to-cross-the-us-rocky-mountains-going-to-oregon-in-a" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the easiest place to cross the US Rocky Mountains, going to Oregon, in a large truck?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/169193/checking-if-a-word-exists" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Checking if a word exists
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/363314/help-me-find-the-voltage-drop-and-please-check-my-solution" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Help me find the voltage drop and please check my solution
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/363271/is-smoke-sensor-safe-for-eyes-kids" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is smoke sensor safe for eyes / kids?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="https://gamedev.stackexchange.com/questions/156534/level-playing-field-punish-the-better-player-or-enhance-the-worse-player" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Level playing field: Punish the better player or enhance the worse player?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="https://superuser.com/questions/1305459/windows-10-red-screen-important-updates-needed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Windows 10 Red Screen! (Important Updates Needed)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/105555/is-it-normal-ethical-for-student-grades-to-be-assigned-according-to-quotas" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it normal/ethical for student grades to be assigned according to quotas?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="https://skeptics.stackexchange.com/questions/40906/does-germany-have-a-peace-treaty-and-a-constitution" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does Germany have a peace treaty and a constitution?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2696959/in-proofs-are-for-each-and-for-any-synonyms" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In proofs, are "for each" and "for any" synonyms?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+
+<div id="feed-link">
+    <a href="https://arduino.stackexchange.com/feeds/question/16348" title="feed of this question and its answers">
+        <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+        question feed
+    </a>
+</div>
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/16348/ivc/614d');});</script>
+<noscript>&lt;div&gt;&lt;img src="/posts/16348/ivc/614d" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;</noscript><div style="display:none" id="prettify-lang">lang-cpp</div></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://arduino.stackexchange.com/">Arduino</a></h5>
+                        <ul class="-list">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://arduino.stackexchange.com/tour">Tour</a></li>
+                                <li class="-item"><a href="https://arduino.stackexchange.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=arduino.stackexchange.com">Chat</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://arduino.stackexchange.com/contact">Contact</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://arduino.meta.stackexchange.com/">Feedback</a></li>
+                                                            <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://arduino.stackexchange.com/questions/16348/how-do-you-use-spi-on-an-arduino#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (28)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2018.3.16.29467</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Arduino Stack Exchange works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                var trackingCodes = [
+                    'UA-5620270-24'
+                ];
+
+                        trackingCodes.push('UA-108242619-5');
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: trackingCodes
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|arduino-uno|arduino-mega|c++|arduino-leonardo|spi|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+        
+    
+    
+</body></html>

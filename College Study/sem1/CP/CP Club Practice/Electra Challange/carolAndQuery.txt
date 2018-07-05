@@ -1,0 +1,50 @@
+Carol was preparing for his regional programming contest when he came across a rather difficult question.
+
+The question stated that:
+
+Given an array A[] of n integers and q queries of form "l x", your job is to answer the following:
+
+Find the minimum r for which the minimum element in the range l..r(l and r inclusive) in the array is lesser than x
+
+Help Carol in solving the problem.
+
+Input Format
+
+The first line contains two integers integer n and q - the size of array A and the number of queries
+
+The following line contains n integers - the values of array A.
+
+The following q lines contain n queries of the form l x
+
+Constraints
+
+Subtask 1: n <= 1000 q <= 1000
+
+Subtask 2: n <= 100000 q <= 100000
+
+Output Format
+
+For every query print the required value of r
+
+If no such r exists print -1
+
+Sample Input 0
+
+7 7
+342444647 763838385 242500910 215000120 439520721 254942303 691349996 
+1 564132234
+3 327993161
+1 13161235
+0 87176174
+4 987706219
+1 307499234
+5 892161520
+Sample Output 0
+
+2
+3
+-1
+-1
+4
+2
+5

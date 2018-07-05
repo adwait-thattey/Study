@@ -1,0 +1,176 @@
+<!doctype html>
+
+<html>
+	<head>
+	<title> Question8 </title>
+	
+		<script>
+		
+		</script>
+		
+	</head>
+	
+	<body style="text-align:center">
+    	<h1>AGE-CALCULATOR</h1>
+    	
+    	<h3>This program also takes leap years into consideration, giving you your exact correct age </h3>
+    	<br>
+    	<h2> Enter your date of Birth </h2>
+    	
+    	<center>
+        <form id="age">
+        	<table>
+            <tr>
+            <td>Date</td>
+            <td>Month</td>
+            <td>year</td>
+            
+            </tr>
+            
+            <tr>
+            <td>
+        	<select name="date" value="date">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+            
+            </select>
+    		</td>
+        	<td>
+            <select name="month" value="month">
+            	<option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+                          
+            </select>
+            </td>
+            <td><input type="number" name="year"></td>
+            
+            </table>
+            <br><br>
+            <input type="button" value="Calc Age" onclick="getAge();">
+	
+		</form>
+        
+        <p id="para">
+        
+        </p>
+        </center>
+	</body>
+    
+    <script>
+    
+    	
+        
+        function numDays(m,y)  {
+        
+        	switch(m)
+            	{	case 1 :
+		    	case 3 :
+			case 5 :
+		        case 7 :
+		        case 8 :
+		        case 10:
+		        case 12: return 31;
+		        case 4 :
+		        case 6:
+		        case 9:
+		        case 11: return 30;
+		        case 2 : { if(y%4==0) return 29; return 28; }
+            
+            
+            	};
+        
+        }
+        
+        
+        
+        function convMon2Num(str)
+        {	
+        	switch (str) {
+            	case "January" : return 1;
+                case "February" : return 2;
+                case "March" : return 3;
+                case "April" : return 4;
+                case "May" : return 5;
+                case "June" :return 6;
+                case "July" :return 7;
+                case "August" :return 8;
+                case "September" :return 9;
+                case "October" :return 10;
+                case "November" :return 11;
+                case "December" :return 12;
+            
+            };
+        
+        }
+        
+        function getAge()  {
+        var d= new Date;
+      
+        var DOB=document.getElementById('age');
+        var diffDate=d.getDate()-DOB.date.value;        
+        var diffMonth=d.getMonth() + 1 -convMon2Num(DOB.month.value);
+        var diffYear=d.getFullYear()-DOB.year.value;
+        
+        if(diffDate<0) {
+        	diffDate = numDays(convMon2Num(DOB.month.value) , DOB.year.value) + diffDate;
+        	--diffMonth;
+        }  
+        
+        if(diffMonth<0) {
+        	diffMonth = 12 + diffMonth;
+        	--diffYear;
+        
+        }  			      
+        
+        
+        document.getElementById("para").innerHTML= "Today you are " + diffYear + " years , " + diffMonth + " months and " + diffDate + " days old";
+        
+        }
+        
+        
+        
+        
+    
+    </script>
+		
+
+</html>

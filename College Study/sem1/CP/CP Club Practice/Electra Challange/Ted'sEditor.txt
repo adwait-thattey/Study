@@ -1,0 +1,33 @@
+Ted is busy working on the computer system for a company. One day he got bored of doing repetitive task given to him by his boss. He decided to write a program to automate this task so that it takes minimum time to write using the editor. It takes A seconds to insert or delete a letter 'C' from the editor and B seconds to copy string and make a duplicate of it. Help Ted in minimising his time of making a string containing N characters.
+
+Note: Assume all characters in string are equal to 'C'.
+
+Input Format
+
+First line will have the number of test-cases T. One line corresponding to each test-case providing the values of N, A, and B.
+
+Constraints
+
+1 ≤ T ≤ 5
+1 ≤ N ≤ 107
+1 ≤ A, B ≤ 109
+
+Output Format
+
+Minimum amount of time to complete the task as asked in the problem statement.
+
+Sample Input 0
+
+3
+8 1 1 
+8 1 10
+10 62 99
+Sample Output 0
+
+4 
+8
+384
+Explanation 0
+
+Test 1: "" -> "C" -> "CC" -> "CCCC" -> "CCCCCCCC". 
+It can be seen that time taken at each stage is 1 second, so the total (and minimum) time taken will be 4 seconds.

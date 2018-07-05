@@ -1,0 +1,315 @@
+/* setup */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+body {
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+.hide {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important; }
+
+#banner {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  border: solid 1px #000;
+  overflow: hidden;
+  background-color: #08090b;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+  #banner .bannerClick {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"); }
+
+/* Banner Styles */
+.boldFont {
+  font-weight: bold; }
+
+.ar span, .he span {
+  direction: rtl; }
+
+span.ar, span.he {
+  direction: rtl; }
+
+#banner #ribbonComponent {
+  position: absolute;
+  top: 0;
+  left: 0; }
+#banner #supercut {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+body {
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #03030d; }
+
+.hide {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important; }
+
+/* Banner Styles */
+#banner {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  border: solid 1px #000;
+  overflow: hidden;
+  background-color: #03030d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  #banner .bannerClick {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"); }
+  #banner .keyartWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 300px;
+    height: 250px; }
+    #banner .keyartWrapper .explode_holder {
+      position: absolute;
+      width: 485px;
+      height: 250px;
+      left: -189px;
+      top: 8px;
+      overflow: hidden; }
+      #banner .keyartWrapper .explode_holder #explode {
+        position: absolute;
+        width: 2425px;
+        height: 1000px; }
+    #banner .keyartWrapper .logo_break_holder {
+      position: absolute;
+      width: 485px;
+      height: 125px;
+      left: -90px;
+      top: -18px;
+      overflow: hidden; }
+      #banner .keyartWrapper .logo_break_holder #logo_break {
+        position: absolute;
+        width: 1940px;
+        height: 875px; }
+    #banner .keyartWrapper .emojiHolder {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      top: 52px;
+      right: 70px;
+      opacity: 0;
+      overflow: hidden; }
+      #banner .keyartWrapper .emojiHolder #emoji {
+        position: absolute;
+        width: 750px;
+        height: 600px; }
+    #banner .keyartWrapper .left_chunks {
+      position: absolute;
+      top: 40px;
+      left: -10px; }
+    #banner .keyartWrapper .middle_chunks {
+      position: absolute;
+      top: 39px;
+      right: 9px; }
+    #banner .keyartWrapper .right_chunks {
+      position: absolute;
+      top: 0px;
+      right: -20px; }
+    #banner .keyartWrapper .reference {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      opacity: 0; }
+    #banner .keyartWrapper #pedigreeComponent {
+      position: absolute;
+      top: 14px;
+      left: 0px;
+      width: 300px;
+      height: 20px;
+      text-align: center;
+      letter-spacing: 2.4px;
+      font-size: 8px;
+      color: #fff;
+      will-change: transform; }
+      #banner .keyartWrapper #pedigreeComponent .zh {
+        font-size: 10px; }
+      #banner .keyartWrapper #pedigreeComponent .th {
+        font-size: 10px; }
+      #banner .keyartWrapper #pedigreeComponent.ar {
+        letter-spacing: 1px;
+        direction: rtl; }
+      #banner .keyartWrapper #pedigreeComponent.he {
+        direction: rtl; }
+  #banner #trailerPlay {
+    position: absolute;
+    right: 100px;
+    top: 74px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer; }
+  #banner #trailerComponent {
+    position: absolute;
+    bottom: 0px;
+    right: 0px; }
+  #banner .supercutOverlay {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    left: 21px;
+    pointer-events: none;
+    opacity: 0; }
+    #banner .supercutOverlay #supercutLogoComponent {
+      position: absolute;
+      bottom: 4px;
+      left: 0; }
+    #banner .supercutOverlay #supercutCopyComponent {
+      position: absolute;
+      color: #fff;
+      width: 100%;
+      left: 98px;
+      bottom: 4px;
+      text-align: left;
+      font-size: 17.5px; }
+  #banner .copyContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 300px;
+    height: 100%; }
+    #banner .copyContainer #mainCopyComponent {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      right: 0px;
+      bottom: 48px;
+      font-size: 12px;
+      height: 28px;
+      letter-spacing: 0.2px;
+      line-height: 12px; }
+      #banner .copyContainer #mainCopyComponent.ar {
+        font-size: 22px;
+        bottom: 55px; }
+      #banner .copyContainer #mainCopyComponent span {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        left: 0px; }
+    #banner .copyContainer .ctaContainer {
+      position: absolute;
+      bottom: 18px;
+      right: 62px;
+      overflow: hidden;
+      width: 90px;
+      height: 24px; }
+      #banner .copyContainer .ctaContainer.ar, #banner .copyContainer .ctaContainer.he {
+        right: 160px; }
+      #banner .copyContainer .ctaContainer #ctaComponent {
+        position: absolute; }
+        #banner .copyContainer .ctaContainer #ctaComponent .copy {
+          padding: 4% 8%; }
+          #banner .copyContainer .ctaContainer #ctaComponent .copy.ar {
+            margin-top: -14px !important;
+            padding: 0% 8%; }
+    #banner .copyContainer #logoComponent {
+      position: absolute;
+      bottom: 20px;
+      left: 52px; }
+      #banner .copyContainer #logoComponent.ar, #banner .copyContainer #logoComponent.he {
+        left: 166px; }
+    #banner .copyContainer .shadow {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      pointer-events: none; }
+  #banner .ratingBug {
+    position: absolute;
+    left: 1px;
+    bottom: 1px;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    visibility: hidden; }
+    #banner .ratingBug.pt {
+      visibility: visible; }
+  #banner .mobilePlayButton {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 9px;
+    left: 9px;
+    background-color: #d51b28;
+    border-radius: 12px;
+    -webkit-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+    cursor: pointer; }
+    #banner .mobilePlayButton:hover {
+      background-color: #fff; }
+      #banner .mobilePlayButton:hover #polygon {
+        fill: #d51b28; }
+    #banner .mobilePlayButton #polygon {
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease;
+      fill: white;
+      stroke-width: 0; }

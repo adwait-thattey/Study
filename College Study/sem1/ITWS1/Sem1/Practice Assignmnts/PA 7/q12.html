@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+	<title> Question12 </title>
+	
+		<script>
+			foo();
+			function foo(){
+			document.write("Inside foo")
+			};
+		</script>
+		
+		<script>
+		bar();
+		var bar=function(){
+		document.write("Inside bar")
+		};
+		</script>
+		
+	</head>
+	
+	<body>
+	<br><br>
+	The first script will display "Inside foo" , because foo() is a function which is being called by us. And we have written document.write inside foo.
+	<br><br>
+	The second script will however ,  have no output. In-Fact , it will show error as <br> Uncaught TypeError: bar is not a function<br> This is because here "bar is not a function but a variable. We can not call bar by using its name.
+	
+	</body>
+		
+
+</html>

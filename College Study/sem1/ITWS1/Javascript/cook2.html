@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+
+var dat = new Date;
+	dat.setTime(dat.getTime() + 4500);
+	document.cookie = "hellname=John Doe; expires="+ dat.toUTCString() + "; path=/";
+	dat.setTime(dat.getTime() - 50000);
+	document.cookie = "username=John Doe; expires="+ dat.toUTCString() + "; path=/";
+	var cookies = document.cookie;
+	cookies = cookies.split(";");
+
+	for(i in cookies) {
+
+		document.body.innerHTML+= "<br>Name : " + cookies[i].split("=")[0] + ";" + "Value : " + cookies[i].split("=")[1];
+
+	}
+</script>
+</html>

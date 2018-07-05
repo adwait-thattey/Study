@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+		<input type="button" value="Hello" id="hell" onclick="func()">
+		<input type="button" value="clear" id="hell2" onclick="clr()"><br><br>
+
+</body>
+
+<script>
+if(localStorage.getItem("Item1")!=undefined) {
+	document.body.innerHTML+="Hello World";
+}
+
+function func() {
+
+	document.body.innerHTML+="Hello World";
+	localStorage.setItem("Item1" , 5);
+}
+
+function clr() {
+
+	localStorage.removeItem("Item1");
+}
+</script>
+</html>

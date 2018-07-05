@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Question5 </title>
+
+	</head>
+
+	<body>
+
+	<div style="text-align:center;">
+		<h2>Enter A String/Number : </h2>
+		<input type="text" id="numin">
+	</div>
+	<br><br><br>
+	<table style="width:100%;border:2px solid black">
+		<tr style="border:2px solid black">
+			<th style="border:2px solid black;width:100%;height:30px"> <input type="button" value="Check" onclick="checkPalindrome();">	</th>
+		</tr>
+		
+		<tr>
+			<td style="border:2px solid black;height:35px" id="palin">	</td>
+	
+	</table>
+
+	</body>
+	
+	
+	<script>
+	
+		function checkPalindrome()
+		{  var num=document.getElementById("numin").value;
+			var str1,str2;
+			str1=num.toString();
+			str2=str1.split("").reverse("").join("");
+			if(str1==str2)	 document.getElementById("palin").innerHTML="Palindrome!!!";
+			else document.getElementById("palin").innerHTML="Not A Palindrome!!!";
+		
+		
+		}
+	
+	</script>
+
+</html>

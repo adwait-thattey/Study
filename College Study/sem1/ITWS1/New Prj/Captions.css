@@ -1,0 +1,206 @@
+.captions {
+		position:absolute;
+		z-index: 3;
+		font-size:30px;
+		font-weight: bold;
+		width:20%;
+		height:45px;
+		padding:0px;
+		margin:0px;
+		left:-10px;
+		opacity:0.8;
+		border-top-right-radius:25px;
+		border-bottom-right-radius:25px;
+		color:black;
+		transition: all 0.5s;
+		
+	}
+	
+	.captions:hover {
+		width:50%;
+	}
+
+	.captions-info {
+		position:absolute;
+		z-index: 3;
+		font-size:25px;
+		font-weight: bold;
+		width:15%;
+		height:45px;
+		padding:0px;
+		margin:0px;
+		left:-10px;
+		opacity:0.8;
+		border-top-right-radius:25px;
+		border-bottom-right-radius:25px;
+		color:black;
+		padding-top:0.4%;
+		transition: all 0.5s
+	}
+
+	.captions-info:hover {
+		width:20%;
+	}
+
+	.captions .company-redirect-text {
+		cursor: pointer;
+  		display: inline-block;
+ 	 	position: relative;
+  		transition: 0.5s;
+	}
+
+	.captions .car-redirect-text {
+		cursor: pointer;
+  		display: inline-block;
+ 	 	position: relative;
+  		transition: 0.5s;
+	}
+
+	.captions-info .captions-info-content {
+  		cursor: pointer;
+  		display: inline-block;
+ 	 	position: relative;
+  		transition: 0.5s;
+	}
+
+	.captions .company-redirect-text:after {
+
+		content: "Click To Go To Company Page";
+ 		position: absolute;
+ 		opacity: 0;
+ 		top: 23%;
+ 		right: -20px;
+ 		transition: 0.5s;
+ 		font-style:none;
+ 		font-weight:none;
+ 		font-size:15px;
+
+ 	}	 
+
+ 	.captions .car-redirect-text:after {
+
+		content: "Click To Go To Official Page";
+ 		position: absolute;
+ 		opacity: 0;
+ 		top: 23%;
+ 		right: -20px;
+ 		transition: 0.5s;
+ 		font-style:none;
+ 		font-weight:none;
+ 		font-size:15px;
+ 		
+ 	}
+
+ 	.captions .purchase-redirect:after {
+
+		
+ 		position: absolute;
+ 		opacity: 0;
+ 		top: 23%;
+ 		right: -20px;
+ 		transition: 0.5s;
+ 		font-style:none;
+ 		font-weight:none;
+ 		font-size:15px;
+ 		
+ 	}
+
+ 	.captions .purchase-redirect {
+		cursor: pointer;
+  		display: inline-block;
+ 	 	position: relative;
+  		transition: 0.5s;
+	}
+
+	.captions-info .captions-info-content:after {
+ 		 content: '\00bb';
+ 		 position: absolute;
+ 		 opacity: 0;
+ 		 top: 0;
+ 		 right: -20px;
+ 		 transition: 0.5s;
+
+	}
+
+	.captions:hover .company-redirect-text {
+		padding-right: 60%;
+	}
+
+	.captions:hover .car-redirect-text {
+		padding-right: 60%;
+	}
+
+	
+	
+	.captions-info:hover .captions-info-content {
+  		padding-right: 25px;
+	}
+
+	.captions:hover .company-redirect-text:after {
+		 opacity: 1;
+ 		 right: 0;
+	}
+
+	.captions:hover .car-redirect-text:after {
+		 opacity: 1;
+ 		 right: 0;
+	}
+
+	
+
+	.captions-info:hover .captions-info-content:after {
+ 		 opacity: 1;
+ 		 right: 0;
+	}
+
+	.captions-info:hover {
+		background-color:black !important;
+		color:white !important;
+		
+	}
+
+	.captions:hover {
+		background-color:black !important;
+		color:white !important;
+	}
+
+	.caption-gallery:hover {
+		background-color:black !important;
+		color:white !important;
+	}
+
+	.captions-info-content:hover {
+		
+		transition: 0s !important;
+
+	}
+
+	.purchase-redirect:hover {
+		
+		transition: 0s !important;
+
+	}
+
+	.company-redirect-text:hover {
+		
+		transition: 0s !important;
+
+	}
+
+	.car-redirect-text:hover {
+		color:white !important;
+		transition: 0s !important;
+
+	}
+
+	.captions-gallery:hover {
+	
+		transition: 0s !important;
+
+	}
+
+
+	
+	
+
+ 	

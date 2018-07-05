@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CAR</title>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="purr.css">
+ 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script>
+		slideIndex=0;
+	</script>
+	 <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css"> 
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style>
+	.item {bottom: 0px !important;}
+	.item {object-fit:cover;}
+	.carousel-inner {min-width:100% !important;}
+	.carousel {width:100% }
+	.item {min-height:700px;max-height:700px;width:100% ;position:relative} 
+	.container {min-width:100% !important;float:left !important;padding:0px;margin:0px;}
+	.captions {position:absolute;z-index: 3;font-size:30px;font-weight: bold;width:25%;height:45px;padding:0px;margin:0px;left:-10px;opacity:0.8;border-top-right-radius:25px;border-bottom-right-radius:25px; color:black;}
+	
+	.carousel-control:hover {background-color:blue;opacity:0.7;}
+	.carousel-control.left{border-top-right-radius:40px;border-bottom-right-radius:40px;}
+	.carousel-control.right{border-top-left-radius:40px;border-bottom-left-radius:40px;}
+	</style>
+
+</head>
+<body style="margin:0px;padding:0px;">
+
+	
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" style="position:fixed !important;">
+		  	<a class="navbar-brand" href="#">APNA CAR CHUNO</a>
+		  	<button class="navbar-toggler" type="button">
+		    <span class="navbar-toggler-icon"></span>
+		  	</button>
+		  	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    	<ul class="navbar-nav mr-auto">
+
+				    <li class="nav-item dropdown peep">
+				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+				          Company
+				        </a>
+				        <div class="dropdown-menu">
+				          <a class="dropdown-item" href="#" >Skoda</a>
+				          <a class="dropdown-item" href="#">Renault</a>
+				          <a class="dropdown-item" href="#">Mercedes</a>
+				        </div>
+		      		</li>
+		      		<li class="nav-item dropdown peep">
+				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+				          Types
+				        </a>
+				        <div class="dropdown-menu">
+				          <a class="dropdown-item" href="#">Sedan</a>
+				          <a class="dropdown-item" href="#">Hatchback</a>
+				          <a class="dropdown-item" href="#">SUV</a>
+				        </div>
+				      	<li class="nav-item active peep">
+				        <a class="nav-link" href="#">  About Us <span class="sr-only">(current)</span></a>
+				      	</li>
+				      	<li class="nav-item active peep">
+				        <a class="nav-link" href="#">  Compare <span class="sr-only">(current)</span></a>
+				      	</li>
+				      	<form class="form-inline my-2 my-lg-0">
+      					<input class="form-control mr-sm-2" type="search" placeholder="Search">
+      					<button class="btn btn-outline-success my-2 my-sm-0 searchIt" type="submit">Search</button>
+    					</form>
+				      	<li class="nav-item active peep">
+				        <a class="nav-link" href="#"><i class="fa fa-sign-in"></i>    Login <span class="sr-only">(current)</span></a>
+				      	</li>
+				      	
+					</li>
+		   		</ul>
+		 	 </div>
+		</nav>			
+
+
+
+
+
+
+
+
+
+<div style="background-color:grey;position:relative;width:100%;height:1000px;">
+
+		<div class="container">
+    
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-caption captions" style="bottom:30%;background-color:white;">Audi</div>
+    <div class="carousel-caption captions" style="bottom:10%;background-color:white">R8</div>
+
+    <div class="carousel-inner" style="position:relative">
+      <div class="item active">
+        <img src="aaa.jpg" alt="Los Angeles" style="width:100%;">
+
+      </div>
+
+      <div class="item">
+        <img src="bbb.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="ccc.jpg" alt="New york" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="ddd.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a id="slide_right" class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+		
+	</div>
+	
+
+	<div style="background-color:green;float:left;width:10%;height:auto;position:relative;">
+		Summary
+	</div>
+<!--	
+	<div style="background-color:grey;width:100%;position:relative;">
+		Engine And Transmission
+	</div>
+
+	<div style="background-color:green;width:100%;position:relative;">
+		Performance
+	</div>
+
+	<div style="background-color:grey;width:100%;position:relative;">
+		Dimentions
+	</div>
+
+	<div style="background-color:green;width:100%;position:relative;">
+		Warranty
+	</div>
+
+	<div style="background-color:grey;width:100%;position:relative;">
+		Rating
+	</div>
+
+-->
+</body>
+<script>
+
+var x = setInterval(document.getElementById('slide_right').click() , 1500);
+
+
+</script>
+
+</html>

@@ -1,0 +1,6 @@
+CSS Variables
+-Custom Properties
+
+decleration : --name:value;
+access: property:var(--name);
+

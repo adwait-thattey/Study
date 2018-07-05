@@ -1,0 +1,248 @@
+\relax 
+\citation{wright2009}
+\citation{ding2015multi}
+\citation{kan2016multi}
+\citation{ding2012}
+\citation{abhi2015}
+\citation{zhao2003face}
+\citation{zhang2009face}
+\citation{ding2016comprehensive}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Motivation}{1}}
+\citation{facenet}
+\citation{deepface}
+\citation{cao2010}
+\citation{wolf2011}
+\citation{lei2014}
+\citation{lu2015learning}
+\citation{lu2015simultaneous}
+\citation{lbpbook}
+\citation{iold}
+\citation{lcod}
+\citation{ltrp}
+\citation{mdlbp}
+\citation{boflbp}
+\citation{lbptexture}
+\citation{dlbp}
+\citation{brint}
+\citation{priclbp}
+\citation{lwp}
+\citation{lbdp}
+\citation{ldep}
+\citation{lbdisp}
+\citation{tang20133d}
+\citation{elaiwat2014}
+\citation{lbp}
+\citation{huang2011local}
+\citation{yang2013comparative}
+\citation{lgbphs}
+\citation{hgpp}
+\citation{ahonen2008}
+\citation{wld}
+\citation{xie2010fusing}
+\citation{svdslbp}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Related Works}{2}}
+\citation{mblbp}
+\citation{ltp}
+\citation{ldp}
+\citation{gemf}
+\citation{vu2013}
+\citation{lgop}
+\citation{lumini2017}
+\citation{ldn}
+\citation{lvp}
+\citation{jabid2010facial}
+\citation{drldp}
+\citation{ldgp}
+\citation{lqp}
+\citation{chan2013}
+\citation{dcp}
+\citation{ldtp}
+\citation{lghp}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Major Contribution}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Proposed Descriptor}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Local Neighborhood Extraction}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Local Directional Information Coding}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The $N$ neighbors in the local neighborhood of pixel $(i,j)$ at radius $r$. Note that the first neighbor is considered in the right side and rest neighbors are considered w.r.t. first neighbor in counter-clockwise direction.\relax }}{6}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:neighbors}{{1}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces An illustration of the local directional relation pattern computation. (a) A local neighborhood with $N=4$ directions and $M=4$ neighbors in each direction. (b) Local direction binary bits are generated in each direction. For $M=4$, the number of binary values is $\mu =6$. (c) Local directional relation code, $\Gamma _{i,j}^{k}$, is computed in each direction for $k \in [1, 4]$ by converting $\mu =6$ binary bits into equivalent decimal. (d) The transformed center value ($\tau _{i,j}=12$) is computed from the original center pixel value ($I_{i,j}=50$) in order to match its range with local directional codes. (e) The local directional relation binary values (i.e., $\rho _{i,j}^{N,M}(k)$ for $N=4$, $M=4$ and $k \in [1,N]$) are computed for each direction. (f) Finally, the local directional relation pattern for a center pixel ($i,j$), $LDRP_{i,j}^{4,4}$, is generated from $\rho _{i,j}^{4,4}$ by converting the binary values into equivalent decimal.\relax }}{7}}
+\newlabel{fig:example}{{2}{7}}
+\newlabel{weight}{{8}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Local Directional Relation Pattern}{7}}
+\citation{lfw}
+\citation{lfw}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}LDRP Feature Vector}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The construction process of multi-scale LDRP feature vector for an image. The image is taken from LFW database \cite  {lfw}. First the LDRP maps are computed for $M=3$, $4$, $5$, and $6$ number of directional neighbors, then the feature vector is computed from all LDRP maps, and finally all feature vectors are concatenated into a single feature vector.\relax }}{9}}
+\newlabel{fig:multiscale}{{3}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Multi-scale LDRP}{9}}
+\citation{lfw}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The face retrieval framework using proposed LDRP descriptor.\relax }}{10}}
+\newlabel{fig:setup}{{4}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Experimental Setup}{10}}
+\citation{ltrp}
+\citation{mdlbp}
+\citation{anmrr}
+\citation{pasc}
+\citation{lfw}
+\citation{lfw1}
+\citation{pubfig}
+\citation{feret}
+\citation{feret1}
+\citation{essex}
+\citation{att}
+\citation{pasc}
+\citation{viola}
+\citation{lfw1}
+\citation{pubfig}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Distances Measures}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Evaluation Criteria}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Databases Used}{11}}
+\citation{essex}
+\citation{viola}
+\citation{att}
+\citation{feret}
+\citation{feret1}
+\citation{lbp}
+\citation{ltp}
+\citation{ldp}
+\citation{ldn}
+\citation{lvp}
+\citation{ldgp}
+\citation{dcp}
+\citation{lghp}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Face Retrieval Experimental Results}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Performance Analysis}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Effect of Local Neighborhood}{13}}
+\citation{lghp}
+\citation{lghp}
+\citation{ltrp}
+\citation{mdlbp}
+\citation{lghp}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The performance comparison of LDRP descriptors in terms of the ARP(\%) for $n=5$ number of retrieved images over the PubFig, PaSC, LFW, FERET, AT\&T, and ESSEX face databases by varying the values of $M_1$ and $M_2$ (i.e. multiscale parameters) for different radius and the number of local neighborhoods. The Chi-square distance is used. The highest ARP values are highlighted in bold for each database.\relax }}{14}}
+\newlabel{t1}{{1}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Effect of Distance Measures}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The ARP(\%) using proposed LDRP descriptor with Euclidean, Cosine, L1, D1, and Chi-square distance measures over the PubFig, PaSC, LFW, FERET, AT\&T, and ESSEX face databases. The number of retrieved images ($n$) is 5. The highest ARP values are highlighted in bold for each database.\relax }}{15}}
+\newlabel{t2}{{2}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The ARP(\%) using LGHP descriptor \cite  {lghp} with Euclidean, Cosine, L1, D1, and Chi-square distance measures over the PubFig, PaSC, LFW, FERET, AT\&T, and ESSEX face databases. The number of retrieved images ($n$) is 5. The highest ARP values are highlighted in bold for each database.\relax }}{15}}
+\newlabel{t3}{{3}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{15}}
+\bibstyle{IEEEtran}
+\bibdata{r1}
+\bibcite{wright2009}{1}
+\bibcite{ding2015multi}{2}
+\bibcite{kan2016multi}{3}
+\bibcite{ding2012}{4}
+\bibcite{abhi2015}{5}
+\bibcite{zhao2003face}{6}
+\bibcite{zhang2009face}{7}
+\bibcite{ding2016comprehensive}{8}
+\bibcite{facenet}{9}
+\bibcite{deepface}{10}
+\bibcite{cao2010}{11}
+\bibcite{wolf2011}{12}
+\bibcite{lei2014}{13}
+\bibcite{lu2015learning}{14}
+\bibcite{lu2015simultaneous}{15}
+\bibcite{lbpbook}{16}
+\bibcite{iold}{17}
+\bibcite{lcod}{18}
+\bibcite{ltrp}{19}
+\bibcite{mdlbp}{20}
+\bibcite{boflbp}{21}
+\bibcite{lbptexture}{22}
+\bibcite{dlbp}{23}
+\bibcite{brint}{24}
+\bibcite{priclbp}{25}
+\bibcite{lwp}{26}
+\bibcite{lbdp}{27}
+\bibcite{ldep}{28}
+\bibcite{lbdisp}{29}
+\bibcite{tang20133d}{30}
+\bibcite{elaiwat2014}{31}
+\bibcite{lbp}{32}
+\bibcite{huang2011local}{33}
+\bibcite{yang2013comparative}{34}
+\bibcite{lgbphs}{35}
+\bibcite{hgpp}{36}
+\bibcite{ahonen2008}{37}
+\bibcite{wld}{38}
+\bibcite{xie2010fusing}{39}
+\bibcite{svdslbp}{40}
+\bibcite{mblbp}{41}
+\bibcite{ltp}{42}
+\bibcite{ldp}{43}
+\bibcite{gemf}{44}
+\bibcite{vu2013}{45}
+\bibcite{lgop}{46}
+\bibcite{lumini2017}{47}
+\bibcite{ldn}{48}
+\bibcite{lvp}{49}
+\bibcite{jabid2010facial}{50}
+\bibcite{drldp}{51}
+\bibcite{ldgp}{52}
+\bibcite{lqp}{53}
+\bibcite{chan2013}{54}
+\bibcite{dcp}{55}
+\bibcite{ldtp}{56}
+\bibcite{lghp}{57}
+\bibcite{lfw}{58}
+\bibcite{anmrr}{59}
+\bibcite{pasc}{60}
+\bibcite{lfw1}{61}
+\bibcite{pubfig}{62}
+\bibcite{feret}{63}
+\bibcite{feret1}{64}
+\bibcite{essex}{65}
+\bibcite{att}{66}
+\bibcite{viola}{67}
+\newlabel{fig:pasc-arp}{{5a}{22}}
+\newlabel{sub@fig:pasc-arp}{{a}{22}}
+\newlabel{fig:pasc-arr}{{5b}{22}}
+\newlabel{sub@fig:pasc-arr}{{b}{22}}
+\newlabel{fig:pasc-f}{{5c}{22}}
+\newlabel{sub@fig:pasc-f}{{c}{22}}
+\newlabel{fig:pasc-anmrr}{{5d}{22}}
+\newlabel{sub@fig:pasc-anmrr}{{d}{22}}
+\newlabel{fig:lfw-arp}{{5e}{22}}
+\newlabel{sub@fig:lfw-arp}{{e}{22}}
+\newlabel{fig:lfw-arr}{{5f}{22}}
+\newlabel{sub@fig:lfw-arr}{{f}{22}}
+\newlabel{fig:lfw-f}{{5g}{22}}
+\newlabel{sub@fig:lfw-f}{{g}{22}}
+\newlabel{fig:lfw-anmrr}{{5h}{22}}
+\newlabel{sub@fig:lfw-anmrr}{{h}{22}}
+\newlabel{fig:pubfig-arp}{{5i}{22}}
+\newlabel{sub@fig:pubfig-arp}{{i}{22}}
+\newlabel{fig:pubfig-arr}{{5j}{22}}
+\newlabel{sub@fig:pubfig-arr}{{j}{22}}
+\newlabel{fig:pubfig-f}{{5k}{22}}
+\newlabel{sub@fig:pubfig-f}{{k}{22}}
+\newlabel{fig:pubfig-anmrr}{{5l}{22}}
+\newlabel{sub@fig:pubfig-anmrr}{{l}{22}}
+\newlabel{fig:essex-arp}{{5m}{22}}
+\newlabel{sub@fig:essex-arp}{{m}{22}}
+\newlabel{fig:essex-arr}{{5n}{22}}
+\newlabel{sub@fig:essex-arr}{{n}{22}}
+\newlabel{fig:essex-f}{{5o}{22}}
+\newlabel{sub@fig:essex-f}{{o}{22}}
+\newlabel{fig:essex-anmrr}{{5p}{22}}
+\newlabel{sub@fig:essex-anmrr}{{p}{22}}
+\newlabel{fig:att-arp}{{5q}{22}}
+\newlabel{sub@fig:att-arp}{{q}{22}}
+\newlabel{fig:att-arr}{{5r}{22}}
+\newlabel{sub@fig:att-arr}{{r}{22}}
+\newlabel{fig:att-f}{{5s}{22}}
+\newlabel{sub@fig:att-f}{{s}{22}}
+\newlabel{fig:att-anmrr}{{5t}{22}}
+\newlabel{sub@fig:att-anmrr}{{t}{22}}
+\newlabel{fig:feret-arp}{{5u}{22}}
+\newlabel{sub@fig:feret-arp}{{u}{22}}
+\newlabel{fig:feret-arr}{{5v}{22}}
+\newlabel{sub@fig:feret-arr}{{v}{22}}
+\newlabel{fig:feret-f}{{5w}{22}}
+\newlabel{sub@fig:feret-f}{{w}{22}}
+\newlabel{fig:feret-anmrr}{{5x}{22}}
+\newlabel{sub@fig:feret-anmrr}{{x}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The results over PaSC, LFW, PubFig, ESSEX, AT\&T, and FERET databases in terms of the ARP, ARR, F-Score, and ANMRR vs number of retrieved images.\relax }}{22}}
+\newlabel{fig:results}{{5}{22}}

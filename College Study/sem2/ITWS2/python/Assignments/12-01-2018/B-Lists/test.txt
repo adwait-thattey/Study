@@ -1,0 +1,6 @@
+Hello World
+Hello Python
+
+Die Die DIe
+Goodbye Python
+:-(

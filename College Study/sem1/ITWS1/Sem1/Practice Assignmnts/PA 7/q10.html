@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+    <script>
+    	
+    </script>
+	<title> Question10 </title>
+	
+		<script>
+		
+		</script>
+		
+	</head>
+	
+	<body style="text-align:center">
+    <h1> Calculator </h1>
+    <input id="num1" size="5" value="0">
+    <select name="operation" id="operation">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+    </select>
+    <input id="num2" size="5" value="0">
+    =
+    <input type="text" id="answer">
+    
+	
+	</body>
+    
+    <script>
+    	
+        function calc()  {
+        
+        var x = document.getElementById("num1").value;
+        var y = document.getElementById("num2").value;
+        var opr = document.getElementById("operation").value;
+        var ans = document.getElementById("answer");
+        if(x=="" || y=="") {ans.value="";return;}
+        
+        switch (opr) {
+        	case '+' : ans.value=Number(x)+Number(y);break;
+            case '-' : ans.value=Number(x)-Number(y);break;
+            case '*' : ans.value=Number(x)*Number(y);break;
+            case '/' : ans.value=Number(x)/Number(y);break;
+        
+        }
+        
+        if(opr=='/' && Number(y)==0) ans.value="Division By 0 is Not Defined";
+        
+       
+        }
+        
+        var xyz=setInterval(calc,80);
+    </script>
+		
+
+</html>

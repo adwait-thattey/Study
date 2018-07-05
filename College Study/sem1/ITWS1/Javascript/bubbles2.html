@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  
+ </head>
+ <body onclick="start(event)">
+   <canvas id="canvas" width="5000px" height="5000px"></canvas>
+ </body>
+ <script type="application/javascript">
+   
+
+
+  
+  
+      var canvas = document.getElementById('canvas');
+      
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle="Black";
+
+    
+   var INTERVAL;
+   var pattern = new Array;
+   var key = -1;
+   var intervals = new Array;
+   var circles = new Array;
+   
+function start(event) {
+	
+	++key;
+
+  circles.length=0
+
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:0,blue:255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:255,blue:0,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:255,blue:255,tran:1})
+  
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:125,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:125,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:125,blue:255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:125,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:125,blue:0,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:125,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:125,blue:255,tran:1})
+
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:125,green:0,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:125,green:255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:125,green:0,blue:255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:125,green:255,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:125,green:255,blue:0,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:125,green:0,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:125,green:255,blue:255,tran:1})
+
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:125,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:125,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:0,blue:125,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:125,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:255,blue:125,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:125,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:255,blue:125,tran:1})
+
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:0,blue:255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:255,blue:0,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:255,tran:1})
+
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:0,blue:255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:255,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:255,blue:0,tran:1})
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:0,blue:255,tran:1})
+
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:Math.random()*255,green:Math.random()*255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:Math.random()*255,green:Math.random()*255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:Math.random()*255,blue:Math.random()*255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:Math.random()*255,blue:Math.random()*255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:Math.random()*255,green:0,blue:Math.random()*255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:Math.random()*255,green:0,blue:Math.random()*255,tran:1});
+
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:Math.random()*255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:255,green:Math.random()*255,blue:0,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:Math.random()*255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:0,green:255,blue:Math.random()*255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:Math.random()*255,green:0,blue:255,tran:1});
+  circles.push({ogx:0,x:0,ogy:0,y:0,rad:0,red:Math.random()*255,green:0,blue:255,tran:1});
+  
+  pattern.push(JSON.parse(JSON.stringify({circ: circles,id:key})));
+ 
+ for(i in pattern[key].circ) {
+ 	var C = pattern[key].circ[i];
+ 	C.x=C.ogx=event.clientX;
+ 	C.y=C.ogy=event.clientY;
+ 	C.rad=0;
+ 	C.tran=1;
+ }
+
+var cur = key;
+ INTERVAL = setInterval(function (){moveCircles(cur)},0.1);
+ intervals.push(INTERVAL);
+ console.log(INTERVAL);
+ }
+
+  function createRectangle(x1,y1,width,length,color='black') {
+   	ctx.fillStyle=color;
+   	ctx.fillRect(x1,y1,width,length);
+
+   }
+
+   createRectangle(0,0,5000,5000);
+
+   
+
+ function drawCircle(C) {
+   	ctx.beginPath();
+	ctx.ellipse(C.x,C.y, C.rad, C.rad, 0, 0, 2*Math.PI);
+	var style = "rgba("+C.red+","+C.green+","+C.blue+","+C.tran+")";
+	ctx.fillStyle=style;	
+	ctx.fill();
+	ctx.moveTo(0, 200);
+	ctx.closePath();
+   } 
+
+   function clearCircle(C) {
+   	ctx.beginPath();
+	ctx.ellipse(C.x,C.y, C.rad+1, C.rad+0.3, 0, 0, 2*Math.PI);
+	ctx.fillStyle="black";	
+	ctx.fill();
+	ctx.moveTo(0, 200);
+	ctx.closePath();
+   } 
+
+   function changeCircle(C) {
+   	
+   	C.tran -= 0.01;
+   	if(C.ogx==C.x && C.ogy==C.y) {
+   		C.x = C.x + Math.floor(Math.random()*3) -1;
+   		C.y = C.y + Math.floor(Math.random()*3) -1;
+   	}
+   	else {
+
+   		if(C.x>C.ogx) C.x += 5*Math.random() -4*Math.random() ;
+   		else C.x -= 5*Math.random() -4*Math.random();
+
+   		if(C.y>C.ogy) C.y += 5*Math.random() -4*Math.random();
+   		else C.y -= 5*Math.random() -4*Math.random();
+   	}
+
+   	C.rad = C.rad + 0.5*Math.random();
+   }
+   function moveCircles(k){
+   	
+    if(pattern[k].circ[0].tran<=0) {console.log("cleared " + intervals[pattern[k].id] );clearInterval(intervals[pattern[k].id]);return;} 
+
+    pattern[k].circ.forEach(clearCircle);
+   	pattern[k].circ.forEach(changeCircle)
+ 	pattern[k].circ.forEach(drawCircle);
+ 	pattern[k].circ.forEach(drawCircle);
+    
+  }
+	 
+
+    
+  </script>
+</html>

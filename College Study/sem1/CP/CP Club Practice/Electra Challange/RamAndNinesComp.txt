@@ -1,0 +1,45 @@
+Ram encountered an intriguing problem while practising for ACM ICPC.
+
+The problem states that you are given two numbers and you should calculate the 9's complement of their difference. Since Ram is just a beginner he is asking you to help him in solving this question.
+
+Note: In case of 9's complement, leading zeroes should not be omitted and it's number of digits should be equal to the no. of digits of the difference of (a-b)
+
+Input Format
+
+First line of the input contains T, number of testcases.
+
+Each test case contains two lines.
+
+First line of the test case contains integer A.
+
+Second line of the test case contains integer B.
+
+Constraints
+
+1 <= T <= 100
+
+1 <= number of digits in A = number of digits in B <= 10^6
+
+A >= B
+
+Output Format
+
+Print T lines each containing 9's complement of A-B.
+
+Sample Input 0
+
+4
+12345
+12344
+4567899
+4567899
+4578
+1223
+12
+10
+Sample Output 0
+
+8
+9
+6644
+7

@@ -1,0 +1,101 @@
+<!doctype html>
+<html> 
+<head>
+	<script>	
+		var pos = [9,9,9,9,9,9,9,9,9];
+		var nummoves= 0;
+		function display(pos) {
+			for (var i=0; i<9; i++)  {
+				document.forms[0].elements[i].value = pos[i];
+			}
+			document.forms[0].elements[9].value= nummoves;
+			win();
+		}
+		function move(num) {
+			if (num < 8 & pos[num+1]==0) {
+				pos[num+1]= pos[num];
+				pos[num]= 0;
+				nummoves++;
+			}
+			else if (num > 0 & pos[num-1]==0) {
+				pos[num-1]= pos[num];
+				pos[num]= 0;
+				nummoves++;
+			} 
+			else if (num > 2 & pos[num-3]==0) {
+				pos[num-3]= pos[num];
+				pos[num]= 0;
+				nummoves++;
+			}
+			else if (num < 6 & pos[num+3]==0 ) {
+				pos[num+3]= pos[num];
+				pos[num]= 0;
+				nummoves++;
+			}
+			display(pos);
+		}
+		function win() {     
+			if (pos[0]== 1 & pos[1]== 2 & pos[2]== 3 & pos[3]== 4 & 
+			pos[4]== 5 & pos[5]== 6 & pos[6]== 7 & pos[7]== 8 & pos[8]== 0) {
+				if (confirm('You did it! Do you want to restart?')) newgame();
+			}
+		}
+		function newgame() {
+			for (var i=0; i<9;i++) {
+				randomnum=Math.floor(Math.random()*9);
+				x=1;
+				for (var j=0; j<i; j++)  {
+					if (randomnum==pos[j]) {
+						x=0;
+						break;
+					}
+				}
+				if (x==0) {
+					i--;
+					continue;
+				}
+				pos[i]=randomnum;
+			}
+			nummoves=0;
+			display(pos);   
+		}   
+	</script>
+</head>
+ 
+<body onLoad="newgame()">
+	<center>
+		<h1>Magic Squares</h1>
+		<form>
+			<table border=0 celpadding=0 cellspacing=10>
+				<tr>
+					<td>
+						<input type="button" onClick="move(0)">
+						<input type="button" onClick="move(1)">
+						<input type="button" onClick="move(2)"><br>
+						<input type="button" onClick="move(3)">
+						<input type="button" onClick="move(4)">
+						<input type="button" onClick="move(5)"><br>
+						<input type="button" onClick="move(6)">
+						<input type="button" onClick="move(7)">
+						<input type="button" onClick="move(8)">
+					</td>
+					<td valign=top>
+						Put the numbers in order so that they read 1-8. <br>
+						The 0 is the 'empty' place.  Click on any number <br>
+						next to 0 and they will switch places.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Number of moves:<br>
+						<input type="number" name="moves" size=7 value="0"> 
+					</td>
+					<td align=center><br>
+						<input type="submit" value="New Game" onClick="newgame()">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>

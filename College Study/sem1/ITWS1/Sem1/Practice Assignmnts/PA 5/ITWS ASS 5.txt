@@ -1,0 +1,38 @@
+1. man ls
+5. ls -s
+6. cp [path of original]/original.file [destination path]/copied.file
+7. Shows the calender of september 1752
+8. passwd
+10. cat will show
+11. 1> 2 files are created named baseball and bat
+	2> Invalid option -- 'b'
+	3> [1] [Process id]
+			beans: command not found
+			[1]+ Done					touch chilli
+			// A file named chilli is created
+			
+13. touch readme.1
+	chmod u-r readme.1
+	cat readme.1
+		cat: readme.1: Permission Denied
+		
+14. after changing permissions
+	touch try.me
+	touch: cannot touch 'try.me': Permission Denied
+	
+15. d) cat big.file | grep bash
+
+16. head -11 big.file | tail -1
+17. To rename mv [original filename] [new file name]
+	Delete non-empty directories with all content: rm [directory name] -r
+	
+18. ls -d lists the directory itself i.e. '.'. so ls -ld will list '.' on long form
+
+19. a) wc [file1] [file2] | tail -1
+	b) echo $PATH
+	
+	
+20. c) touch ./stuff/filea ./stuff/morestuff/fileb ./stuff/morestuff/stillmore/filec
+	d) lists all directories as well as their contents recurssively
+	f) mv -i [file1] [path/hello]  This will issue a prompt if a file named 'hello' exits in the destination
+	h) rm -ir [directory name]

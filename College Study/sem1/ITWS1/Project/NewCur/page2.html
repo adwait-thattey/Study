@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function sleep(ms) {
+ 		 return new Promise(resolve => setTimeout(resolve, ms));
+		}
+		globflag=1;
+	</script>
+	<style type="text/css">
+		/*body {text-align:center;color:white;background-image:url("temp images/aaa.jpg");background-size:100% 100%;height:100%;width:100%;background-position:center;background-attachment:fixed;background-repeat:no-repeat;}*/
+
+		body {background: url("temp images/aaa.jpg") no-repeat center center fixed;background-size: cover;}
+
+		.midbox {color:white;width:40%;height:300px;top:150px;left:400px;background-color:black;opacity:0.8;border:3px solid white;position:relative;}
+
+		.slide-animate-go-out-up {animation:go-out-up 0.5s forwards;}
+
+		.slide-animate-go-out-left {animation:go-out-left 0.5s forwards;}
+
+		.slide-animate-go-in-left {animation:go-in-left 2.5s forwards;}
+
+		.slide-animate-go-in-up {animation:go-in-up 2.5s forwards;}
+
+
+		@keyframes go-out-up {
+
+			from {top:150px;}
+			to {top:-450px;}
+		}
+
+		@keyframes go-in-up {
+
+
+			from {top:1000px;}
+			to {top:150px;}
+
+		}
+
+		@keyframes go-in-left {
+
+			from {left:1500px;}
+			to {left:400px;}
+
+
+		}
+
+		@keyframes go-out-left {
+
+			from {left:400px;}
+
+			to {left:-700px;}
+
+		}
+	</style>
+	<script>
+		lastScrollTop = 0;
+		var bkimages = new Array;
+		var temp = "aaa.jpg";
+		bkimages.push(temp);
+		var temp = "bbb.jpg";
+		bkimages.push(temp);
+		var temp = "ccc.jpg";
+		bkimages.push(temp);
+		var temp = "ddd.jpg";
+		bkimages.push(temp);
+
+
+		currentBkIndex=0;
+
+	</script>
+</head>
+<body>
+	
+		
+		<div id="info" class="midbox">
+			Hello World
+		</div>
+
+
+	
+
+
+</body>
+<script>
+
+
+window.addEventListener('wheel', function(e) {
+  if (e.deltaY < 0) {
+    console.log('scrolling up');
+    dispBk(currentBkIndex - 1);
+
+    globflag-=2;
+    if(globflag<1) globflag=4;
+    dropThisContent(globflag);
+    sleep(500).then(() => {
+    // Do something after the sleep!
+    showNextContent(globflag);
+	});
+
+  }
+  if (e.deltaY > 0) {
+    console.log('scrolling down');
+    //document.getElementById('status').innerHTML = 'scrolling down';
+    dispBk(currentBkIndex + 1);
+
+    if(globflag>4) globflag=1;
+   
+    dropThisContent(globflag);
+    sleep(500).then(() => {
+    // Do something after the sleep!
+    showNextContent(globflag);
+	});
+    
+  }
+});
+
+function dispBk(n) {
+	if(n>=bkimages.length) n = 0;
+	if(n<0) n = bkimages.length - 1;
+	document.body.style.backgroundImage = "url('" + bkimages[n] + "')";
+	currentBkIndex = n;
+}
+
+function dropThisContent(i) {
+	
+	var X = document.getElementById("info");
+ X.classList.remove("slide-animate-go-out-up");
+ X.classList.remove("slide-animate-go-out-left");
+ X.classList.remove("slide-animate-go-in-left");
+ X.classList.remove("slide-animate-go-in-up");
+
+  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+  // Oops! This won't work in strict mode. Thanks Felis Phasma!
+	void X.offsetWidth;
+
+	if(globflag%2) {
+ 		X.classList.add("slide-animate-go-out-up");
+	}
+
+	else {
+		X.classList.add("slide-animate-go-out-left");
+	}
+
+}
+
+function showNextContent(i) {
+	
+	var X = document.getElementById("info");
+ X.classList.remove("slide-animate-go-out-up");
+ X.classList.remove("slide-animate-go-out-left");
+ X.classList.remove("slide-animate-go-in-left");
+ X.classList.remove("slide-animate-go-in-up");
+
+  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+  // Oops! This won't work in strict mode. Thanks Felis Phasma!
+	void X.offsetWidth;
+
+	if(i==1) {
+
+		X.innerHTML = "CAR NAME AND COMPANY NAME<br><br>SCROLL DOWN OR UP FOR MORE"
+
+		X.classList.add("slide-animate-go-in-up");
+
+	}
+
+	if(i==2) {
+
+		X.innerHTML = "FEW LINES ABOUT CAR<br><br>SCROLL DOWN OR UP FOR MORE"
+
+		X.classList.add("slide-animate-go-in-left");
+
+	}
+
+	if(i==3) {
+
+		X.innerHTML = "SPECIFICATIONS OF CAR<br><br>SCROLL DOWN OR UP FOR MORE"
+
+		X.classList.add("slide-animate-go-in-up");
+
+	}
+
+	if(i==4) {
+
+		X.innerHTML = "GALLERY AND OTHER OPTIONS<br><br>SCROLL DOWN OR UP FOR MORE"
+
+		X.classList.add("slide-animate-go-in-left");
+
+	}
+
+	++globflag;
+	
+
+
+}
+
+showNextContent(globflag);
+
+
+
+
+
+
+</script>
+</html>

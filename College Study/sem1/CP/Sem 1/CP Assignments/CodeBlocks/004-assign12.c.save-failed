@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+char *genRandName(int);
+
+typedef struct cost {
+
+    float mrp;
+    float discount;
+    float charges;
+
+}COST;
+
+typedef struct item {
+
+    int proID;
+    char name[21];
+    int type;
+    char make[13];
+    float starrate;
+
+}ITEM;
+
+/*
+
+ITEM *genDataset(int n) {
+
+    ITEM *I;
+
+    I = (ITEM*)malloc(n*sizeof(ITEM));
+
+    for(int i=0;i<n;++i) {
+
+        I[i].proID = ;
+        I[i].name = ;
+
+    }
+
+
+
+}*/
+
+char *genRandName(int n) {
+
+
+char *str=(char *)malloc(n*sizeof(char));
+
+for(int i=0;i<=n-2;++i) {
+     str[i] = (char)(rand()%(122+1-97) + 97);
+}
+str[n-1]='\0';
+return str;
+
+}
+
+
+int main() {
+
+srand((unsigned int)time(NULL));
+//97 122
+char *str=(char *)malloc(n*sizeof(char));
+
+str = genRandName(21);
+
+printf("%s",str);
+return 0;
+
+}

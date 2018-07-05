@@ -1,0 +1,62 @@
+Vihaan and Mahaan were thick friends. They solve each other's problems. Vihaan was stuck solving a problem for several hours. So, Mahaan said he'll solve it for him/her. Vihaan described the problem statement as follows: Given an array of N integers not necessarily distinct and a special number K, if there exists two numbers P and Q in the array such that their sum is K, then that pair is called a Special pair. Vihaan just knows how to check the existence of a special pair. But, this problem's output expects the number/count of such Special pairs in the given array. After hearing this problem, even Mahaan struggles. As you are a student of IIITS and are trying to bring up the coding culture in your college, you start off your journey by helping Mahaan.
+
+Note 1: The pair P and Q should only be considered once. In other words, (P, Q) and (Q, P) should not be counted twice.
+
+Note 2: But keep in mind that given integers need not necessarily be distinct. The same integer can exist multiple number of times in the array and they have to be considered separately for the answer.
+
+Subtasks:
+
+For 35% of max score: 1 <= N <= 100
+
+For 60% of max score: 1 <= N <= 5000
+
+For 100% of max score: Original Constraints.
+
+Input Format
+
+The first line of the input contains T, the number of testcases. The first line of each testcase has two space separated integers N and K, the number of elements in the array and the special number respectively. The second line of each testcase has N space separated Natural numbers which are the array elements.
+
+Constraints
+
+1 <= T <= 5
+
+2 <= N <= 10^6
+
+2 <= K <= 2 X 10^6
+
+1 <= A[i] <= 10^6
+
+Output Format
+
+For each testcase, print the count of all special pairs in a separate line.
+
+Sample Input 0
+
+3
+10 54
+33 21 27 79 48 28 13 57 56 26
+10 15
+5 10 2 11 6 9 4 13 17 1
+5 16
+8 8 8 8 8
+Sample Output 0
+
+2
+4
+10
+Explanation 0
+
+Case 1: Only 2 such pairs exist:
+21+33 = 54
+26+28 = 54
+
+
+Case 2: We have:
+5+10 = 15
+11+4 = 15
+13+2 = 15
+09+6 = 15
+
+Case 3: Since we have 8 occuring 5 times, we can choose
+any two integers from the array such that 8+8 = 16 in 5C2 
+ways, which is equal to 10.

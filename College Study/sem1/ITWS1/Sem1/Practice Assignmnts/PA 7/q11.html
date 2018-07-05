@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<h2>Enter the size of Matrix (n) </h2>
+<br><br><input type="number" id="size">
+<br><br>
+<h3>After Entering the size , get ready to enter n*n elements. Once you are ready , press "OK"</h3><br><br>
+<input type="button" value="OK" onclick="getInput()" style="height:40px;width:55px;font-size:20px" >
+
+<br><br>
+<table >
+<tr>
+<td id="output"> </td>
+</tr>
+
+</table>
+</center>
+</body>
+
+<script>
+
+function getInput() {
+    var Arr = [];
+    var n = document.getElementById("size").value;
+
+    for(i=0;i<n;++i)
+    	for(var j=0;j<n;++j)
+          {
+              var temp = prompt("Enter Mat[" + i + "][" + j + "]");
+              Arr.push(temp);
+              
+          }
+      
+     var great = getLargest(Arr);
+     
+     var x = document.getElementById("output");
+    x.style.border="2px solid black";
+    x.innerHTML="Largest is : " + great;
+	
+          
+     
+}
+
+function getLargest(A) {
+	var great=Number(A[0]);
+    
+    for(i in A)
+    {	
+    	if(Number(A[i])>great) great = A[i];    
+    }
+    
+    return great;
+    
+
+}
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+	<head>
+	<title> Question9 </title>
+	
+		<script>
+		
+		</script>
+		
+	</head>
+	
+	<body style="text-align:left">
+    	<h2 style="text-align:center">Portal to check Eligibility for Voting </h2>
+        <br><br>
+        <h3>Enter The Details </h3>
+        
+        <form id="vote" >
+        Enter Your Nationality : 
+        <input type="text" placeholder="Entry is not case sensitive" name="nationality">
+        <br><br>
+        Enter Your Age :  
+        <input type="number" name="age">
+        <br><br><br>
+        <input type="button" name="subs" value="Send Details" onclick="chksub();" >
+        
+        </form>
+        
+	</body>
+    
+    <script>
+    
+    forms = document.getElementById("vote");
+    
+
+    
+    function chksub() {
+    if(forms.nationality.value=="") {alert("Plz Enter Nationality");return false;}
+    if(forms.age.value=="") {alert("Plz Enter Age");return false;}
+    
+    if(forms.nationality.value.toLowerCase()!="india"){alert("Sorry. You are not Eligible!!  :-(");return false;}
+    
+     if(forms.age.value<1) {alert("Are You Kidding Me... :-(.\n Age must be above 0");return false;}
+    if(forms.age.value<18) {alert("Sorry. You are not Eligible!!  :-(");return false;}
+    
+    
+    alert("Eligible For Voting");
+    
+    
+    }
+    
+    </script>
+		
+
+</html>

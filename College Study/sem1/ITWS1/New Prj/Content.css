@@ -1,0 +1,177 @@
+	.main-content {
+		position:absolute;
+		background-color:black;
+		width:60%;
+		height:400px;
+		z-index:5;
+		left:19.3%;
+		top:15%;
+		opacity:0.8;
+		padding:none;
+		margin:none;
+		display:none;
+		transition: all 3s;
+		
+	}
+
+	.main-content-heading {
+		width:100%;
+		height:25%;
+		font-weight:bold;
+		text-align:center;
+		font-size:45px;
+		color:red;
+		padding-top: 2%;
+	}
+
+	.Summary table {
+	
+		
+		opacity:1;
+		width:90%;
+		color:white;
+		font-size:25px;
+		height:70%;
+		vertical-align: bottom
+
+	}
+
+	.Summary .Type {
+
+		font-weight :bold;
+		text-align:center;
+		
+
+	}
+
+	.Summary .Value {
+
+		text-align:left;
+
+	}
+
+	.maintype {
+
+		
+		color:green !important;
+		font-weight :bold;
+		
+
+	}
+
+	.mainvalue {
+
+		
+		color:yellow !important;
+		font-weight: bold;
+
+	}
+	.Summary th {
+		height:60px;
+	}
+
+	.Summary td {
+		height:60px;
+	}
+
+	.Engine table {
+	
+		
+		opacity:1;
+		width:90%;
+		color:white;
+		font-size:25px;
+		height:70%;
+		vertical-align: bottom
+
+	}
+
+	.Engine .Type {
+
+		font-weight :bold;
+		text-align:center;
+		
+
+	}
+
+	.Engine .Value {
+
+		text-align:left;
+
+	}
+
+	.Engine th {
+		height:60px;
+	}
+
+	.Engine td {
+		height:60px;
+	}
+
+	.Performance table {
+	
+		
+		opacity:1;
+		width:90%;
+		color:white;
+		font-size:25px;
+		height:70%;
+		vertical-align: bottom
+
+	}
+
+	.Performance .Type {
+
+		font-weight :bold;
+		text-align:center;
+		
+
+	}
+
+	.Performance .Value {
+
+		text-align:left;
+
+	}
+
+	.Performance th {
+		height:60px;
+	}
+
+	.Performance td {
+		height:60px;
+	}
+
+	.Dimensions table {
+	
+		
+		opacity:1;
+		width:90%;
+		color:white;
+		font-size:25px;
+		height:70%;
+		vertical-align: bottom
+
+	}
+
+	.Dimensions .Type {
+
+		font-weight :bold;
+		text-align:center;
+		
+
+	}
+
+	.Dimensions .Value {
+
+		text-align:left;
+
+	}
+
+	.Dimensions th {
+		height:60px;
+	}
+
+	.Dimensions td {
+		height:60px;
+	}

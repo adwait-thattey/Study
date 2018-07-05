@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Question6 </title>
+
+	</head>
+
+	<body>
+
+	<div style="text-align:center;">
+		<h2>Enter A Number : </h2>
+		<input type="text" id="numin">
+	</div>
+	<br><br><br>
+	<table style="width:100%;border:2px solid black">
+		<tr style="border:2px solid black">
+			<th style="border:2px solid black;width:100%;height:30px"> <input type="button" value="Check" onclick="checkOddEven();">	</th>
+		</tr>
+
+	
+	</table>
+
+	</body>
+	
+	
+	<script>
+	
+		function checkOddEven()
+		{  var num=document.getElementById("numin").value;
+			
+			if(isNaN(num)){ alert("Not A Number. Please Enter A Number..."); return;}
+			
+			if(num%2){alert("Odd Number..."); return;}
+			
+			else alert("Even Number..."); 
+			
+		
+		}
+	
+	</script>
+
+</html>

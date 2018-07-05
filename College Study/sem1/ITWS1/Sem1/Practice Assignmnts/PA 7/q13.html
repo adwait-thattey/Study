@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Question13 </title>
+		<style>
+			td {text-align:center;width:80px;height:45px;border:0.5px solid black;}
+		</style>
+			
+	</head>
+	
+	<body>
+		<center>
+			<table>
+				<tr>
+					
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>					
+					<th style="height:15px;width:45px;"><input type="button" onclick="generate()"value="Generate Unique Random Number"></th>
+				</tr>
+			</table>
+		</center>
+	</body>
+	
+	<script>
+		function generate() {
+			var Arr = [1,2,3,4,5];
+			shuffleArray(Arr);
+			var X = document.getElementsByTagName("td");
+			for(i in Arr)
+			{
+				X[i].innerHTML = Arr[i];
+			
+			}
+		
+		}
+		
+		function shuffleArray(array) {
+				for (var i = array.length - 1; i > 0; i--) {
+					var j = Math.floor(Math.random() * (i + 1));
+					var temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+		}
+	</script>
+		
+
+</html>

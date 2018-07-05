@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			table ,tr ,th, td {border:2px solid red;border-collapse:collapse;padding:5px;}
+			td ,th{width:100px;height:15px;}
+		</style>
+		<title> Question15 </title>
+	</head>
+	
+	<body>
+		<table id="Marksheet" align="center">
+			<tr>
+				<th>Name</th>				
+				<th>Average</th>
+				<th>Grade</th>
+			</tr>
+		</table>
+	
+	</body>
+	
+	<script>
+		
+		var Marksheet = new Array;
+		var Student = {Name: "ABC" , ITWS1 : 89 , CP : 67 , DEC : 99 , Maths1 : 34};
+		Marksheet.push(Student);
+		
+		Student = {Name: "DEF" , ITWS1 : 56 , CP : 34 , DEC : 100 , Maths1 : 56};
+		Marksheet.push(Student);
+		
+		Student = {Name: "GHI" , ITWS1 : 78 , CP : 90 , DEC : 67 , Maths1 : 65};
+		Marksheet.push(Student);
+
+		Student = {Name: "JKL" , ITWS1 : 45 , CP : 45 , DEC : 78 , Maths1 : 54};
+		Marksheet.push(Student);
+
+		Student = {Name: "MNO" , ITWS1 : 95 , CP : 67 , DEC : 89 , Maths1 : 65};
+		Marksheet.push(Student);
+
+		Student = {Name: "PQR" , ITWS1 : 30 , CP : 56 , DEC : 90 , Maths1 : 87};
+		Marksheet.push(Student);
+		var Average = new Array;
+
+		for(i in Marksheet)
+		{	
+			var Avg = 0;
+			for(j in Student)
+			{	if(j=="Name") continue;
+
+				Avg+=Marksheet[i][j];
+			}
+			Avg/=4;
+			
+			Average.push(Avg);
+		}
+
+		var Grades = new Array;
+
+		for(i in Average) {
+
+			var cur = Average[i];
+			var gr = "";
+			{	
+				if(cur>=90)	gr = "A";
+				else if(cur>=80)	gr = "A-";
+				else if(cur>=70)	gr = "B";
+				else if(cur>=60)	gr = "B-";
+				else if(cur>=50)	gr = "C";
+				else if(cur>=40)	gr = "C-";
+				else if(cur<40)		gr = "F";
+				else gr = "undefined";
+			}
+
+			Grades.push(gr);
+		}
+
+		var tab = document.getElementById("Marksheet");
+
+		for(i in Marksheet)
+		{
+			var x = tab.insertRow(1);
+			var y = x.insertCell(0);
+			y.innerHTML = Marksheet[i]["Name"];
+			var y = x.insertCell(1);
+			y.innerHTML = Average[i];
+			var y = x.insertCell(2);
+			y.innerHTML = Grades[i];
+
+		}
+
+
+
+
+		
+		</script>
+		
+		
+
+</html>

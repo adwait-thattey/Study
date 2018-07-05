@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  	<center>
+  	 <canvas id="print" width="640" height="50" style="border:1px solid #000000;"></canvas></br>
+    <canvas id="myCanvas" width="640" height="480" style="border:1px solid #000000;"></canvas>
+   </center> 
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var canvas1 = document.getElementById('print');
+      var context1 = canvas1.getContext('2d');
+      addEventListener("keydown", moveSnake);
+		function moveSnake(e) 
+		{
+    		switch(e.keyCode) 
+			{
+		     	case 37:
+					if(dir != "right")
+					{
+						dir = "left";
+					}
+				   break;
+				case 38:
+					if(dir != "down")
+					{
+						dir = "up";
+					}
+					break;
+		     	case 39:
+					if(dir != "left")
+					{
+						dir = "right"; 
+					}			
+					break;
+		     	case 40:
+					if(dir != "up")
+					{
+						dir = "down";
+					}
+		         break;  
+    		}   
+		}
+    </script>
+	<script src="snake_core.js"></script>
+
+  </body>
+</html>

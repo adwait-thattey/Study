@@ -1,0 +1,45 @@
+<!doctype HTML>
+
+<html>
+
+	<head>
+	
+		<title> Question4 </title>
+	
+		<script>
+			
+			function getFact(n) {
+				
+				if(n<=1) return 1;
+				
+			else return n*getFact(n-1);
+				
+				
+			
+			}
+			
+			
+			function findReq(x)  {
+				var sum=0;
+				if(x<1) {alert("Only a number greater than or equal to 1 is allowed"); return;}
+				for(var i=1;i<=x;++i)
+					sum+=getFact(i);
+					
+				return sum;	
+			
+			}
+			
+			
+		</script>
+		
+	</head>
+	
+	<body style="text-align:center;font-size:25px;">
+	
+		<input type="number" id="numin" min=1> <input  type="button" value="Button" onclick="document.getElementById('hell').innerHTML=findReq(document.getElementById('numin').value);">
+		<br><br>
+		<p > Click Button To Find &Sigma;<sup><sup>n</sup></sup><sub><sub>i=1</sub></sub>i! </p>
+		<p id="hell">	</p>
+	</body>
+	
+</html>

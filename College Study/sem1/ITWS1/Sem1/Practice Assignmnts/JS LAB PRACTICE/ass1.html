@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+
+	</head>
+
+	<body>
+
+	<div style="text-align:center;">
+		<h2>Enter A Number : </h2>
+		<input type="number" min="0" max="99" id="numin">
+	</div>
+	<br><br><br>
+	<table style="width:100%;border:2px solid black">
+		<tr style="border:2px solid black">
+			<th style="border:2px solid black;width:30%;height:30px"> <input type="button" value="Fibonacci" onclick="getFibonacci();">	</th>
+			<th style="border:2px solid black;width:30%;height:30px"> <input type="button" value="Prime" onclick="checkPrime();">	</th>
+			<th style="border:2px solid black;width:30%;height:30px"> <input type="button" value="Palindrome" onclick="checkPalindrome();">	</th>
+		</tr>
+		
+		<tr>
+			<td style="border:2px solid black;height:35px" id="fibo">	</td>
+			<td style="border:2px solid black;height:35px" id="prime">	</td>
+			<td style="border:2px solid black;height:35px" id="palin">	</td>
+	
+	</table>
+
+	</body>
+	
+	
+	<script>
+	
+		function getFibonacci() {
+			
+			var Series="";
+			var num1=0,num2=1;
+			var limit=document.getElementById("numin").value;
+			if(limit>99 || limit<0) { alert("Enter a number only in the range 0-99"); return; }
+			
+			
+			Series = num1 + " ";
+			while(num2<=limit)
+			{	Series+= num2 + " ";
+				 var temp = num2;
+				num2+=num1;
+				num1 = temp;
+				
+			
+			}
+			
+			document.getElementById("fibo").innerHTML=Series;
+		 
+		}
+		
+			function checkPrime() {
+		
+			var num=document.getElementById("numin").value;
+			var flag=0;
+			for(var i=2;(i<=Math.ceil(Math.sqrt(num)))&&(i<num);++i)
+			{	if(num%i==0) {flag=1;break;}		
+			}
+			
+			if(flag==0) document.getElementById("prime").innerHTML="Prime Number!!!";
+			else document.getElementById("prime").innerHTML="Not A Prime Number!!!";
+		}
+	
+		function checkPalindrome()
+		{  var num=document.getElementById("numin").value;
+			var str1,str2;
+			str1=num.toString();
+			str2=str1.split("").reverse("").join("");
+			if(str1==str2)	 document.getElementById("palin").innerHTML="Palindrome!!!";
+			else document.getElementById("palin").innerHTML="Not A Palindrome!!!";
+		
+		
+		}
+	
+	</script>
+
+</html>

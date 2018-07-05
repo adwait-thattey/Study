@@ -1,0 +1,28 @@
+<!doctype HTML>
+<html id="bdy">
+	<head>
+		<title>	</title>
+	
+		<script>
+			function changecolor()
+			{	
+				var abc = document.getElementById("bdy");
+				var r = Math.floor(Math.random()*100) + 100;
+				var g =Math.floor(Math.random()*100) + 100;
+				var b =Math.floor(Math.random()*100) + 100;
+				abc.innerHTML="<body style='height:300px;background-color:rgb(" + r + "," + g + "," + b + ");'><br><br><br></body>"
+			}
+			/*                    
+			
+			*/
+			window.setInterval(changecolor, 1000);
+		</script>
+		
+	</head>
+	
+	<body>
+	
+	<input type="button" value="colchng" onclick="changecolor();">
+	
+	</body>
+</html>

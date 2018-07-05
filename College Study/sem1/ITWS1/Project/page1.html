@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="page1.css">
+	<link rel="stylesheet" type="text/css" href="w3page1.css">
+	<script>
+		var slideIndex=0;
+	</script>
+</head>
+
+<body style="background-color:green">
+<center>
+<h1 id="car_name">R8</h1>
+<h3  id="company_name" >Audi</h3>
+
+
+<div class="slideshow-wrapper " onmouseover="freezeShow()" onmouseout="show=setInterval(nextImage , 2000);">
+		<!--<div class="slideshow-inner-wrapper">-->
+		<img src=".\temp images\001.png" class="slide-image" >
+		<img src=".\temp images\002.png" class="slide-image">
+		<img src=".\temp images\003.jpg" class="slide-image">
+		<img src=".\temp images\004.png" class="slide-image" >
+		<img src=".\temp images\005.png" class="slide-image">
+		<img src=".\temp images\006.png" class="slide-image">
+		<!--<img src=".\temp images\007.png" class="slide-image"> -->
+	<input type="button" value="&#10094;"  onclick="nextImage(-1)" class=" button-left-align but">
+	<input type="button" value="&#10095;"  onclick="nextImage(1)" class="button-right-align but">
+	
+	<div style="position:absolute;bottom:-5px;left:35%;" class="w3-section">
+	<button class="index-but " onclick="showImage(0);">&#9679;</button>
+	<button class="index-but " onclick="showImage(1);">&#9679;</button>
+	<button class="index-but " onclick="showImage(2);">&#9679;</button>
+	<button class="index-but " onclick="showImage(3);">&#9679;</button>
+	<button class="index-but " onclick="showImage(4);">&#9679;</button>
+	<button class="index-but " onclick="showImage(5);">&#9679;</button>
+	</div>
+</div>
+
+<div>
+
+</div>
+
+<div id="short_info">
+</div>
+
+<div id="specifications">
+</div>
+
+<div id="video">
+</div>
+
+
+<br><br>
+
+</center>
+</body>
+
+<script>
+
+function showImage(n)  {
+		var x = document.getElementsByClassName("slide-image");
+		slideIndex=n;
+		if(n>=x.length) slideIndex=0;
+		else if(n<0)slideIndex=x.length -1;
+
+		for(var i=0;i<x.length;++i)
+		{	x[i].style.display="none";
+		}
+		
+		x[slideIndex].style.display="block";
+
+		var B = document.getElementsByClassName("index-but");
+		CurrentButtonIndex=slideIndex;
+		
+		for(var i=0;i<B.length;++i)
+		{	B[i].style.color="black";
+		}
+		
+
+		B[slideIndex].style.color="blue";
+
+
+}
+
+function nextImage(n=1) {
+showImage(slideIndex+=n);
+}
+
+function freezeShow()
+{
+clearInterval(show);
+}
+showImage(0);
+var show=setInterval(nextImage , 2000);
+
+
+
+
+</script>
+
+</html>
+

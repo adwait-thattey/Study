@@ -1,0 +1,218 @@
+ITWS – Assignment 5
+UNIX Commands
+
+Question 1:
+	Ans: man ls
+
+Question 2:
+	Ans: The content of output.1 is the list of all files (including output.1) present in 
+		 the current directory (HOME by default).
+
+Question 3:
+	Ans: ls > output.2
+		 who > output.2
+		 ps > output.2
+		 more output.2
+		 
+		 
+		 
+Question 4:
+	Ans: ls > output.3
+		 who >> output.3
+		 ps >> output.3
+
+Question 5:
+	Ans: ls -s
+
+
+Question 6:
+	Ans: To make the copy in the same directory :
+			cp original.file copied.file
+
+			To make the copy in a different directory: 
+			(say desktop assuming we are currently in home) :
+			
+			cp original.file  ./desktop/copied.file
+ 
+ 
+Question 7:
+	Ans: This command displays the calendar of month September 1752
+
+Question 8:
+	Ans: by using the passwd command.
+
+Question 9:
+	Ans: The list of commands that can do this task are:
+			who
+			whoami
+
+Question 10:
+	Ans: 	cat sky will show us if we have succeeded. 
+			If the file has been created, it will display the contents of the file. 	
+			Otherwise it will display the following message:
+			
+			cat: sky: No such file or directory
+
+
+Question 11
+	Ans:  
+		(a) touch baseball bat :
+			This will create 2 files with the name baseball and bat.
+		
+		(b) touch -bigfile-
+			This will show the following error:
+			
+			Invalid option -- 'b'
+		
+		
+		(c)  touch chili&beans
+			
+			This will display the following output:
+			[1] 2204						
+			beans: command not found
+			[1]+ Done					touch chili
+	
+			This creates a file named chili the background with PROCESS-ID:2204 in this case
+			
+
+Question 12
+	Ans: The following commands will do the required:
+	
+			mkdir UNIXclass
+			cd UNIXclass
+			mkdir Letters Programs Misc
+			
+Question 13
+	Ans: The following commands will create a file readme.1 
+			and remove its read permission from user:
+			
+				touch readme.1
+				chmod u-r readme.1
+			
+		If we write cat readme.1 after this, it will display the following error:
+
+				cat: readme.1: Permission Denied
+				
+
+Question 14
+	Ans: (a)	The following commands will do the needful :
+	
+				mkdir NoWrite
+				chmod u-w NoWrite
+				cd NoWrite
+				touch try.me
+				touch: cannot touch 'try.me': Permission Denied
+			
+			The above mentioned error message gets displayed. try.me is NOT CREATED
+			
+		(b) The following commands will go back one diectory and allow user to 
+			write into the directory again
+				
+				cd ..
+				chmod a+w NoWrite
+				
+
+			
+			
+
+Question 15
+	Ans:  (a) cat big.file
+				This will display the contents of the file : big.file which contains 
+				the detailed list of all files present in /bin
+				
+		  (b) more big.file
+				This will also display the content of file but will spilit it into 
+				parts so that we can navigate and read the whole content smoothly
+				
+		  (c) The difference between cat and more is that while cat displays all
+				the content in one go, more spilits all the content into small parts 
+				such that 1 part fits on our terminal screen. We can then go to the next 
+				part by pressing the space key or go to the next line by pressing the Enter key
+				
+				It is better to use more when we wish to inspect the contents of file line by line.
+		  
+		  (d) The file contained 2 lines with the string "bash"
+				
+				The command used is:
+				
+					cat big.file | grep bash
+					
+
+Question 16
+	Ans:  head -11 big.file | tail -1
+	
+	
+Question 17
+	Ans: The following commands will do the needful:
+	
+			touch UG1
+			mkdir IIITS
+			mv UG1 UG1.IIITS
+			mv UG1.IIITS ./IIITS/UG1.IIITS
+			mkdir IIITS1
+			rm -r IIITS IIITS1
+			
+
+Question 18
+	Ans:
+	
+	
+Question 19
+	Ans: (a) wc file_a file_b | tail -1
+		 (b) echo $PATH
+
+
+Question 20
+	Ans:  (a) 	mkdir ITWS1
+				cd ITWS1
+				mkdir dir_practice
+				cd dir_practice
+				
+				
+		  (b) 	mkdir stuff
+				mkdir stuff/morestuff
+				mkdir stuff/morestuff/stillmore	
+
+		  
+		  (c)   touch ./stuff/filea ./stuff/morestuff/fileb ./stuff/morestuff/stillmore/filec
+		  
+		  (d)   Entering ls -R from home directory will give us a list of all 
+				files and folders inside the home directory. It will subsequently also
+				list all the files and folders present inside every directory inside home. This 
+				will be continued until all the files present inside the home directory
+				whether directly or indirectly have been listed.
+				
+		  (e)	cat > stuff/mystuff
+				If you can read this message,
+				you have accessed my account
+				Congratulations...
+				
+				(Press Control + D after this to save the content and close the file
+				
+			
+		  (f)   mv stuff/filea stuff/filex
+				mv -i stuff/morestuff/fileb stuff/morestuff/stillmore/filec
+				mv: overwrite 'stuff/morestuff/stillmore/filec'? n
+				
+				
+				
+		  (g)	cp stuff/filex ~/filex.bak
+
+
+		  (h)	rm -ir stuff
+				rm: descend into directory 'stuff'? y
+				rm: remove regular empty file 'stuff/filex'? y
+				rm: remove regular file 'stuff/mystuff'? y
+				rm: descend into directory 'stuff/morestuff'? y
+				rm: descend into directory 'stuff/morestuff/stillmore'? y
+				rm: remove regular empty file 'stuff/morestuff/stillmore/filec'? y
+				rm: remove directory 'stuff/morestuff/stillmore'? y
+				rm: remove regular empty file 'stuff/morestuff/fileb'? y
+				rm: remove directory 'stuff/morestuff'? y
+				rm: remove directory 'stuff'? y
+				
+
+			
+
+
+
