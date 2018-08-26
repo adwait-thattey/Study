@@ -338,19 +338,19 @@ def test(args=None, BSTtype=BST):
     if not args:
         args = sys.argv[1:]
     if not args:
-        print 'usage: %s <number-of-random-items | item item item ...>' % \
-              sys.argv[0]
+        print('usage: %s <number-of-random-items | item item item ...>' % \
+              sys.argv[0])
         sys.exit()
     elif len(args) == 1:
-        items = (random.randrange(100) for i in xrange(int(args[0])))
+        items = (random.randrange(100) for i in range(int(args[0])))
     else:
         items = [int(i) for i in args]
 
     tree = BSTtype()
-    print tree
+    print(tree)
     for item in items:
         tree.insert(item)
-        print
-        print tree
+        print()
+        print(tree)
 
 if __name__ == '__main__': test()
