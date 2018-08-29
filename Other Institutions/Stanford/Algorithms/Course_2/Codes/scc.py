@@ -87,15 +87,16 @@ def DFS1stpass(node_i):
     global vertex_dict, t_counter
     # print(opened_file_lines)
     vertex_dict[node_i][0] = True # mark i explored
-    index = 0
+    # index = 0
     # print(opened_file_lines)
     # print(index)
-    while index < len(opened_file_lines) and opened_file_lines[index].split()[0] != str(node_i): 
-        # print(index)
-        index+=1
+    # while index < len(opened_file_lines) and opened_file_lines[index].split()[0] != str(node_i): 
+    #     # print(index)
+    #     index+=1
 
-    if index < len(opened_file_lines):
-        for v2 in opened_file_lines[index].split()[1:]:
+    # if index < len(opened_file_lines):
+    if node_i in opened_file_lines:
+        for v2 in opened_file_lines[node_i]:
             if vertex_dict[int(v2)][0] is False:
                 DFS1stpass(int(v2))
 
@@ -104,11 +105,11 @@ def DFS1stpass(node_i):
     # print()            
 
 def pass1():
-    for line in opened_file_lines: 
-        line = line.split()
-        if vertex_dict[int(line[0])][0] is False:
+    for key in opened_file_lines: 
+        # line = line.split()
+        if vertex_dict[key][0] is False:
             # print(line[0])
-            DFS1stpass(int(line[0]))
+            DFS1stpass(key)
 
 def DFS2ndPass(node_i):
     # print(node_i, end="-")
@@ -118,12 +119,13 @@ def DFS2ndPass(node_i):
     vertex_dict[node_i][3] = cur_leader_node
     index = 0
 
-    while index < len(opened_file_lines) and opened_file_lines[index].split()[0] != str(node_i): 
+    # while index < len(opened_file_lines) and opened_file_lines[index].split()[0] != str(node_i): 
         # print(index)
-        index+=1
+        # index+=1
 
-    if index < len(opened_file_lines):
-        for v2 in opened_file_lines[index].split()[1:]:
+    # if index < len(opened_file_lines):
+    if node_i in opened_file_lines:
+        for v2 in opened_file_lines[node_i]:
             if vertex_dict[int(v2)][1] is False:
                 DFS2ndPass(int(v2))
 
@@ -140,7 +142,7 @@ def pass2():
     for vertex in list_of_vertex_sorted: 
         
         if vertex_dict[vertex][1] is False:
-            # print(line[0])
+            # print(vertex)
             v_counter = 0
             DFS2ndPass(vertex)
             SCC_set.append(v_counter)
@@ -151,9 +153,24 @@ def print_dict(D) :
     for key,value in D.items() : 
         print(key, value)
 
+def create_adj_dict(inp_file):
+    F = open(inp_file)
+    D = dict()
+    for line in F:
+        line = line.split()
+        try:
+            D[int(line[0])] = line[1:]
+        except ValueError:
+            D[line[0]] = int(line[1])
+
+    del(D[0])
+    F.close()   
+    return D   
+
 if __name__=="__main__":
-    import sys
-    sys.setrecursionlimit(5000)
+    import resource, sys
+    resource.setrlimit(resource.RLIMIT_STACK, (2**29,-1))
+    sys.setrecursionlimit(10**6)
     import subprocess
     if len(sys.argv) > 2 and sys.argv[2] == 'adj' :
         adj_file = sys.argv[1]
@@ -179,19 +196,20 @@ if __name__=="__main__":
         convert_to_reverse_adjacency_list("rev" + sys.argv[1])
         adj_file = "adj" + str(sys.argv[1])
         adj_file_rev = "adjrev" + str(sys.argv[1])
-
+        print("adj created")
         
     #Get Max vertex
-    F = open(adj_file_rev)
+    # F = open(adj_file_rev)
     
-    opened_file_lines = F.readlines()[1:]
-    F.close()
+    opened_file_lines = create_adj_dict(adj_file_rev)
+    # F.close()
     #Skipped first line as it contains 0
     # assign_global_opend_file_lines
     # proc = subprocess.Popen(['tail', '-n', '1', str(adj_file)], stdout=subprocess.PIPE)
-    last_line = opened_file_lines[-1]
-    max_number = int(last_line.split()[1])
-    opened_file_lines.pop()
+    # last_line = opened_file_lines[-1]
+    max_number = opened_file_lines["max_is"]
+    del(opened_file_lines["max_is"])
+    # opened_file_lines.pop()
     # print(opened_file_lines)
     for i in range(1, max_number+1):
         vertex_dict[i] = [False,False,0, None]
@@ -200,14 +218,17 @@ if __name__=="__main__":
         # 3rd int represents time taken i.e. f(n)
         # 4th int represents leader of i
     # print_dict(vertex_dict)
+    print("running pass 1")
     pass1()
     # print_dict(vertex_dict)
     
-    F = open(adj_file)
-    opened_file_lines = F.readlines()[1:]
-    opened_file_lines.pop()
-    F.close()
+    # F = open(adj_file)
+    opened_file_lines = create_adj_dict(adj_file)
+    del(opened_file_lines["max_is"])
 
+    # opened_file_lines.pop()
+    # F.close()
+    print("running pass 2")
     pass2()
     SCC_set.sort(reverse=True)
     
