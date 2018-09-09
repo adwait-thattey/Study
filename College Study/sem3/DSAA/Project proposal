@@ -1,0 +1,10 @@
+Transfer data using sound.
+
+reshape the data into a vector. write the vector out as a sound file. listen to the sound on another device, convert back to data.
+
+
+detection of vehicles at no parking zone. 
+    If a vehicle is parked at a no parking zone, without a driver inside then, get the number plate, and inform authorities.
+    
+
+speed detection of moving vehicles    

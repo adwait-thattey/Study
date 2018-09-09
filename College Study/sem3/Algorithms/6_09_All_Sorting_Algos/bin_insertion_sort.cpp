@@ -88,29 +88,29 @@ void writeback(vector<double> V, string output_file) {
 
 void start(string file_name) {
     string line;
-    vector <double> V;
+    vector <double> *V = new vector<double>;
     ifstream myfile (file_name);
-    cout<<"File Opened. Reading... \n ";
+    // cout<<"File Opened. Reading... \n ";
     if (myfile.is_open()){
         while ( getline (myfile,line) ){
             double F = stod(line);
-            V.push_back(F);
+            V->push_back(F);
         }
         myfile.close();
     }
-    cout<<"Completed\n";
+    // cout<<"Completed\n";
 
-    cout<<"Sorting...\n";
+    // cout<<"Sorting...\n";
     auto start = std::chrono::high_resolution_clock::now();
-    binInsertionSort(V);
+    binInsertionSort(*V);
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
-    std::cout << "Completed in " << elapsed.count() << " seconds\n";
+    std::cout << elapsed.count();
     
     string output_file = "sorted" + file_name;
-    cout<<"Writing back...\n";
-    writeback(V,output_file);
-    cout<<"Completed. Output written to "<<output_file<<"\n";
+    // cout<<"Writing back...\n";
+    writeback(*V,output_file);
+    // cout<<"Completed. Output written to "<<output_file<<"\n";
 
 }
 

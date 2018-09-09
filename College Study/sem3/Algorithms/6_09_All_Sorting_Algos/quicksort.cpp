@@ -9,7 +9,7 @@
 using namespace std;
 
 //void swap(int &A , int &B);
-long int getPivot(vector<double> A , long int low , long int high) {
+long int getPivot(long int low , long int high) {
     if(high==low) {
         return low;
     }
@@ -22,7 +22,7 @@ void quickSort(vector<double> &Arr , long int low , long int high) {
     
     /* Assumes last element as pivot */
     // cout<<"start\n";
-    long int pivot = getPivot(Arr,low,high);
+    long int pivot = getPivot(low,high);
     // cout<<count_debug++<<"\n";
     swap(Arr[pivot],Arr[high]);
 
@@ -58,26 +58,32 @@ void writeback(vector<double> V, string output_file) {
 
 void start(string file_name) {
     string line;
-    vector <double> V;
+    vector <double> *V = new vector<double>;
     ifstream myfile (file_name);
     
     if (myfile.is_open()){
         while ( getline (myfile,line) ){
             double F = stod(line);
-            V.push_back(F);
+            V->push_back(F);
         }
         myfile.close();
     }
     auto start = std::chrono::high_resolution_clock::now();
-    quickSort(V,0,V.size()-1);
+    quickSort(*V,0,V->size()-1);
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Sorting Completed in " << elapsed.count() << " seconds\n";
     
     string output_file = "sorted" + file_name;
     
-    writeback(V,output_file);
-    cout<<"Sorted Output written to "<<output_file<<"\n";
+    /* for (auto i = V->begin();i!=V->end();++i) {
+        cout<<*i<<"\n";
+    } */
+
+    writeback(*V,output_file);
+    // cout<<"Sorted Output written to "<<output_file<<"\n";
+
+    
 
 }
 

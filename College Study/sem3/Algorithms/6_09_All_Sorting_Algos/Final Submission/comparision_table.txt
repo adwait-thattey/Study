@@ -1,0 +1,45 @@
+All values are in seconds
+All the codes are written in C++ using latest c++17 standard.
+To compile run : g++ -std=c++17 x.cpp
+
+Insertion Sort with Bin search (bin_insertion_sort.cpp)
+------------
+        |10K            | 20K           | 50K           | 100K
+Sorted  |0.00013056620  |0.00026055450  |0.000670401100 |0.00130075
+Random  |0.23427920     |0.94546150     |5.84668100     |23.7778
+Reverse |0.54377320     |1.9747450      |11.7789100     |47.8348
+
+Normal Insertion Sort (insertion_sort.cpp)
+
+        |10K            | 20K           | 50K           | 100K
+Sorted  |0.00019465520  |0.00033055450  |0.000724473100 |0.00147616
+Random  |0.33031320     |1.2872150      |7.96134100     |33.1295
+Reverse |0.66618520     |2.64850        |16.9317100     |66.1404
+
+
+Quick Sort with random pivot (quicksort.cpp)
+
+        |10K            | 20K           | 50K           | 100K
+Sorted  |0.00403578     |0.00819386     |0.0220047      |0.045605
+Random  |0.00508185     |0.0109697      |0.0294978      |0.0621854
+Reverse |0.00427129     |0.00908395     |0.0233758      |0.0530221
+
+Bubble Sort (bubble_sort.cpp)
+
+        |10K            | 20K           | 50K           | 100K
+Sorted  |0.000106645    |0.000204523    |0.000488383    |0.000954342
+Random  |1.20633        |4.68673        |30.0486        |118.325
+Reverse |1.32835        |5.18343        |32.1422        |129.555
+
+Selection Sort (selection.cpp)
+
+        |10K            | 20K           | 50K           | 100K
+Sorted  |0.52487        |2.19586        |13.122         |53.6985
+Random  |0.537401       |2.03152        |13.3517        |52.1419
+Reverse |0.522356       |2.09215        |13.6055        |54.6763
+
+Merge Sort (merge_sort.cpp)
+        |10K            | 20K           | 50K           | 100K
+Sorted  |0.0218869      |0.0455233      |0.109357       |0.244803
+Random  |0.0386098      |0.0488418      |0.123385       |0.254302
+Reverse |0.0219674      |0.0431335      |0.10548        |0.243589

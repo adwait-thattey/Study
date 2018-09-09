@@ -39,25 +39,25 @@ void writeback(vector<double> V, string output_file) {
 
 void start(string file_name) {
     string line;
-    vector <double> V;
+    vector <double> *V = new vector<double>;
     ifstream myfile (file_name);
     
     if (myfile.is_open()){
         while ( getline (myfile,line) ){
             double F = stod(line);
-            V.push_back(F);
+            V->push_back(F);
         }
         myfile.close();
     }
     auto start = std::chrono::high_resolution_clock::now();
-    bubbleSort(V);
+    bubbleSort(*V);
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Sorting Completed in " << elapsed.count() << " seconds\n";
     
     string output_file = "sorted" + file_name;
     
-    writeback(V,output_file);
+    writeback(*V,output_file);
     cout<<"Sorted Output written to "<<output_file<<"\n";
 
 }
