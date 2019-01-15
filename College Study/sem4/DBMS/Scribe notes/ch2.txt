@@ -1,0 +1,34 @@
+Database System Concepts and Architecture
+contents
+Data Models and Their Categories
+History of Data Models
+Schemas, Instances, and States
+Three-Schema Architecture
+Data Independence
+
+Data Models:
+
+Data abstraction generally refers to the suppression of details of data organization and storage, and the highlighting of the essential features for an improved understanding of data.
+Characterstics of database: support abstraction
+
+A data model—a collection of concepts that
+can be used to describe the structure of a database—provides the necessary means
+to achieve this abstraction.2 By structure of a database we mean the data types, rela-
+tionships, and constraints that apply to the data. Most data models also includeset of basic operations for specifying retrievals and updates on the database.
+
+dynamic aspect or
+behavior of a database application. This allows the database designer to specify a set
+of valid user-defined operations that are allowed on the database objects.3 An
+example of a user-defined operation could be COMPUTE_GPA, which can be
+applied to a STUDENT object.
+
+
+generic operations to insert,
+delete, modify, or retrieve any kind of object are often included in the basic data
+model operations.
+
+For example, object-relational models (see Chapter 12) extend the basic
+relational model to include such concepts, among others. In the basic relational data
+model, there is a provision to attach behavior to the relations in the form of persis-
+tent stored modules, popularly known as stored procedures (see Chapter 10).
+
