@@ -1,0 +1,36 @@
+!SESSION 2018-01-10 00:11:52.841 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-10 00:15:14.899
+!MESSAGE Indexed 'PracticePrj' (0 sources, 28 headers) in 1.24 sec: 779 declarations; 1,491 references; 2 unresolved inclusions; 2 syntax errors; 23 unresolved names (1.00%)
+
+!ENTRY org.eclipse.cdt.core 4 0 2018-01-10 00:15:59.045
+!MESSAGE Error while parsing /PracticePrj/Hello.cpp.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.isSameFunction(CPPSemantics.java:3278)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.createBinding(CPPVisitor.java:714)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.createBinding(CPPVisitor.java:266)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTName.createIntermediateBinding(CPPASTName.java:56)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTNameBase.resolveBinding(CPPASTNameBase.java:86)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.findImplicitlyCalledConstructor(CPPSemantics.java:2832)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.findImplicitlyCalledConstructor(CPPSemantics.java:2814)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTDeclarator.getImplicitNames(CPPASTDeclarator.java:255)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTDeclarator.accept(CPPASTDeclarator.java:168)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration.accept(CPPASTSimpleDeclaration.java:92)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTNamespaceDefinition.accept(CPPASTNamespaceDefinition.java:116)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:268)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.extractSymbols(PDOMWriter.java:364)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:159)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:799)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:757)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:637)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:344)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:127)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
