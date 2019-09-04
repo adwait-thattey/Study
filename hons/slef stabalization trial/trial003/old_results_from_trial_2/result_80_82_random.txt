@@ -1,0 +1,753 @@
+time python3 driver.py
+0: [1, 2, 4, 5, 9, 11, 19, 54]
+1: [0, 3, 6, 7, 15, 16, 22, 79]
+2: [0, 25]
+3: [1, 8, 13, 27]
+4: [0, 10, 17, 20, 37, 42]
+5: [0, 18, 28, 55, 64]
+6: [1, 14, 24, 29]
+7: [1, 21, 38]
+8: [3, 30]
+9: [0, 26, 51]
+10: [4, 12, 56]
+11: [0, 23, 31, 32]
+12: [10]
+13: [3, 36]
+14: [6, 35, 74]
+15: [1]
+16: [1, 47]
+17: [4, 60]
+18: [5, 34]
+19: [0]
+20: [4, 53]
+21: [7]
+22: [1, 40]
+23: [11]
+24: [6, 45]
+25: [2]
+26: [9, 39]
+27: [3, 33, 43]
+28: [5, 69]
+29: [6, 52, 59]
+30: [8, 41, 48, 78, 44]
+31: [11]
+32: [11, 38, 61]
+33: [27, 76]
+34: [18, 75]
+35: [14]
+36: [13]
+37: [4, 49, 68]
+38: [32, 7]
+39: [26, 62, 77]
+40: [22, 75]
+41: [30, 44, 50]
+42: [4]
+43: [27]
+44: [41, 30]
+45: [24, 46, 57]
+46: [45]
+47: [16]
+48: [30, 70, 73]
+49: [37]
+50: [41]
+51: [9]
+52: [29, 58, 65]
+53: [20]
+54: [0, 67]
+55: [5]
+56: [10]
+57: [45, 63]
+58: [52]
+59: [29]
+60: [17, 72]
+61: [32]
+62: [39, 66, 71]
+63: [57]
+64: [5]
+65: [52]
+66: [62]
+67: [54]
+68: [37]
+69: [28]
+70: [48]
+71: [62]
+72: [60]
+73: [48]
+74: [14]
+75: [34, 40]
+76: [33]
+77: [39]
+78: [30]
+79: [1]
+
+Printing node and parents
+[DRIVER]: <node 0> None 0
+[DRIVER]: <node 1> <node 6> 76
+[DRIVER]: <node 2> <node 25> 20
+[DRIVER]: <node 3> <node 27> 32
+[DRIVER]: <node 4> <node 10> 59
+[DRIVER]: <node 5> <node 18> 76
+[DRIVER]: <node 6> <node 29> 72
+[DRIVER]: <node 7> <node 21> 24
+[DRIVER]: <node 8> <node 3> 5
+[DRIVER]: <node 9> <node 26> 15
+[DRIVER]: <node 10> <node 56> 23
+[DRIVER]: <node 11> <node 32> 34
+[DRIVER]: <node 12> <node 10> 51
+[DRIVER]: <node 13> <node 3> 30
+[DRIVER]: <node 14> <node 74> 69
+[DRIVER]: <node 15> <node 1> 55
+[DRIVER]: <node 16> <node 1> 5
+[DRIVER]: <node 17> <node 60> 54
+[DRIVER]: <node 18> <node 34> 34
+[DRIVER]: <node 19> <node 0> 3
+[DRIVER]: <node 20> <node 4> 79
+[DRIVER]: <node 21> <node 7> 15
+[DRIVER]: <node 22> <node 40> 31
+[DRIVER]: <node 23> <node 11> 27
+[DRIVER]: <node 24> <node 45> 17
+[DRIVER]: <node 25> <node 2> 57
+[DRIVER]: <node 26> <node 9> 13
+[DRIVER]: <node 27> <node 33> 54
+[DRIVER]: <node 28> <node 5> 25
+[DRIVER]: <node 29> <node 6> 54
+[DRIVER]: <node 30> <node 48> 3
+[DRIVER]: <node 31> <node 11> 34
+[DRIVER]: <node 32> <node 61> 52
+[DRIVER]: <node 33> <node 76> 48
+[DRIVER]: <node 34> <node 18> 15
+[DRIVER]: <node 35> <node 14> 21
+[DRIVER]: <node 36> <node 13> 42
+[DRIVER]: <node 37> <node 49> 45
+[DRIVER]: <node 38> <node 32> 48
+[DRIVER]: <node 39> <node 62> 61
+[DRIVER]: <node 40> <node 75> 77
+[DRIVER]: <node 41> <node 30> 71
+[DRIVER]: <node 42> <node 4> 26
+[DRIVER]: <node 43> <node 27> 47
+[DRIVER]: <node 44> <node 30> 37
+[DRIVER]: <node 45> <node 46> 53
+[DRIVER]: <node 46> <node 45> 76
+[DRIVER]: <node 47> <node 16> 34
+[DRIVER]: <node 48> <node 30> 21
+[DRIVER]: <node 49> <node 37> 44
+[DRIVER]: <node 50> <node 41> 42
+[DRIVER]: <node 51> <node 9> 25
+[DRIVER]: <node 52> <node 29> 31
+[DRIVER]: <node 53> <node 20> 34
+[DRIVER]: <node 54> <node 0> 78
+[DRIVER]: <node 55> <node 5> 53
+[DRIVER]: <node 56> <node 10> 37
+[DRIVER]: <node 57> <node 45> 9
+[DRIVER]: <node 58> <node 52> 8
+[DRIVER]: <node 59> <node 29> 34
+[DRIVER]: <node 60> <node 17> 38
+[DRIVER]: <node 61> <node 32> 10
+[DRIVER]: <node 62> <node 39> 36
+[DRIVER]: <node 63> <node 57> 36
+[DRIVER]: <node 64> <node 5> 43
+[DRIVER]: <node 65> <node 52> 40
+[DRIVER]: <node 66> <node 62> 66
+[DRIVER]: <node 67> <node 54> 35
+[DRIVER]: <node 68> <node 37> 59
+[DRIVER]: <node 69> <node 28> 8
+[DRIVER]: <node 70> <node 48> 12
+[DRIVER]: <node 71> <node 62> 63
+[DRIVER]: <node 72> <node 60> 13
+[DRIVER]: <node 73> <node 48> 70
+[DRIVER]: <node 74> <node 14> 61
+[DRIVER]: <node 75> <node 34> 9
+[DRIVER]: <node 76> <node 33> 57
+[DRIVER]: <node 77> <node 39> 10
+[DRIVER]: <node 78> <node 30> 58
+[DRIVER]: <node 79> <node 1> 13
+
+
+Starting central thread
+
+
+
+0 level:0 parent:None
+[NODE 0]: Privilege Not refreshed -1
+1 level:76 parent:<node 6>
+[NODE 1]: Privilege Refreshed 0
+[CD]: Received status from node 1
+[CD]: {<node 1>: 0}
+2 level:20 parent:<node 25>
+[NODE 2]: Privilege Refreshed 0
+[CD]: Received status from node 2
+[CD]: {<node 1>: 0, <node 2>: 0}
+3 level:32 parent:<node 27>
+[NODE 3]: Privilege Refreshed 0
+[CD]: Received status from node 3
+[CD]: {<node 1>: 0, <node 2>: 0, <node 3>: 0}
+4 level:59 parent:<node 10>
+[NODE 4]: Privilege Refreshed 0
+[CD]: Received status from node 4
+[CD]: {<node 1>: 0, <node 2>: 0, <node 3>: 0, <node 4>: 0}
+5 level:76 parent:<node 18>
+6 level:72 parent:<node 29>
+8 level:5 parent:<node 3>
+9 level:15 parent:<node 26>
+10 level:23 parent:<node 56>
+12 level:51 parent:<node 10>
+13 level:30 parent:<node 3>
+[NODE 6]: Privilege Refreshed 0
+[CD]: Received status from node 6
+[NODE 5]: Privilege Refreshed 0
+[CD]: Received status from node 5
+[NODE 10]: Privilege Refreshed 0
+7 level:24 parent:<node 21>
+[NODE 12]: Privilege Refreshed 0
+14 level:69 parent:<node 74>
+[NODE 14]: Privilege Refreshed 0
+21 level:15 parent:<node 7>
+16 level:5 parent:<node 1>
+22 level:31 parent:<node 40>
+[NODE 22]: Privilege Refreshed 0
+11 level:34 parent:<node 32>
+24 level:17 parent:<node 45>
+25 level:57 parent:<node 2>
+27 level:54 parent:<node 33>
+29 level:54 parent:<node 6>
+18 level:34 parent:<node 34>
+31 level:34 parent:<node 11>
+[CD]: Received status from node 10
+34 level:15 parent:<node 18>
+[CD]: Granting privilege to <node 2>
+35 level:21 parent:<node 14>
+[CD]: Received status from node 12
+[NODE 13]: Privilege Refreshed 0
+[CD]: Received status from node 14
+[NODE 21]: Privilege Refreshed 0
+39 level:61 parent:<node 62>
+40 level:77 parent:<node 75>
+41 level:71 parent:<node 30>
+42 level:26 parent:<node 4>
+43 level:47 parent:<node 27>
+44 level:37 parent:<node 30>
+[CD]: {<node 6>: 0, <node 5>: 0}
+23 level:27 parent:<node 11>
+45 level:53 parent:<node 46>
+47 level:34 parent:<node 16>
+49 level:44 parent:<node 37>
+[NODE 11]: Privilege Refreshed 0
+50 level:42 parent:<node 41>
+[NODE 24]: Privilege Refreshed 0
+[CD]: Received status from node 24
+[CD]: {<node 6>: 0, <node 5>: 0, <node 10>: 0, <node 12>: 0, <node 14>: 0, <node 22>: 0, <node 13>: 0, <node 21>: 0, <node 24>: 0}
+30 level:3 parent:<node 48>
+52 level:31 parent:<node 29>
+54 level:78 parent:<node 0>
+55 level:53 parent:<node 5>
+32 level:52 parent:<node 61>
+33 level:48 parent:<node 76>
+[CD]: {<node 6>: 0, <node 5>: 0, <node 10>: 0, <node 12>: 0, <node 14>: 0, <node 22>: 0}
+[NODE 7]: Privilege Refreshed 0
+57 level:9 parent:<node 45>
+[NODE 57]: Privilege Refreshed 0
+
+
+
+19 level:3 parent:<node 0>
+[NODE 19]: Privilege Refreshed 0
+[CD]: {<node 6>: 0, <node 5>: 0, <node 10>: 0, <node 12>: 0, <node 14>: 0, <node 22>: 0}
+[CD]: Received status from node 13
+15 level:55 parent:<node 1>
+[CD]: {<node 6>: 0, <node 5>: 0, <node 10>: 0, <node 12>: 0, <node 14>: 0, <node 22>: 0, <node 13>: 0}
+61 level:10 parent:<node 32>
+[NODE 61]: Privilege Refreshed 0
+62 level:36 parent:<node 39>
+[NODE 39]: Privilege Refreshed 0
+63 level:36 parent:<node 57>
+[NODE 16]: Privilege Refreshed 0
+[CD]: Received status from node 16
+66 level:66 parent:<node 62>
+[NODE 42]: Privilege Refreshed 0
+68 level:59 parent:<node 37>
+17 level:54 parent:<node 60>
+[NODE 43]: Privilege Refreshed 0
+70 level:12 parent:<node 48>
+[CD]: Received status from node 22
+71 level:63 parent:<node 62>
+[NODE 45]: Privilege Refreshed 0
+48 level:21 parent:<node 30>
+[NODE 47]: Privilege Refreshed 0
+73 level:70 parent:<node 48>
+[NODE 73]: Privilege Refreshed 0
+[CD]: Received status from node 73
+77 level:10 parent:<node 39>
+[NODE 50]: Privilege Refreshed 0
+78 level:58 parent:<node 30>
+51 level:25 parent:<node 9>
+[NODE 25]: Privilege Refreshed 0
+28 level:25 parent:<node 5>
+[NODE 30]: Privilege Refreshed 0
+53 level:34 parent:<node 20>
+[NODE 54]: Privilege Refreshed 0
+[NODE 55]: Privilege Refreshed 0
+56 level:37 parent:<node 10>
+[CD]: Received status from node 7
+36 level:42 parent:<node 13>
+[CD]: Received status from node 57
+59 level:34 parent:<node 29>
+[NODE 35]: Privilege Refreshed 0
+60 level:38 parent:<node 17>
+38 level:48 parent:<node 32>
+[NODE 8]: Privilege Refreshed 0
+[CD]: Granting privilege to <node 22>
+[CD]: {<node 6>: 0}
+[NODE 63]: Privilege Refreshed 0
+[CD]: Received status from node 63
+[CD]: {<node 39>: 0, <node 16>: 0}
+[NODE 9]: Privilege Refreshed 0
+[NODE 66]: Privilege Refreshed 0
+[CD]: Received status from node 42
+69 level:8 parent:<node 28>
+[CD]: Received status from node 43
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0}
+[NODE 22]: Appended to message list 
+[NODE 71]: Privilege Refreshed 0
+74 level:61 parent:<node 14>
+76 level:57 parent:<node 33>
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0}
+[CD]: Received status from node 50
+79 level:13 parent:<node 1>
+[NODE 29]: Privilege Refreshed 0
+[NODE 28]: Privilege Refreshed 0
+[NODE 52]: Privilege Refreshed 0
+[NODE 18]: Privilege Refreshed 0
+[NODE 31]: Privilege Refreshed 0
+[CD]: Received status from node 55
+[NODE 33]: Privilege Refreshed 0
+58 level:8 parent:<node 52>
+[NODE 58]: Privilege Refreshed 0
+[CD]: Received status from node 58
+[NODE 59]: Privilege Refreshed 0
+37 level:45 parent:<node 49>
+[NODE 37]: Privilege Refreshed -1
+[NODE 60]: Privilege Refreshed 0
+[CD]: Received status from node 60
+[NODE 38]: Privilege Refreshed 0
+[CD]: Received status from node 61
+[NODE 62]: Privilege Refreshed 0
+
+
+[NODE 41]: Privilege Refreshed 0
+64 level:43 parent:<node 5>
+67 level:35 parent:<node 54>
+[CD]: Received status from node 66
+[NODE 68]: Privilege Refreshed 0
+[NODE 69]: Privilege Refreshed 0
+[NODE 44]: Privilege Refreshed 0
+[NODE 70]: Privilege Refreshed 0
+46 level:76 parent:<node 45>
+[NODE 46]: Privilege Refreshed 0
+[CD]: Received status from node 46
+[CD]: Received status from node 47
+75 level:9 parent:<node 34>
+[CD]: Received status from node 11
+26 level:13 parent:<node 9>
+[NODE 77]: Privilege Refreshed 0
+[NODE 78]: Privilege Refreshed 0
+[CD]: Received status from node 78
+[CD]: Received status from node 25
+[CD]: Received status from node 29
+[CD]: Received status from node 30
+[NODE 53]: Privilege Refreshed 0
+[CD]: Received status from node 52
+[CD]: Received status from node 31
+[NODE 32]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0}
+[NODE 2]: Appended to message list 
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0}
+[CD]: Received status from node 35
+20 level:79 parent:<node 4>
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0}
+[NODE 15]: Privilege Refreshed 0
+[CD]: Received status from node 21
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0}
+[CD]: Received status from node 8
+[CD]: Received status from node 39
+[NODE 40]: Privilege Refreshed 0
+65 level:40 parent:<node 52>
+[CD]: Received status from node 41
+[NODE 64]: Privilege Refreshed 0
+[CD]: Received status from node 64
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0}
+[CD]: Received status from node 68
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0}
+[NODE 23]: Privilege Refreshed 0
+[NODE 22]: Privilege 0 Action Completed. Broadcasting. 
+[CD]: Received status from node 45
+[NODE 48]: Privilege Refreshed 0
+[NODE 49]: Privilege Refreshed 0
+[NODE 74]: Privilege Refreshed 0
+[NODE 76]: Privilege Refreshed 0
+[NODE 26]: Privilege Refreshed 0
+[CD]: Received status from node 77
+[NODE 79]: Privilege Refreshed 0
+[NODE 27]: Privilege Refreshed 0
+[CD]: Received status from node 28
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0}
+[CD]: Received status from node 54
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0}
+[NODE 56]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0}
+[CD]: Received status from node 33
+[NODE 34]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0}
+[CD]: Received status from node 59
+[CD]: Received status from node 19
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0}
+[CD]: Received status from node 15
+[CD]: Received status from node 38
+[CD]: Received status from node 62
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0}
+[CD]: Received status from node 40
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0}
+[NODE 17]: Privilege Refreshed 0
+[CD]: Received status from node 69
+[CD]: Received status from node 44
+72 level:13 parent:<node 60>
+[CD]: Received status from node 71
+[CD]: Received status from node 48
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0}
+[CD]: Received status from node 49
+[CD]: Received status from node 74
+[NODE 51]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0}
+[CD]: Received status from node 79
+[CD]: Received status from node 27
+[CD]: Received status from node 18
+[CD]: Received status from node 53
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0}
+[CD]: Received status from node 32
+[CD]: Received status from node 34
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+[NODE 65]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0}
+[CD]: Received status from node 70
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+[NODE 22]: Privilege Refreshed -1
+[NODE 72]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0}
+[NODE 75]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0}
+[CD]: Received status from node 26
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0}
+[CD]: Received status from node 56
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0}
+[NODE 36]: Privilege Refreshed 0
+[NODE 2]: Privilege 0 Action Completed. Broadcasting. 
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0}
+[NODE 20]: Privilege Refreshed 0
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0}
+[CD]: Received status from node 9
+[NODE 67]: Privilege Refreshed 0
+[CD]: Received status from node 67
+[CD]: Received status from node 23
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0}
+[NODE 1]: Received update code 1 from <node 22> 
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0}
+[CD]: Received status from node 76
+[CD]: {<node 67>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0, <node 17>: 0, <node 72>: 0, <node 75>: 0, <node 51>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0, <node 17>: 0, <node 72>: 0, <node 75>: 0, <node 51>: 0}
+[CD]: Received status from node 36
+[CD]: Received status from node 65
+[CD]: Received status from node 17
+[CD]: {<node 67>: 0}
+[CD]: Received status from node 72
+[CD]: {<node 67>: 0}
+[CD]: Received status from node 75
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0, <node 17>: 0, <node 72>: 0, <node 75>: 0, <node 51>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0, <node 23>: 0, <node 76>: 0, <node 26>: 0, <node 17>: 0, <node 72>: 0, <node 75>: 0, <node 51>: 0}
+[CD]: {<node 67>: 0}
+[CD]: {<node 67>: 0}
+[NODE 2]: Privilege Refreshed -1
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: {<node 39>: 0, <node 16>: 0, <node 42>: 0, <node 43>: 0, <node 45>: 0, <node 73>: 0, <node 50>: 0, <node 54>: 0, <node 7>: 0, <node 35>: 0, <node 19>: 0, <node 61>: 0, <node 8>: 0, <node 63>: 0, <node 66>: 0, <node 47>: 0, <node 11>: 0, <node 25>: 0, <node 29>: 0, <node 30>: 0, <node 52>: 0, <node 31>: 0, <node 55>: 0, <node 58>: 0, <node 60>: 0, <node 62>: 0, <node 41>: 0, <node 9>: 0, <node 69>: 0, <node 70>: 0, <node 46>: 0, <node 78>: 0, <node 32>: 0, <node 33>: 0, <node 59>: 0, <node 38>: 0, <node 40>: 0, <node 64>: 0, <node 68>: 0, <node 44>: 0, <node 71>: 0, <node 48>: 0, <node 49>: 0, <node 74>: 0, <node 77>: 0, <node 79>: 0, <node 27>: 0, <node 28>: 0, <node 18>: 0, <node 53>: 0, <node 56>: 0, <node 34>: 0, <node 15>: 0}
+[CD]: {<node 67>: 0}
+[NODE 1]: Privilege Refreshed 0
+[CD]: Received status from node 51
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: Received status from node 20
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: {<node 67>: 0, <node 20>: 0}
+[CD]: {<node 67>: 0}
+[CD]: {<node 67>: 0, <node 20>: 0}
+[NODE 0]: Received update code 1 from <node 2> 
+[CD]: Granting privilege to <node 42>
+[CD]: Received status from node 1
+[CD]: {<node 67>: 0, <node 20>: 0}
+
+
+[CD]: {<node 67>: 0, <node 20>: 0, <node 1>: 0}
+[CD]: {<node 67>: 0, <node 20>: 0, <node 1>: 0}
+
+[NODE 42]: Appended to message list 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 42]: Privilege 0 Action Completed. Broadcasting. 
+[CD]: Granting privilege to <node 67>
+[NODE 40]: Received update code 1 from <node 22> 
+
+
+
+[NODE 40]: Privilege Refreshed 0
+[NODE 25]: Received update code 1 from <node 2> 
+[NODE 25]: Privilege Refreshed 0
+[CD]: Received status from node 25
+[NODE 67]: Appended to message list 
+[NODE 42]: Privilege Refreshed -1
+[CD]: {<node 25>: 0}
+[NODE 67]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 4]: Received update code 1 from <node 42> 
+[CD]: Received status from node 40
+[CD]: Granting privilege to <node 40>
+[NODE 67]: Privilege Refreshed -1
+[NODE 4]: Privilege Refreshed 0
+[CD]: Received status from node 4
+[CD]: {<node 25>: 0}
+[CD]: {<node 25>: 0, <node 4>: 0}
+
+
+
+[NODE 54]: Received update code 1 from <node 67> 
+[NODE 40]: Appended to message list 
+[NODE 54]: Privilege Refreshed 0
+[NODE 40]: Privilege 0 Action Completed. Broadcasting. 
+[CD]: Granting privilege to <node 25>
+[CD]: Received status from node 54
+[CD]: {<node 54>: 0}
+[NODE 25]: Appended to message list 
+
+
+[NODE 40]: Privilege Refreshed -1
+[NODE 25]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 22]: Received update code 1 from <node 40> 
+
+[NODE 25]: Privilege Refreshed -1
+[NODE 22]: Privilege Refreshed 0
+[CD]: Received status from node 22
+[NODE 2]: Received update code 1 from <node 25> 
+[NODE 2]: Privilege Refreshed 0
+[CD]: Received status from node 2
+[CD]: {<node 54>: 0, <node 22>: 0, <node 2>: 0}
+[CD]: {<node 54>: 0, <node 22>: 0, <node 2>: 0}
+[NODE 75]: Received update code 1 from <node 40> 
+[NODE 75]: Privilege Refreshed 0
+[CD]: Received status from node 75
+[CD]: {<node 54>: 0, <node 22>: 0, <node 2>: 0, <node 75>: 0}
+[CD]: Granting privilege to <node 22>
+
+
+
+[NODE 22]: Appended to message list 
+[NODE 22]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 22]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 22> 
+[CD]: No node has privilege
+[NODE 1]: Privilege Refreshed 0
+[CD]: Received status from node 1
+[CD]: {<node 1>: 0}
+[NODE 40]: Received update code 1 from <node 22> 
+[NODE 40]: Privilege Refreshed -1
+
+
+
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+[CD]: Spanning tree reached in 7 privileges
+
+Printing node and parents
+[DRIVER]: <node 0> None 0
+[DRIVER]: <node 1> <node 6> 76
+[DRIVER]: <node 2> <node 25> 58
+[DRIVER]: <node 3> <node 27> 32
+[DRIVER]: <node 4> <node 10> 59
+[DRIVER]: <node 5> <node 18> 76
+[DRIVER]: <node 6> <node 29> 72
+[DRIVER]: <node 7> <node 21> 24
+[DRIVER]: <node 8> <node 3> 5
+[DRIVER]: <node 9> <node 26> 15
+[DRIVER]: <node 10> <node 56> 23
+[DRIVER]: <node 11> <node 32> 34
+[DRIVER]: <node 12> <node 10> 51
+[DRIVER]: <node 13> <node 3> 30
+[DRIVER]: <node 14> <node 74> 69
+[DRIVER]: <node 15> <node 1> 55
+[DRIVER]: <node 16> <node 1> 5
+[DRIVER]: <node 17> <node 60> 54
+[DRIVER]: <node 18> <node 34> 34
+[DRIVER]: <node 19> <node 0> 3
+[DRIVER]: <node 20> <node 4> 79
+[DRIVER]: <node 21> <node 7> 15
+[DRIVER]: <node 22> <node 40> 11
+[DRIVER]: <node 23> <node 11> 27
+[DRIVER]: <node 24> <node 45> 17
+[DRIVER]: <node 25> <node 2> 59
+[DRIVER]: <node 26> <node 9> 13
+[DRIVER]: <node 27> <node 33> 54
+[DRIVER]: <node 28> <node 5> 25
+[DRIVER]: <node 29> <node 6> 54
+[DRIVER]: <node 30> <node 48> 3
+[DRIVER]: <node 31> <node 11> 34
+[DRIVER]: <node 32> <node 61> 52
+[DRIVER]: <node 33> <node 76> 48
+[DRIVER]: <node 34> <node 18> 15
+[DRIVER]: <node 35> <node 14> 21
+[DRIVER]: <node 36> <node 13> 42
+[DRIVER]: <node 37> <node 49> 45
+[DRIVER]: <node 38> <node 32> 48
+[DRIVER]: <node 39> <node 62> 61
+[DRIVER]: <node 40> <node 75> 10
+[DRIVER]: <node 41> <node 30> 71
+[DRIVER]: <node 42> <node 4> 60
+[DRIVER]: <node 43> <node 27> 47
+[DRIVER]: <node 44> <node 30> 37
+[DRIVER]: <node 45> <node 46> 53
+[DRIVER]: <node 46> <node 45> 76
+[DRIVER]: <node 47> <node 16> 34
+[DRIVER]: <node 48> <node 30> 21
+[DRIVER]: <node 49> <node 37> 44
+[DRIVER]: <node 50> <node 41> 42
+[DRIVER]: <node 51> <node 9> 25
+[DRIVER]: <node 52> <node 29> 31
+[DRIVER]: <node 53> <node 20> 34
+[DRIVER]: <node 54> <node 0> 78
+[DRIVER]: <node 55> <node 5> 53
+[DRIVER]: <node 56> <node 10> 37
+[DRIVER]: <node 57> <node 45> 9
+[DRIVER]: <node 58> <node 52> 8
+[DRIVER]: <node 59> <node 29> 34
+[DRIVER]: <node 60> <node 17> 38
+[DRIVER]: <node 61> <node 32> 10
+[DRIVER]: <node 62> <node 39> 36
+[DRIVER]: <node 63> <node 57> 36
+[DRIVER]: <node 64> <node 5> 43
+[DRIVER]: <node 65> <node 52> 40
+[DRIVER]: <node 66> <node 62> 66
+[DRIVER]: <node 67> <node 54> 79
+[DRIVER]: <node 68> <node 37> 59
+[DRIVER]: <node 69> <node 28> 8
+[DRIVER]: <node 70> <node 48> 12
+[DRIVER]: <node 71> <node 62> 63
+[DRIVER]: <node 72> <node 60> 13
+[DRIVER]: <node 73> <node 48> 70
+[DRIVER]: <node 74> <node 14> 61
+[DRIVER]: <node 75> <node 34> 9
+[DRIVER]: <node 76> <node 33> 57
+[DRIVER]: <node 77> <node 39> 10
+[DRIVER]: <node 78> <node 30> 58
+[DRIVER]: <node 79> <node 1> 13
+
+
+[THREAD 8]: Shutting Down
+[THREAD 43]: Shutting Down
+[THREAD 62]: Shutting Down
+[THREAD 59]: Shutting Down
+[THREAD 12]: Shutting Down
+[THREAD 26]: Shutting Down
+[THREAD 18]: Shutting Down
+[THREAD 66]: Shutting Down
+[THREAD 31]: Shutting Down
+[THREAD 4]: Shutting Down
+[THREAD 47]: Shutting Down
+[THREAD 30]: Shutting Down
+[THREAD 39]: Shutting Down
+[THREAD 77]: Shutting Down
+[THREAD 56]: Shutting Down
+[THREAD 21]: Shutting Down
+[THREAD 5]: Shutting Down
+[THREAD 67]: Shutting Down
+[THREAD 37]: Shutting Down
+[THREAD 3]: Shutting Down
+[THREAD 23]: Shutting Down
+[THREAD 19]: Shutting Down
+[THREAD 53]: Shutting Down
+[THREAD 71]: Shutting Down
+[THREAD 32]: Shutting Down
+[THREAD 42]: Shutting Down
+[THREAD 13]: Shutting Down
+[THREAD 48]: Shutting Down
+[THREAD 33]: Shutting Down
+[THREAD 70]: Shutting Down
+[THREAD 36]: Shutting Down
+[THREAD 29]: Shutting Down
+[THREAD 63]: Shutting Down
+[THREAD 44]: Shutting Down
+[THREAD 78]: Shutting Down
+[THREAD 24]: Shutting Down
+[THREAD 25]: Shutting Down
+[THREAD 69]: Shutting Down
+[THREAD 45]: Shutting Down
+[THREAD 60]: Shutting Down
+[THREAD 10]: Shutting Down
+[THREAD 58]: Shutting Down
+[THREAD 34]: Shutting Down
+[THREAD 35]: Shutting Down
+[THREAD 51]: Shutting Down
+[THREAD 28]: Shutting Down
+[THREAD 20]: Shutting Down
+[THREAD 22]: Shutting Down
+[THREAD 74]: Shutting Down
+[THREAD 46]: Shutting Down
+[THREAD 27]: Shutting Down
+[THREAD 38]: Shutting Down
+[THREAD 49]: Shutting Down
+[THREAD 73]: Shutting Down
+[THREAD 55]: Shutting Down
+[THREAD 65]: Shutting Down
+[THREAD 14]: Shutting Down
+[THREAD 79]: Shutting Down
+[THREAD 40]: Shutting Down
+[THREAD 17]: Shutting Down
+[THREAD 9]: Shutting Down
+[THREAD 1]: Shutting Down
+[THREAD 64]: Shutting Down
+[THREAD 0]: Shutting Down
+[THREAD 11]: Shutting Down
+[THREAD 75]: Shutting Down
+[THREAD 41]: Shutting Down
+[THREAD 54]: Shutting Down
+[THREAD 2]: Shutting Down
+[THREAD 6]: Shutting Down
+[THREAD 61]: Shutting Down
+[THREAD 50]: Shutting Down
+[THREAD 57]: Shutting Down
+[THREAD 72]: Shutting Down
+[THREAD 52]: Shutting Down
+[THREAD 16]: Shutting Down
+[THREAD 15]: Shutting Down
+[THREAD 7]: Shutting Down
+[THREAD 76]: Shutting Down
+[THREAD 68]: Shutting Down
+[4, 5, 39, 33, 3, 8, 9, 1, 3, 0]
+
+real    5m21.058s
+user    5m34.492s
+sys     0m36.712s

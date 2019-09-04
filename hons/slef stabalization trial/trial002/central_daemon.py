@@ -18,6 +18,9 @@ class CentralDaemon(threading.Thread):
         self.received_privilege_count = 0
         self.node_privileges = dict()
         self.no_privilege_chance = 0
+        self.node_privilege_tracker = list()
+        self.current_round = 0
+        self.message_dict = dict()
 
     def run(self):
         while self.no_privilege_chance < 3:
@@ -41,18 +44,26 @@ class CentralDaemon(threading.Thread):
             return random.choice(privileged_nodes)
         else:
             print("[CD]: No node has privilege")
-            time.sleep(1)
+            time.sleep(2)
             self.no_privilege_chance += 1
             return None
 
     def grant_privilege_to_node(self):
+        self.current_round += 1
         chosen_node = self.choose_privilege_node()
+        if chosen_node:
+            self.node_privilege_tracker.append(chosen_node.id)
+            self.message_dict[self.current_round] = 1
+        else:
+            self.node_privilege_tracker.append(None)
+
         self.reset_privileges()
         if chosen_node:
             self.received_privilege_count += 1
             print(f"[CD]: Granting privilege to {repr(chosen_node)}")
             chosen_node.change_privilege_to_true()
-
+            
+            
     def reset_privileges(self):
         self.node_privileges = dict()
 

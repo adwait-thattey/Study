@@ -18,6 +18,7 @@ class Node:
         self.privilege = -1
         self.total_nodes = constants.TOTAL_NODES
         self.privilege_granted = False
+        self.message_dict = dict()
 
     def __repr__(self):
         return f"<node {self.id}>"    
@@ -88,8 +89,19 @@ class Node:
         if self.privilege >=0:
             self.central_daemon.receive_status_from_node(self)
 
+            if self.central_daemon.current_round in self.message_dict:
+                self.message_dict[self.central_daemon.current_round] += 1
+            else:
+                self.message_dict[self.central_daemon.current_round] = 1
+
+            # print(f"[NODE {self.id}]: Message {self.message_list} ")
+
+
     def use_privilege(self):
         self.privilege_granted = False
+        # self.message_list.append(0)
+        print(f"[NODE {self.id}]: Appended to message list ")
+
 
         if self.privilege < 0:
             return
@@ -117,11 +129,17 @@ class Node:
         """
         print(f"[NODE {self.id}]: Received update code {code} from {repr(sender_node)} ")
         if code == 1:
+            # self.message_list.append(0)
             self.refresh_privilege()
 
     def broadcast_change_to_neighbours(self):
         for n in self.neighbours:
             n.receive_update_from_neighbour(self, code=1)
+            if self.central_daemon.current_round in self.message_dict:
+                self.message_dict[self.central_daemon.current_round] += 1
+            else:
+                self.message_dict[self.central_daemon.current_round] = 1
+            # print(f"[NODE {self.id}]: Message {self.message_list} ")
 
     def refresh_privilege(self):
         # time.sleep(1)

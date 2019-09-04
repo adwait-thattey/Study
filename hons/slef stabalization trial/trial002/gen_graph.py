@@ -8,7 +8,7 @@ connected_nodes = list()
 
 def print_graph(adj_list):
     for node in adj_list:
-        print(f"{node}: {adjacency_list[node]}")
+        print(f"{node}: {adj_list[node]}")
 
 def make_edge(a,b):
     global taken_edges
@@ -21,7 +21,7 @@ def gen_graph(nodes, edges):
     global taken_edges
     global connected_nodes
 
-    if edges < nodes:
+    if edges < nodes -1:
         print("edges can't be less than  nodes")
         return
 

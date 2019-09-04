@@ -1,0 +1,267 @@
+0: [1, 2, 4, 15]
+1: [0, 6, 12, 19, 4]
+2: [0, 3]
+3: [2, 9, 18]
+4: [0, 5, 1]
+5: [4, 7]
+6: [1]
+7: [5, 8, 13, 14]
+8: [7, 16]
+9: [3, 10, 11]
+10: [9]
+11: [9]
+12: [1]
+13: [7]
+14: [7, 17]
+15: [0]
+16: [8]
+17: [14, 18]
+18: [3, 17]
+19: [1]
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 6>
+[DRIVER]: <node 2> <node 3>
+[DRIVER]: <node 3> <node 9>
+[DRIVER]: <node 4> <node 0>
+[DRIVER]: <node 5> <node 4>
+[DRIVER]: <node 6> <node 1>
+[DRIVER]: <node 7> <node 14>
+[DRIVER]: <node 8> <node 7>
+[DRIVER]: <node 9> <node 11>
+[DRIVER]: <node 10> <node 9>
+[DRIVER]: <node 11> <node 9>
+[DRIVER]: <node 12> <node 1>
+[DRIVER]: <node 13> <node 7>
+[DRIVER]: <node 14> <node 17>
+[DRIVER]: <node 15> <node 0>
+[DRIVER]: <node 16> <node 8>
+[DRIVER]: <node 17> <node 18>
+[DRIVER]: <node 18> <node 3>
+[DRIVER]: <node 19> <node 1>
+
+
+Starting central thread
+
+
+
+0 level:0 parent:None
+[NODE 0]: Privilege Not refreshed -1
+1 level:20 parent:<node 6>
+2 level:20 parent:<node 3>
+[NODE 1]: Privilege Refreshed 2
+[NODE 2]: Privilege Refreshed 2
+[CD]: Received status from node 2
+3 level:20 parent:<node 9>
+[NODE 3]: Privilege Refreshed -1
+4 level:20 parent:<node 0>
+[CD]: {<node 1>: 2, <node 2>: 2}
+5 level:20 parent:<node 4>
+[NODE 5]: Privilege Refreshed -1
+6 level:20 parent:<node 1>
+9 level:20 parent:<node 11>
+[CD]: Received status from node 1
+12 level:20 parent:<node 1>
+13 level:20 parent:<node 7>
+7 level:20 parent:<node 14>
+8 level:20 parent:<node 7>
+[NODE 8]: Privilege Refreshed -1
+14 level:20 parent:<node 17>
+19 level:20 parent:<node 1>
+[NODE 9]: Privilege Refreshed -1
+11 level:20 parent:<node 9>
+[NODE 11]: Privilege Refreshed -1
+[NODE 4]: Privilege Refreshed 2
+[CD]: Granting privilege to <node 1>
+
+
+
+[NODE 19]: Privilege Refreshed -1
+[CD]: {<node 1>: 2, <node 2>: 2}
+[NODE 12]: Privilege Refreshed -1
+[CD]: Received status from node 4
+16 level:20 parent:<node 8>
+17 level:20 parent:<node 18>
+[NODE 17]: Privilege Refreshed -1
+[NODE 14]: Privilege Refreshed -1
+[NODE 6]: Privilege Refreshed -1
+[NODE 7]: Privilege Refreshed -1
+15 level:20 parent:<node 0>
+18 level:20 parent:<node 3>
+[NODE 18]: Privilege Refreshed -1
+[NODE 13]: Privilege Refreshed -1
+[CD]: {}
+10 level:20 parent:<node 9>
+[CD]: Granting privilege to <node 4>
+[NODE 4]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 4]: Privilege Refreshed -1
+[NODE 1]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 0]: Received update code 1 from <node 4> 
+
+
+
+[NODE 16]: Privilege Refreshed -1
+[NODE 0]: Privilege Not refreshed -1
+[NODE 15]: Privilege Refreshed 2
+[NODE 1]: Privilege Refreshed -1
+[NODE 10]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 1> 
+[NODE 5]: Received update code 1 from <node 4> 
+[CD]: Received status from node 15
+[CD]: {<node 15>: 2}
+[NODE 5]: Privilege Refreshed 2
+[NODE 0]: Privilege Not refreshed -1
+[CD]: Granting privilege to <node 15>
+
+
+
+[CD]: Received status from node 5
+[NODE 6]: Received update code 1 from <node 1> 
+[CD]: {<node 5>: 2}
+[NODE 15]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 15]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 4> 
+[CD]: Granting privilege to <node 5>
+[NODE 6]: Privilege Refreshed 2
+[CD]: Received status from node 6
+[CD]: {<node 6>: 2}
+[NODE 0]: Received update code 1 from <node 15> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 0]: Privilege Not refreshed -1
+
+
+
+[NODE 5]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 12]: Received update code 1 from <node 1> 
+[NODE 12]: Privilege Refreshed 2
+[NODE 5]: Privilege Refreshed -1
+[CD]: Received status from node 12
+[NODE 4]: Received update code 1 from <node 5> 
+[CD]: Granting privilege to <node 6>
+[CD]: {<node 12>: 2}
+[NODE 4]: Privilege Refreshed -1
+[NODE 6]: Privilege 2 Action Completed. Broadcasting. 
+
+
+[NODE 7]: Received update code 1 from <node 5> 
+
+[NODE 7]: Privilege Refreshed 2
+[CD]: Received status from node 7
+[NODE 19]: Received update code 1 from <node 1> 
+[NODE 19]: Privilege Refreshed 2
+[NODE 6]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 6> 
+[CD]: {<node 12>: 2, <node 7>: 2}
+[NODE 1]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 7>
+
+
+[CD]: Received status from node 19
+
+[NODE 7]: Privilege 2 Action Completed. Broadcasting. 
+[CD]: {<node 19>: 2}
+[NODE 4]: Received update code 1 from <node 1> 
+[NODE 4]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 19>
+[NODE 7]: Privilege Refreshed -1
+
+
+[NODE 5]: Received update code 1 from <node 7> 
+[NODE 19]: Privilege 2 Action Completed. Broadcasting. 
+
+[NODE 19]: Privilege Refreshed -1
+[NODE 5]: Privilege Refreshed -1
+[NODE 8]: Received update code 1 from <node 7> 
+[NODE 8]: Privilege Refreshed 2
+
+[CD]: Received status from node 8
+[NODE 1]: Received update code 1 from <node 19> 
+[CD]: {<node 8>: 2}
+[NODE 1]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 8>
+
+
+[NODE 13]: Received update code 1 from <node 7> 
+
+[NODE 13]: Privilege Refreshed 2
+[CD]: Received status from node 13
+[CD]: {<node 13>: 2}
+[NODE 14]: Received update code 1 from <node 7> 
+[NODE 14]: Privilege Refreshed 2
+[CD]: Received status from node 14
+[CD]: {<node 13>: 2, <node 14>: 2}
+[NODE 8]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 8]: Privilege Refreshed -1
+[NODE 7]: Received update code 1 from <node 8> 
+[NODE 7]: Privilege Refreshed -1
+[NODE 16]: Received update code 1 from <node 8> 
+[NODE 16]: Privilege Refreshed 2
+[CD]: Received status from node 16
+[CD]: {<node 13>: 2, <node 14>: 2, <node 16>: 2}
+[CD]: Granting privilege to <node 16>
+
+
+
+[NODE 16]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 16]: Privilege Refreshed -1
+[NODE 8]: Received update code 1 from <node 16> 
+[NODE 8]: Privilege Refreshed -1
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+[CD]: Spanning tree reached in 9 privileges
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 0>
+[DRIVER]: <node 2> <node 3>
+[DRIVER]: <node 3> <node 9>
+[DRIVER]: <node 4> <node 0>
+[DRIVER]: <node 5> <node 4>
+[DRIVER]: <node 6> <node 1>
+[DRIVER]: <node 7> <node 5>
+[DRIVER]: <node 8> <node 7>
+[DRIVER]: <node 9> <node 11>
+[DRIVER]: <node 10> <node 9>
+[DRIVER]: <node 11> <node 9>
+[DRIVER]: <node 12> <node 1>
+[DRIVER]: <node 13> <node 7>
+[DRIVER]: <node 14> <node 17>
+[DRIVER]: <node 15> <node 0>
+[DRIVER]: <node 16> <node 8>
+[DRIVER]: <node 17> <node 18>
+[DRIVER]: <node 18> <node 3>
+[DRIVER]: <node 19> <node 1>
+
+
+[THREAD 17]: Shutting Down
+[THREAD 7]: Shutting Down
+[THREAD 10]: Shutting Down
+[THREAD 14]: Shutting Down
+[THREAD 13]: Shutting Down
+[THREAD 16]: Shutting Down
+[THREAD 15]: Shutting Down
+[THREAD 12]: Shutting Down
+[THREAD 4]: Shutting Down
+[THREAD 5]: Shutting Down
+[THREAD 8]: Shutting Down
+[THREAD 11]: Shutting Down
+[THREAD 3]: Shutting Down
+[THREAD 1]: Shutting Down
+[THREAD 19]: Shutting Down
+[THREAD 6]: Shutting Down
+[THREAD 0]: Shutting Down
+[THREAD 9]: Shutting Down
+[THREAD 2]: Shutting Down
+[THREAD 18]: Shutting Down
+
+real    1m19.131s
+user    1m20.445s
+sys     0m1.755s 

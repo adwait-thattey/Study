@@ -14,6 +14,7 @@ class RunNode(threading.Thread):
         self.node = node.Node(node_id,central_daemon)
         self.node.level = level
         self.keep_running = True
+        
 
     def add_neighbours(self, neighbours):
         self.node.add_neighbours(neighbours)

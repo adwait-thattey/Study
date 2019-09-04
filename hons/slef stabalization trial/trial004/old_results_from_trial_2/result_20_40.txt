@@ -1,0 +1,453 @@
+0: [1, 2, 8, 9]
+1: [0, 4, 9, 11, 16, 10, 17, 19, 14, 8]
+2: [0, 3, 5, 6]
+3: [2, 7, 19, 18]
+4: [1, 9, 11, 8, 18, 17]
+5: [2, 10, 12]
+6: [2, 8, 15, 12]
+7: [3, 13, 14, 19]
+8: [6, 17, 0, 4, 1]
+9: [1, 18, 4, 19, 17, 0]
+10: [5, 1, 15]
+11: [1, 12, 4]
+12: [5, 14, 11, 6]
+13: [7]
+14: [12, 1, 7]
+15: [6, 10, 19]
+16: [1]
+17: [8, 1, 9, 4]
+18: [9, 3, 4]
+19: [3, 9, 15, 1, 7]
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 10>
+[DRIVER]: <node 2> <node 5>
+[DRIVER]: <node 3> <node 2>
+[DRIVER]: <node 4> <node 8>
+[DRIVER]: <node 5> <node 10>
+[DRIVER]: <node 6> <node 8>
+[DRIVER]: <node 7> <node 19>
+[DRIVER]: <node 8> <node 6>
+[DRIVER]: <node 9> <node 18>
+[DRIVER]: <node 10> <node 1>
+[DRIVER]: <node 11> <node 4>
+[DRIVER]: <node 12> <node 14>
+[DRIVER]: <node 13> <node 7>
+[DRIVER]: <node 14> <node 12>
+[DRIVER]: <node 15> <node 19>
+[DRIVER]: <node 16> <node 1>
+[DRIVER]: <node 17> <node 1>
+[DRIVER]: <node 18> <node 3>
+[DRIVER]: <node 19> <node 7>
+
+
+Starting central thread
+
+
+
+0 level:0 parent:None
+1 level:20 parent:<node 10>
+[NODE 1]: Privilege Refreshed 2
+[NODE 0]: Privilege Not refreshed -1
+[CD]: Received status from node 1
+2 level:20 parent:<node 5>
+[CD]: {<node 1>: 2}
+[NODE 2]: Privilege Refreshed 2
+4 level:20 parent:<node 8>
+5 level:20 parent:<node 10>
+[NODE 5]: Privilege Refreshed -1
+[CD]: Received status from node 2
+7 level:20 parent:<node 19>
+3 level:20 parent:<node 2>
+[NODE 3]: Privilege Refreshed -1
+[CD]: {<node 1>: 2, <node 2>: 2}
+8 level:20 parent:<node 6>
+[NODE 4]: Privilege Refreshed -1
+6 level:20 parent:<node 8>
+9 level:20 parent:<node 18>
+11 level:20 parent:<node 4>
+12 level:20 parent:<node 14>
+13 level:20 parent:<node 7>
+14 level:20 parent:<node 12>
+15 level:20 parent:<node 19>
+[NODE 15]: Privilege Refreshed -1
+[NODE 6]: Privilege Refreshed -1
+18 level:20 parent:<node 3>
+[NODE 18]: Privilege Refreshed -1
+[NODE 11]: Privilege Refreshed -1
+[NODE 13]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 1>
+[NODE 8]: Privilege Refreshed 2
+17 level:20 parent:<node 1>
+10 level:20 parent:<node 1>
+[NODE 10]: Privilege Refreshed -1
+
+
+
+19 level:20 parent:<node 7>
+[NODE 7]: Privilege Refreshed -1
+[NODE 12]: Privilege Refreshed -1
+[CD]: Received status from node 8
+[NODE 17]: Privilege Refreshed -1
+[NODE 9]: Privilege Refreshed 2
+[CD]: Received status from node 9
+16 level:20 parent:<node 1>
+[NODE 19]: Privilege Refreshed -1
+[NODE 1]: Privilege 2 Action Completed. Broadcasting. 
+[CD]: {<node 8>: 2, <node 9>: 2}
+[CD]: {<node 8>: 2, <node 9>: 2}
+[NODE 14]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 9>
+[NODE 16]: Privilege Refreshed 2
+[NODE 1]: Privilege Refreshed -1
+[CD]: Received status from node 16
+[CD]: {<node 16>: 2}
+[NODE 9]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 9]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 1> 
+[NODE 0]: Privilege Not refreshed -1
+
+
+
+[NODE 1]: Received update code 1 from <node 9> 
+[NODE 4]: Received update code 1 from <node 1> 
+[NODE 4]: Privilege Refreshed 2
+[NODE 1]: Privilege Refreshed -1
+[NODE 18]: Received update code 1 from <node 9> 
+[NODE 18]: Privilege Refreshed 2
+[CD]: Received status from node 18
+[CD]: {<node 16>: 2, <node 18>: 2}
+[NODE 4]: Received update code 1 from <node 9> 
+[NODE 4]: Privilege Refreshed 2
+[CD]: Granting privilege to <node 16>
+[CD]: Received status from node 4
+[NODE 16]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 16]: Privilege Refreshed -1
+
+
+
+[CD]: Received status from node 4
+[CD]: {<node 4>: 2}
+[NODE 1]: Received update code 1 from <node 16> 
+[NODE 9]: Received update code 1 from <node 1> 
+[CD]: Granting privilege to <node 4>
+[NODE 1]: Privilege Refreshed -1
+[CD]: {<node 4>: 2}
+[NODE 4]: Privilege 2 Action Completed. Broadcasting. 
+
+
+
+[NODE 19]: Received update code 1 from <node 9> 
+[NODE 4]: Privilege Refreshed -1
+[NODE 9]: Privilege Refreshed -1
+[NODE 19]: Privilege Refreshed 2
+[NODE 11]: Received update code 1 from <node 1> 
+[NODE 1]: Received update code 1 from <node 4> 
+[CD]: Received status from node 19
+[NODE 11]: Privilege Refreshed 2
+[CD]: Received status from node 11
+[CD]: {}
+[CD]: Granting privilege to <node 19>
+[CD]: {<node 11>: 2}
+[NODE 1]: Privilege Refreshed -1
+
+
+[NODE 19]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 19]: Privilege Refreshed -1
+
+[NODE 3]: Received update code 1 from <node 19> 
+[NODE 3]: Privilege Refreshed 2
+[CD]: Received status from node 3
+[NODE 9]: Received update code 1 from <node 4> 
+[NODE 16]: Received update code 1 from <node 1> 
+[CD]: {<node 11>: 2, <node 3>: 2}
+[NODE 17]: Received update code 1 from <node 9> 
+[NODE 17]: Privilege Refreshed 2
+[CD]: Received status from node 17
+[CD]: {<node 17>: 2}
+[NODE 16]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 9> 
+[NODE 9]: Received update code 1 from <node 19> 
+[NODE 9]: Privilege Refreshed -1
+[NODE 0]: Privilege Not refreshed -1
+[NODE 10]: Received update code 1 from <node 1> 
+[NODE 10]: Privilege Refreshed 2
+[CD]: Granting privilege to <node 11>
+
+
+[NODE 9]: Privilege Refreshed -1
+[CD]: Received status from node 10
+[NODE 11]: Privilege 2 Action Completed. Broadcasting. 
+[CD]: {<node 17>: 2, <node 10>: 2}
+[NODE 11]: Received update code 1 from <node 4> 
+[NODE 11]: Privilege Refreshed -1
+[NODE 15]: Received update code 1 from <node 19> 
+[NODE 15]: Privilege Refreshed 2
+[NODE 17]: Received update code 1 from <node 1> 
+
+[CD]: Received status from node 15
+[NODE 17]: Privilege Refreshed 2
+[NODE 11]: Privilege Refreshed -1
+[CD]: Received status from node 17
+[CD]: {<node 17>: 2, <node 10>: 2, <node 15>: 2}
+[NODE 8]: Received update code 1 from <node 4> 
+[NODE 1]: Received update code 1 from <node 11> 
+[CD]: {}
+[NODE 8]: Privilege Refreshed 2
+[CD]: Granting privilege to <node 10>
+
+
+[CD]: Received status from node 8
+[NODE 1]: Received update code 1 from <node 19> 
+[NODE 19]: Received update code 1 from <node 1> 
+
+[CD]: {<node 8>: 2}
+[NODE 18]: Received update code 1 from <node 4> 
+[NODE 10]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 1]: Privilege Refreshed -1
+[NODE 12]: Received update code 1 from <node 11> 
+[NODE 12]: Privilege Refreshed 2
+[NODE 19]: Privilege Refreshed -1
+[NODE 18]: Privilege Refreshed 2
+[NODE 1]: Privilege Refreshed -1
+[NODE 7]: Received update code 1 from <node 19> 
+[NODE 7]: Privilege Refreshed 2
+[NODE 14]: Received update code 1 from <node 1> 
+[CD]: Received status from node 12
+[CD]: Granting privilege to <node 8>
+[CD]: Received status from node 18
+[NODE 10]: Privilege Refreshed -1
+[CD]: {<node 12>: 2, <node 18>: 2}
+
+
+[CD]: {<node 12>: 2, <node 18>: 2, <node 7>: 2}
+[NODE 17]: Received update code 1 from <node 4> 
+[NODE 17]: Privilege Refreshed 2
+[CD]: Received status from node 7
+[CD]: {<node 12>: 2, <node 18>: 2, <node 7>: 2, <node 17>: 2}
+[NODE 4]: Received update code 1 from <node 11> 
+[NODE 8]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 5]: Received update code 1 from <node 10> 
+[NODE 4]: Privilege Refreshed -1
+[NODE 5]: Privilege Refreshed 2
+[NODE 14]: Privilege Refreshed 2
+[NODE 8]: Privilege Refreshed -1
+
+[CD]: Received status from node 17
+[CD]: Received status from node 5
+[CD]: Received status from node 14
+[NODE 6]: Received update code 1 from <node 8> 
+[CD]: {<node 12>: 2, <node 18>: 2, <node 7>: 2, <node 17>: 2, <node 5>: 2, <node 14>: 2}
+[CD]: Granting privilege to <node 7>
+
+
+[NODE 6]: Privilege Refreshed 2
+[CD]: Received status from node 6
+[CD]: {<node 6>: 2}
+
+[NODE 17]: Received update code 1 from <node 8> 
+[CD]: {}
+[NODE 7]: Privilege 2 Action Completed. Broadcasting. 
+[CD]: {}
+[NODE 8]: Received update code 1 from <node 1> 
+[NODE 8]: Privilege Refreshed -1
+[NODE 17]: Privilege Refreshed 2
+[NODE 1]: Received update code 1 from <node 10> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 15]: Received update code 1 from <node 10> 
+[NODE 15]: Privilege Refreshed 2
+[CD]: Received status from node 17
+[CD]: Granting privilege to <node 6>
+[CD]: Received status from node 15
+[NODE 7]: Privilege Refreshed -1
+
+
+
+[CD]: {<node 17>: 2, <node 15>: 2}
+[NODE 6]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 6]: Privilege Refreshed -1
+[NODE 3]: Received update code 1 from <node 7> 
+[NODE 3]: Privilege Refreshed 2
+[CD]: Received status from node 3
+[CD]: {<node 17>: 2, <node 15>: 2, <node 3>: 2}
+[NODE 13]: Received update code 1 from <node 7> 
+[NODE 2]: Received update code 1 from <node 6> 
+[CD]: {}
+[CD]: Granting privilege to <node 17>
+[NODE 2]: Privilege Refreshed 2
+[NODE 0]: Received update code 1 from <node 8> 
+
+
+
+[CD]: Received status from node 2
+[NODE 13]: Privilege Refreshed 2
+[CD]: Received status from node 13
+[CD]: {<node 2>: 2, <node 13>: 2}
+[NODE 0]: Privilege Not refreshed -1
+[NODE 17]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 17]: Privilege Refreshed -1
+[NODE 8]: Received update code 1 from <node 17> 
+[NODE 14]: Received update code 1 from <node 7> 
+[CD]: Granting privilege to <node 2>
+
+
+[NODE 14]: Privilege Refreshed 2
+[NODE 8]: Privilege Refreshed -1
+[CD]: {<node 2>: 2}
+[CD]: Received status from node 14
+[CD]: {<node 14>: 2}
+[NODE 19]: Received update code 1 from <node 7> 
+[NODE 19]: Privilege Refreshed -1
+
+[NODE 2]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 8]: Received update code 1 from <node 6> 
+[NODE 8]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 14>
+
+
+
+[NODE 15]: Received update code 1 from <node 6> 
+[NODE 15]: Privilege Refreshed 2
+[NODE 14]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 14]: Privilege Refreshed -1
+[NODE 12]: Received update code 1 from <node 14> 
+[NODE 4]: Received update code 1 from <node 8> 
+[CD]: Received status from node 15
+[NODE 12]: Privilege Refreshed 2
+[NODE 4]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 15>
+[NODE 2]: Privilege Refreshed -1
+[CD]: Received status from node 12
+[CD]: {<node 12>: 2}
+[NODE 0]: Received update code 1 from <node 2> 
+[CD]: {<node 12>: 2}
+[NODE 1]: Received update code 1 from <node 17> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 12]: Received update code 1 from <node 6> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 14> 
+[NODE 15]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 12]: Privilege Refreshed 2
+[NODE 9]: Received update code 1 from <node 17> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 15]: Privilege Refreshed -1
+[CD]: Received status from node 12
+[CD]: {<node 12>: 2}
+[NODE 7]: Received update code 1 from <node 14> 
+
+
+[NODE 6]: Received update code 1 from <node 15> 
+[NODE 6]: Privilege Refreshed -1
+[NODE 10]: Received update code 1 from <node 15> 
+[NODE 10]: Privilege Refreshed -1
+
+[NODE 1]: Received update code 1 from <node 8> 
+[NODE 9]: Privilege Refreshed -1
+[NODE 19]: Received update code 1 from <node 15> 
+[CD]: Granting privilege to <node 12>
+[NODE 3]: Received update code 1 from <node 2> 
+[NODE 3]: Privilege Refreshed 2
+
+
+
+[NODE 19]: Privilege Refreshed -1
+[NODE 1]: Privilege Refreshed -1
+[CD]: Received status from node 3
+[NODE 12]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 7]: Privilege Refreshed -1
+[CD]: {<node 3>: 2}
+[NODE 12]: Privilege Refreshed -1
+[NODE 5]: Received update code 1 from <node 12> 
+[CD]: Granting privilege to <node 3>
+
+
+
+[NODE 5]: Received update code 1 from <node 2> 
+[NODE 5]: Privilege Refreshed 2
+[NODE 5]: Privilege Refreshed 2
+[NODE 4]: Received update code 1 from <node 17> 
+[NODE 3]: Privilege 2 Action Completed. Broadcasting. 
+[CD]: No node has privilege
+[NODE 4]: Privilege Refreshed -1
+[CD]: Received status from node 5
+[CD]: Received status from node 5
+[CD]: {<node 5>: 2}
+[CD]: {<node 5>: 2}
+[NODE 3]: Privilege Refreshed -1
+
+
+[NODE 2]: Received update code 1 from <node 3> 
+[NODE 2]: Privilege Refreshed -1
+[NODE 7]: Received update code 1 from <node 3> 
+[NODE 6]: Received update code 1 from <node 2> 
+[NODE 7]: Privilege Refreshed -1
+
+[NODE 14]: Received update code 1 from <node 12> 
+[NODE 19]: Received update code 1 from <node 3> 
+[NODE 6]: Privilege Refreshed -1
+[NODE 19]: Privilege Refreshed -1
+[NODE 18]: Received update code 1 from <node 3> 
+[CD]: No node has privilege
+[NODE 18]: Privilege Refreshed 2
+[NODE 14]: Privilege Refreshed -1
+[CD]: Received status from node 18
+[CD]: {<node 18>: 2}
+[NODE 11]: Received update code 1 from <node 12> 
+[NODE 11]: Privilege Refreshed -1
+
+
+[NODE 6]: Received update code 1 from <node 12> 
+[NODE 6]: Privilege Refreshed -1
+
+[CD]: No node has privilege
+[CD]: Spanning tree reached in 16 privileges
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 0>
+[DRIVER]: <node 2> <node 0>
+[DRIVER]: <node 3> <node 2>
+[DRIVER]: <node 4> <node 1>
+[DRIVER]: <node 5> <node 10>
+[DRIVER]: <node 6> <node 8>
+[DRIVER]: <node 7> <node 19>
+[DRIVER]: <node 8> <node 0>
+[DRIVER]: <node 9> <node 1>
+[DRIVER]: <node 10> <node 1>
+[DRIVER]: <node 11> <node 1>
+[DRIVER]: <node 12> <node 14>
+[DRIVER]: <node 13> <node 7>
+[DRIVER]: <node 14> <node 1>
+[DRIVER]: <node 15> <node 6>
+[DRIVER]: <node 16> <node 1>
+[DRIVER]: <node 17> <node 8>
+[DRIVER]: <node 18> <node 3>
+[DRIVER]: <node 19> <node 9>
+
+
+[THREAD 17]: Shutting Down
+[THREAD 0]: Shutting Down
+[THREAD 18]: Shutting Down
+[THREAD 15]: Shutting Down
+[THREAD 4]: Shutting Down
+[THREAD 12]: Shutting Down
+[THREAD 9]: Shutting Down
+[THREAD 8]: Shutting Down
+[THREAD 6]: Shutting Down
+[THREAD 16]: Shutting Down
+[THREAD 14]: Shutting Down
+[THREAD 19]: Shutting Down
+[THREAD 5]: Shutting Down
+[THREAD 3]: Shutting Down
+[THREAD 13]: Shutting Down
+[THREAD 11]: Shutting Down
+[THREAD 10]: Shutting Down
+[THREAD 7]: Shutting Down
+[THREAD 2]: Shutting Down
+[THREAD 1]: Shutting Down
+
+real    3m41.604s
+user    3m45.186s
+sys     0m3.960s
+ 

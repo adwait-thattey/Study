@@ -1,0 +1,169 @@
+time python3 driver.py
+0: [1, 2]
+1: [0, 2, 3]
+2: [1, 4, 0, 3]
+3: [1, 2]
+4: [2]
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 0>
+[DRIVER]: <node 2> <node 3>
+[DRIVER]: <node 3> <node 2>
+[DRIVER]: <node 4> <node 2>
+
+
+Starting central thread
+
+
+
+0 level:0 parent:None
+[NODE 0]: Privilege Not refreshed -1
+1 level:2 parent:<node 0>
+[NODE 1]: Privilege Refreshed 0
+2 level:2 parent:<node 3>
+[CD]: Received status from node 1
+[CD]: {<node 1>: 0}
+[NODE 2]: Privilege Refreshed 0
+3 level:4 parent:<node 2>
+[CD]: Received status from node 2
+[NODE 3]: Privilege Refreshed 0
+[CD]: {<node 1>: 0, <node 2>: 0}
+[CD]: Received status from node 3
+4 level:3 parent:<node 2>
+[NODE 4]: Privilege Refreshed -1
+[CD]: {}
+[CD]: Granting privilege to <node 3>
+
+
+
+[NODE 3]: Appended to message list 
+[NODE 3]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 3]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 3> 
+[NODE 1]: Privilege Refreshed 0
+[CD]: Received status from node 1
+[CD]: {<node 1>: 0}
+[NODE 2]: Received update code 1 from <node 3> 
+[NODE 2]: Privilege Refreshed 0
+[CD]: Received status from node 2
+[CD]: {<node 1>: 0, <node 2>: 0}
+[CD]: Granting privilege to <node 2>
+
+
+
+[NODE 2]: Appended to message list 
+[NODE 2]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 2]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 2> 
+[NODE 1]: Privilege Refreshed 0
+[CD]: Received status from node 1
+[CD]: {<node 1>: 0}
+[NODE 4]: Received update code 1 from <node 2> 
+[NODE 4]: Privilege Refreshed 0
+[CD]: Received status from node 4
+[CD]: {<node 1>: 0, <node 4>: 0}
+[NODE 0]: Received update code 1 from <node 2> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 3]: Received update code 1 from <node 2> 
+[NODE 3]: Privilege Refreshed 0
+[CD]: Received status from node 3
+[CD]: {<node 1>: 0, <node 4>: 0, <node 3>: 0}
+[CD]: Granting privilege to <node 1>
+
+
+
+[NODE 1]: Appended to message list 
+[NODE 1]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 1]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 1> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 2]: Received update code 1 from <node 1> 
+[NODE 2]: Privilege Refreshed -1
+[NODE 3]: Received update code 1 from <node 1> 
+[NODE 3]: Privilege Refreshed 0
+[CD]: Received status from node 3
+[CD]: {<node 3>: 0}
+[CD]: Granting privilege to <node 3>
+
+
+
+[NODE 3]: Appended to message list 
+[NODE 3]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 3]: Privilege Refreshed 2
+[CD]: Received status from node 3
+[CD]: {<node 3>: 2}
+[NODE 1]: Received update code 1 from <node 3> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 2]: Received update code 1 from <node 3> 
+[NODE 2]: Privilege Refreshed 1
+[CD]: Received status from node 2
+[CD]: {<node 3>: 2, <node 2>: 1}
+[CD]: Granting privilege to <node 3>
+
+
+
+[NODE 3]: Appended to message list 
+[NODE 3]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 3]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 3> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 2]: Received update code 1 from <node 3> 
+[NODE 2]: Privilege Refreshed 0
+[CD]: Received status from node 2
+[CD]: {<node 2>: 0}
+[CD]: Granting privilege to <node 2>
+
+
+
+[NODE 2]: Appended to message list 
+[NODE 2]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 2]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 2> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 4]: Received update code 1 from <node 2> 
+[NODE 4]: Privilege Refreshed 0
+[CD]: Received status from node 4
+[CD]: {<node 4>: 0}
+[NODE 0]: Received update code 1 from <node 2> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 3]: Received update code 1 from <node 2> 
+[NODE 3]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 4>
+
+
+
+[NODE 4]: Appended to message list 
+[NODE 4]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 4]: Privilege Refreshed -1
+[NODE 2]: Received update code 1 from <node 4> 
+[NODE 2]: Privilege Refreshed -1
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+[CD]: Spanning tree reached in 7 privileges
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 0>
+[DRIVER]: <node 2> <node 3>
+[DRIVER]: <node 3> <node 1>
+[DRIVER]: <node 4> <node 2>
+
+
+[THREAD 3]: Shutting Down
+[THREAD 4]: Shutting Down
+[THREAD 1]: Shutting Down
+[THREAD 0]: Shutting Down
+[THREAD 2]: Shutting Down
+[2, 6, 8, 5, 5, 4, 6, 2, 0, 0]
+
+real    0m10.011s
+user    0m10.003s
+sys     0m0.173s

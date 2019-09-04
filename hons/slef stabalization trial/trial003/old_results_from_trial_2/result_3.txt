@@ -1,0 +1,69 @@
+al = {
+    0: [1,2],
+    1: [0,2],
+    2: [0,1]
+}
+
+Starting central thread
+
+
+
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 2>
+[DRIVER]: <node 2> <node 1>
+
+
+0 level:0 parent:None
+[NODE 0]: Privilege Not refreshed -1
+1 level:3 parent:<node 2>
+[NODE 1]: Privilege Refreshed 2
+[CD]: Received status from node 1
+[CD]: {<node 1>: 2}
+2 level:3 parent:<node 1>
+[NODE 2]: Privilege Refreshed 2
+[CD]: Received status from node 2
+[CD]: {<node 1>: 2, <node 2>: 2}
+[CD]: Granting privilege to <node 1>
+
+
+
+[NODE 1]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 1]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 1> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 2]: Received update code 1 from <node 1> 
+[NODE 2]: Privilege Refreshed 2
+[CD]: Received status from node 2
+[CD]: {<node 2>: 2}
+[CD]: Granting privilege to <node 2>
+
+
+
+[NODE 2]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 2]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 2> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 1]: Received update code 1 from <node 2> 
+[NODE 1]: Privilege Refreshed -1
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+[CD]: Spanning tree reached
+
+Printing node and parents
+[DRIVER]: <node 0> None
+[DRIVER]: <node 1> <node 0>
+[DRIVER]: <node 2> <node 0>
+
+
+[THREAD 2]: Shutting Down
+[THREAD 1]: Shutting Down
+[THREAD 0]: Shutting Down
