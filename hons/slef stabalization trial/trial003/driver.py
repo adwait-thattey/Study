@@ -57,9 +57,9 @@ def compile_messages(central_thread):
 if __name__ == "__main__":
     # global adj_list
 
-    # adj_list = gen_graph.gen_graph(constants.TOTAL_NODES, constants.TOTAL_EDGES)
+    adj_list = gen_graph.gen_graph(constants.TOTAL_NODES, constants.TOTAL_EDGES)
     # adj_list = graph.al
-    adj_list = gen_graph.gen_full_connected_graph(constants.TOTAL_NODES)
+    # adj_list = gen_graph.gen_full_connected_graph(constants.TOTAL_NODES)
     gen_graph.print_graph(adj_list)
 
     central_thread = central_daemon.CentralDaemon()

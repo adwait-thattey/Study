@@ -1,0 +1,549 @@
+time python3 driver.py 
+0: [1, 3, 5, 8, 4]
+1: [0, 2, 9, 7, 6, 3]
+2: [1, 4, 3]
+3: [0, 6, 8, 2, 7, 1, 4]
+4: [2, 5, 0, 3]
+5: [0, 7, 4, 8]
+6: [3, 1]
+7: [5, 1, 3]
+8: [3, 0, 9, 5]
+9: [1, 8]
+
+Printing node and parents
+[DRIVER]: <node 0> None 0
+[DRIVER]: <node 1> <node 9> 6
+[DRIVER]: <node 2> <node 1> 7
+[DRIVER]: <node 3> <node 1> 7
+[DRIVER]: <node 4> <node 2> 6
+[DRIVER]: <node 5> <node 0> 7
+[DRIVER]: <node 6> <node 1> 1
+[DRIVER]: <node 7> <node 3> 6
+[DRIVER]: <node 8> <node 3> 10
+[DRIVER]: <node 9> <node 1> 3
+
+
+Starting central thread
+
+
+
+0 level:0 parent:None
+[NODE 0]: Privilege Not refreshed -1
+1 level:6 parent:<node 9>
+[NODE 1]: Privilege Refreshed 0
+2 level:7 parent:<node 1>
+[CD]: Received status from node 1
+[CD]: {<node 1>: 0}
+4 level:6 parent:<node 2>
+[NODE 2]: Privilege Refreshed -1
+3 level:7 parent:<node 1>
+6 level:1 parent:<node 1>
+5 level:7 parent:<node 0>
+[NODE 4]: Privilege Refreshed 0
+9 level:3 parent:<node 1>
+[NODE 6]: Privilege Refreshed 0
+8 level:10 parent:<node 3>
+[NODE 5]: Privilege Refreshed 0
+[CD]: Granting privilege to <node 4>
+7 level:6 parent:<node 3>
+[NODE 7]: Privilege Refreshed 0
+[CD]: Received status from node 7
+[CD]: Received status from node 4
+
+
+[NODE 8]: Privilege Refreshed 2
+[NODE 9]: Privilege Refreshed 0
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: 0, <node 7>: 0}
+[CD]: Received status from node 5
+
+[CD]: Received status from node 8
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: 0, <node 7>: 0, <node 8>: 2}
+[NODE 3]: Privilege Refreshed -1
+[CD]: Received status from node 9
+[CD]: Received status from node 6
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: 0, <node 7>: 0, <node 8>: 2, <node 6>: 0, <node 9>: 0}
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: 0, <node 7>: 0, <node 8>: 2, <node 6>: 0, <node 9>: 0}
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: 0, <node 7>: 0, <node 8>: 2, <node 6>: 0, <node 9>: 0}
+[CD]: Granting privilege to <node 6>
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: 0, <node 7>: 0, <node 8>: 2, <node 6>: 0, <node 9>: 0}
+
+
+
+[NODE 4]: Appended to message list 
+[NODE 6]: Appended to message list 
+[NODE 6]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 4]: Privilege 0 Action Completed. Broadcasting. 
+[CD]: Granting privilege to <node 5>
+[NODE 6]: Privilege Refreshed -1
+[NODE 4]: Privilege Refreshed -1
+[NODE 5]: Appended to message list 
+
+
+[NODE 5]: Privilege 0 Action Completed. Broadcasting. 
+
+[CD]: Received status from node 6
+[CD]: Received status from node 4
+[CD]: {<node 1>: 0, <node 4>: -1, <node 5>: 0, <node 7>: 0, <node 8>: 2, <node 6>: -1, <node 9>: 0}
+[NODE 5]: Privilege Refreshed -1
+[CD]: {<node 1>: 0, <node 4>: -1, <node 5>: 0, <node 7>: 0, <node 8>: 2, <node 6>: -1, <node 9>: 0}
+[NODE 3]: Received update code 1 from <node 6> 
+[NODE 3]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 6> 
+[CD]: Received status from node 5
+[CD]: Granting privilege to <node 7>
+
+
+[NODE 1]: Privilege Refreshed 0
+[NODE 2]: Received update code 1 from <node 4> 
+[NODE 2]: Privilege Refreshed -1
+[NODE 5]: Received update code 1 from <node 4> 
+[CD]: {<node 1>: 0, <node 4>: -1, <node 5>: -1, <node 7>: 0, <node 8>: 2, <node 6>: -1, <node 9>: 0}
+[NODE 5]: Privilege Refreshed -1
+
+[NODE 0]: Received update code 1 from <node 4> 
+[NODE 0]: Received update code 1 from <node 5> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 0]: Privilege Not refreshed -1
+[NODE 3]: Received update code 1 from <node 4> 
+[NODE 7]: Appended to message list 
+[CD]: Granting privilege to <node 9>
+[NODE 3]: Privilege Refreshed -1
+[NODE 7]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 7]: Received update code 1 from <node 5> 
+[NODE 7]: Privilege Refreshed -1
+
+
+
+[NODE 9]: Appended to message list 
+[NODE 7]: Privilege Refreshed -1
+[CD]: Received status from node 7
+[CD]: {<node 1>: 0, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: 0}
+[NODE 9]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 4]: Received update code 1 from <node 5> 
+[CD]: Granting privilege to <node 1>
+
+
+
+[NODE 9]: Privilege Refreshed -1
+[NODE 4]: Privilege Refreshed -1
+[NODE 5]: Received update code 1 from <node 7> 
+[NODE 5]: Privilege Refreshed -1
+[NODE 1]: Appended to message list 
+[CD]: Received status from node 9
+[NODE 8]: Received update code 1 from <node 5> 
+[NODE 1]: Received update code 1 from <node 7> 
+[NODE 1]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 1]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 1>
+[CD]: Received status from node 1
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1}
+[NODE 8]: Privilege Refreshed 2
+
+
+[NODE 1]: Privilege Refreshed -1
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1}
+[NODE 0]: Received update code 1 from <node 1> 
+[NODE 1]: Received update code 1 from <node 9> 
+[CD]: Received status from node 1
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1}
+[NODE 0]: Privilege Not refreshed -1
+[NODE 2]: Received update code 1 from <node 1> 
+
+[NODE 2]: Privilege Refreshed 0
+[NODE 1]: Privilege Refreshed -1
+[CD]: Received status from node 2
+[NODE 8]: Received update code 1 from <node 9> 
+[NODE 3]: Received update code 1 from <node 7> 
+[CD]: Granting privilege to <node 8>
+
+
+[NODE 3]: Privilege Refreshed 0
+[NODE 8]: Appended to message list 
+
+[NODE 8]: Privilege Refreshed 2
+[CD]: Received status from node 3
+[NODE 8]: Privilege 2 Action Completed. Broadcasting. 
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: 0}
+[CD]: Granting privilege to <node 2>
+[NODE 9]: Received update code 1 from <node 1> 
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: 0, <node 3>: 0}
+[NODE 8]: Privilege Refreshed -1
+[NODE 9]: Privilege Refreshed 0
+[NODE 2]: Appended to message list 
+[CD]: Received status from node 9
+
+
+[CD]: Received status from node 8
+
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: -1, <node 9>: 0, <node 2>: 0, <node 3>: 0}
+[NODE 2]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 7]: Received update code 1 from <node 1> 
+[NODE 7]: Privilege Refreshed -1
+[NODE 6]: Received update code 1 from <node 1> 
+[CD]: Granting privilege to <node 3>
+[NODE 2]: Privilege Refreshed -1
+[NODE 6]: Privilege Refreshed 0
+
+
+
+[CD]: Received status from node 2
+[NODE 3]: Appended to message list 
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: 0, <node 2>: -1, <node 3>: 0}
+[CD]: Received status from node 6
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: 0, <node 2>: -1, <node 3>: 0}
+[NODE 3]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 3]: Privilege Refreshed -1
+[NODE 3]: Received update code 1 from <node 8> 
+[CD]: Granting privilege to <node 9>
+[NODE 1]: Received update code 1 from <node 2> 
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: 0, <node 2>: -1, <node 3>: 0}
+[NODE 3]: Privilege Refreshed -1
+
+
+[NODE 3]: Received update code 1 from <node 1> 
+[CD]: Received status from node 3
+
+[CD]: Received status from node 3
+[NODE 9]: Appended to message list 
+[NODE 3]: Privilege Refreshed -1
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: 0, <node 2>: -1, <node 3>: -1}
+[NODE 1]: Privilege Refreshed -1
+[NODE 1]: Appended to message list 
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: 0, <node 2>: -1, <node 3>: -1}
+[NODE 4]: Received update code 1 from <node 2> 
+[NODE 0]: Received update code 1 from <node 3> 
+[NODE 0]: Received update code 1 from <node 8> 
+[CD]: Granting privilege to <node 9>
+[NODE 9]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 6]: Received update code 1 from <node 3> 
+[NODE 4]: Privilege Refreshed 0
+
+
+[CD]: Received status from node 4
+
+[NODE 6]: Privilege Refreshed 0
+[NODE 8]: Received update code 1 from <node 3> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 9]: Privilege Refreshed -1
+[CD]: Received status from node 9
+[NODE 8]: Privilege Refreshed 0
+[CD]: {<node 1>: -1, <node 4>: 0, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: 0, <node 2>: -1, <node 3>: -1}
+[CD]: {<node 1>: -1, <node 4>: 0, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[CD]: Granting privilege to <node 9>
+[NODE 9]: Received update code 1 from <node 8> 
+[CD]: Received status from node 8
+
+
+[NODE 1]: Received update code 1 from <node 9> 
+[NODE 3]: Received update code 1 from <node 2> 
+
+[CD]: {<node 1>: -1, <node 4>: 0, <node 5>: -1, <node 7>: -1, <node 8>: 0, <node 6>: 0, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 3]: Privilege Refreshed -1
+[NODE 9]: Privilege Refreshed -1
+[NODE 2]: Received update code 1 from <node 3> 
+[NODE 1]: Privilege Refreshed 0
+[CD]: Granting privilege to <node 6>
+[CD]: Received status from node 1
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: -1, <node 7>: -1, <node 8>: 0, <node 6>: 0, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 5]: Received update code 1 from <node 8> 
+[NODE 6]: Appended to message list 
+
+
+[NODE 2]: Privilege Refreshed -1
+[NODE 8]: Received update code 1 from <node 9> 
+[NODE 6]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 7]: Received update code 1 from <node 3> 
+[NODE 7]: Privilege Refreshed 0
+[NODE 6]: Privilege Refreshed -1
+[NODE 5]: Privilege Refreshed -1
+
+[NODE 8]: Privilege Refreshed 0
+[NODE 9]: Appended to message list 
+[CD]: Received status from node 7
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: -1, <node 7>: 0, <node 8>: 0, <node 6>: 0, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[CD]: Received status from node 6
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: -1, <node 7>: 0, <node 8>: 0, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 1]: Received update code 1 from <node 3> 
+[NODE 1]: Privilege Refreshed 0
+[NODE 4]: Received update code 1 from <node 3> 
+[CD]: Granting privilege to <node 6>
+[NODE 4]: Privilege Refreshed 0
+[NODE 3]: Received update code 1 from <node 6> 
+[NODE 3]: Privilege Refreshed -1
+
+
+[NODE 1]: Received update code 1 from <node 6> 
+
+[NODE 1]: Privilege Refreshed 0
+[NODE 6]: Appended to message list 
+[CD]: Granting privilege to <node 8>
+
+
+
+[NODE 8]: Appended to message list 
+[NODE 8]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 8]: Privilege Refreshed 2
+[CD]: Received status from node 8
+[CD]: {<node 1>: 0, <node 4>: 0, <node 5>: -1, <node 7>: 0, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 3]: Received update code 1 from <node 8> 
+[NODE 3]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 8> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 9]: Received update code 1 from <node 8> 
+[NODE 9]: Privilege Refreshed -1
+[NODE 5]: Received update code 1 from <node 8> 
+[NODE 5]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 4>
+
+
+
+[NODE 4]: Appended to message list 
+[NODE 4]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 4]: Privilege Refreshed 2
+[CD]: Received status from node 4
+[CD]: Granting privilege to <node 7>
+[CD]: {<node 1>: 0, <node 4>: 2, <node 5>: -1, <node 7>: 0, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+
+
+[NODE 2]: Received update code 1 from <node 4> 
+[NODE 7]: Appended to message list 
+[NODE 2]: Privilege Refreshed -1
+[NODE 7]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 5]: Received update code 1 from <node 4> 
+
+[NODE 5]: Privilege Refreshed -1
+[NODE 7]: Privilege Refreshed 2
+[CD]: Received status from node 7
+[NODE 0]: Received update code 1 from <node 4> 
+[CD]: {<node 1>: 0, <node 4>: 2, <node 5>: -1, <node 7>: 2, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 0]: Privilege Not refreshed -1
+[NODE 3]: Received update code 1 from <node 4> 
+[CD]: Granting privilege to <node 4>
+
+
+[NODE 5]: Received update code 1 from <node 7> 
+
+[NODE 3]: Privilege Refreshed -1
+[NODE 5]: Privilege Refreshed -1
+[NODE 4]: Appended to message list 
+[CD]: Granting privilege to <node 4>
+[NODE 1]: Received update code 1 from <node 7> 
+[NODE 4]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 4]: Privilege Refreshed -1
+[NODE 1]: Privilege Refreshed 0
+[CD]: Received status from node 4
+[NODE 3]: Received update code 1 from <node 7> 
+[CD]: {<node 1>: 0, <node 4>: -1, <node 5>: -1, <node 7>: 2, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 3]: Privilege Refreshed -1
+[NODE 2]: Received update code 1 from <node 4> 
+
+
+[NODE 2]: Privilege Refreshed -1
+
+[NODE 5]: Received update code 1 from <node 4> 
+[NODE 5]: Privilege Refreshed -1
+[NODE 0]: Received update code 1 from <node 4> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 3]: Received update code 1 from <node 4> 
+[NODE 3]: Privilege Refreshed -1
+[NODE 4]: Appended to message list 
+[CD]: Granting privilege to <node 7>
+
+
+
+[NODE 7]: Appended to message list 
+[NODE 7]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 7]: Privilege Refreshed -1
+[CD]: Received status from node 7
+[CD]: {<node 1>: 0, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 5]: Received update code 1 from <node 7> 
+[NODE 5]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 7> 
+[NODE 1]: Privilege Refreshed 0
+[NODE 3]: Received update code 1 from <node 7> 
+[NODE 3]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 1>
+
+
+
+[NODE 1]: Appended to message list 
+[NODE 1]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 1]: Privilege Refreshed 2
+[CD]: Received status from node 1
+[CD]: {<node 1>: 2, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 0]: Received update code 1 from <node 1> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 2]: Received update code 1 from <node 1> 
+[NODE 2]: Privilege Refreshed 1
+[CD]: Received status from node 2
+[CD]: {<node 1>: 2, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: -1, <node 2>: 1, <node 3>: -1}
+[NODE 9]: Received update code 1 from <node 1> 
+[NODE 9]: Privilege Refreshed 1
+[CD]: Received status from node 9
+[CD]: {<node 1>: 2, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: -1, <node 9>: 1, <node 2>: 1, <node 3>: -1}
+[NODE 7]: Received update code 1 from <node 1> 
+[NODE 7]: Privilege Refreshed -1
+[NODE 6]: Received update code 1 from <node 1> 
+[NODE 6]: Privilege Refreshed 1
+[CD]: Received status from node 6
+[CD]: {<node 1>: 2, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: 1, <node 9>: 1, <node 2>: 1, <node 3>: -1}
+[NODE 3]: Received update code 1 from <node 1> 
+[NODE 3]: Privilege Refreshed 1
+[CD]: Received status from node 3
+[CD]: {<node 1>: 2, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: 1, <node 9>: 1, <node 2>: 1, <node 3>: 1}
+[CD]: Granting privilege to <node 1>
+
+
+
+[NODE 1]: Appended to message list 
+[NODE 1]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 1]: Privilege Refreshed -1
+[CD]: Received status from node 1
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: 1, <node 9>: 1, <node 2>: 1, <node 3>: 1}
+[NODE 0]: Received update code 1 from <node 1> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 2]: Received update code 1 from <node 1> 
+[NODE 2]: Privilege Refreshed 0
+[CD]: Received status from node 2
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: 1, <node 9>: 1, <node 2>: 0, <node 3>: 1}
+[NODE 9]: Received update code 1 from <node 1> 
+[NODE 9]: Privilege Refreshed 0
+[CD]: Received status from node 9
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: 1, <node 9>: 0, <node 2>: 0, <node 3>: 1}
+[NODE 7]: Received update code 1 from <node 1> 
+[NODE 7]: Privilege Refreshed -1
+[NODE 6]: Received update code 1 from <node 1> 
+[NODE 6]: Privilege Refreshed 0
+[CD]: Received status from node 6
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: 0, <node 9>: 0, <node 2>: 0, <node 3>: 1}
+[NODE 3]: Received update code 1 from <node 1> 
+[NODE 3]: Privilege Refreshed 0
+[CD]: Received status from node 3
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: 2, <node 6>: 0, <node 9>: 0, <node 2>: 0, <node 3>: 0}
+[CD]: Granting privilege to <node 8>
+
+
+
+[NODE 8]: Appended to message list 
+[NODE 8]: Privilege 2 Action Completed. Broadcasting. 
+[NODE 8]: Privilege Refreshed -1
+[CD]: Received status from node 8
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: 0, <node 9>: 0, <node 2>: 0, <node 3>: 0}
+[NODE 3]: Received update code 1 from <node 8> 
+[NODE 3]: Privilege Refreshed 0
+[NODE 0]: Received update code 1 from <node 8> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 9]: Received update code 1 from <node 8> 
+[NODE 9]: Privilege Refreshed 0
+[NODE 5]: Received update code 1 from <node 8> 
+[NODE 5]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 6>
+
+
+
+[NODE 6]: Appended to message list 
+[NODE 6]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 6]: Privilege Refreshed -1
+[CD]: Received status from node 6
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: -1, <node 9>: 0, <node 2>: 0, <node 3>: 0}
+[NODE 3]: Received update code 1 from <node 6> 
+[NODE 3]: Privilege Refreshed 0
+[NODE 1]: Received update code 1 from <node 6> 
+[NODE 1]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 3>
+
+
+
+[NODE 3]: Appended to message list 
+[NODE 3]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 3]: Privilege Refreshed -1
+[CD]: Received status from node 3
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: -1, <node 9>: 0, <node 2>: 0, <node 3>: -1}
+[NODE 0]: Received update code 1 from <node 3> 
+[NODE 0]: Privilege Not refreshed -1
+[NODE 6]: Received update code 1 from <node 3> 
+[NODE 6]: Privilege Refreshed -1
+[NODE 8]: Received update code 1 from <node 3> 
+[NODE 8]: Privilege Refreshed -1
+[NODE 2]: Received update code 1 from <node 3> 
+[NODE 2]: Privilege Refreshed 0
+[NODE 7]: Received update code 1 from <node 3> 
+[NODE 7]: Privilege Refreshed -1
+[NODE 1]: Received update code 1 from <node 3> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 4]: Received update code 1 from <node 3> 
+[CD]: Granting privilege to <node 9>
+
+
+
+[NODE 4]: Privilege Refreshed -1
+[NODE 9]: Appended to message list 
+[NODE 9]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 9]: Privilege Refreshed -1
+[CD]: Granting privilege to <node 9>
+
+
+
+[CD]: Received status from node 9
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: -1, <node 9>: -1, <node 2>: 0, <node 3>: -1}
+[NODE 1]: Received update code 1 from <node 9> 
+[CD]: Granting privilege to <node 2>
+[NODE 1]: Privilege Refreshed -1
+[NODE 2]: Appended to message list 
+[NODE 8]: Received update code 1 from <node 9> 
+
+
+
+[NODE 2]: Privilege 0 Action Completed. Broadcasting. 
+[NODE 2]: Privilege Refreshed -1
+[NODE 8]: Privilege Refreshed -1
+[CD]: Received status from node 2
+[NODE 9]: Appended to message list 
+[CD]: No node has privilege
+[CD]: {<node 1>: -1, <node 4>: -1, <node 5>: -1, <node 7>: -1, <node 8>: -1, <node 6>: -1, <node 9>: -1, <node 2>: -1, <node 3>: -1}
+[NODE 1]: Received update code 1 from <node 2> 
+[NODE 1]: Privilege Refreshed -1
+[NODE 4]: Received update code 1 from <node 2> 
+[NODE 4]: Privilege Refreshed -1
+[NODE 3]: Received update code 1 from <node 2> 
+[NODE 3]: Privilege Refreshed -1
+
+
+
+[CD]: No node has privilege
+
+
+
+[CD]: No node has privilege
+[CD]: Spanning tree reached in 29 privileges
+
+Printing node and parents
+[DRIVER]: <node 0> None 0
+[DRIVER]: <node 1> <node 0> 1
+[DRIVER]: <node 2> <node 1> 2
+[DRIVER]: <node 3> <node 1> 2
+[DRIVER]: <node 4> <node 5> 2
+[DRIVER]: <node 5> <node 0> 1
+[DRIVER]: <node 6> <node 1> 2
+[DRIVER]: <node 7> <node 5> 2
+[DRIVER]: <node 8> <node 0> 1
+[DRIVER]: <node 9> <node 1> 2
+
+
+[THREAD 7]: Shutting Down
+[THREAD 2]: Shutting Down
+[THREAD 0]: Shutting Down
+[THREAD 4]: Shutting Down
+[THREAD 9]: Shutting Down
+[THREAD 3]: Shutting Down
+[THREAD 5]: Shutting Down
+[THREAD 1]: Shutting Down
+[THREAD 6]: Shutting Down
+[THREAD 8]: Shutting Down
+[1, 3, 5, 2, 8, 3, 4, 8, 3, 7, 3, 4, 9, 7, 7, 8, 6, 1, 5, 4, 8, 5, 12, 12, 6, 4, 8, 1, 3, 2, 5, 0]
+
+messages: 164
+real    1m22.060s
+user    1m22.355s
+sys     0m2.043s
