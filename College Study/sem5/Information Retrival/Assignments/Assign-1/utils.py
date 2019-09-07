@@ -68,6 +68,14 @@ def pretty_print_doc_result(doc_list):
     for doc in doc_list:
         print(doc, shared.DOCUMENT_ID_MAP[doc])
 
+def print_btree_layer(layer):
+    print("Btree layer:")
+    for node in layer:
+        print(str(node), end=" :")
+        for pair in node.data_pointer_pairs:
+            print(f"({pair.data},{str(repr(pair.pointer))})", end="  ")
+        print()
+
 if __name__ == "__main__":
     print(ret_document_dir_path())
     print(map_document_ids())        
