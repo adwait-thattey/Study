@@ -196,8 +196,9 @@ def process_wildcard_query(query_string):
             if '*' in query_words[idx]:
                 # wild card encountered
                 matching_words = find_matching_words(query_words[idx])
-                if len(matching_words) < 0:
+                if not matching_words:
                     print(f"No matching words found for {query_words[idx]}")
+                    res = []
                 else:
                     print(f"found these matching words for {query_words[idx]} : {str(matching_words)}")
                     if len(matching_words) == 1:

@@ -78,12 +78,12 @@ def build_permuterm_index_bplus_tree():
     
     layer = split_index_to_bptree_nodes()
     print("\n")
-    utils.print_btree_layer(layer)
+    #utils.print_btree_layer(layer)
     while len(layer) > 1:
         print()
         layer = build_new_layer(layer)
-        print("\n")
-        utils.print_btree_layer(layer)
+        #print("\n")
+        #utils.print_btree_layer(layer)
     shared.PERMUTERM_TREE_ROOT = layer[0]
 
 if __name__ == "__main__":

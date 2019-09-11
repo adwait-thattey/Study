@@ -25,7 +25,7 @@ def menu_perform_query():
 
     print(help_docs.process_normal_query_help)
     print("Enter query: ")
-    query = input()
+    query = input().lower()
     print()
 
     try:
@@ -51,7 +51,7 @@ def menu_find_matching_wild_words():
 
     print(help_docs.find_matching_words)
     print("Enter query: ")
-    query = input()
+    query = input().lower()
 
     print("Matching words are: ")
     print(permuterm_retriver.find_matching_words(query))
@@ -63,7 +63,7 @@ def menu_perform_wild_card_queries():
 
     print(help_docs.process_wild_card_query)
     print("Enter query: ")
-    query = input()
+    query = input().lower()
 
     try:
         res = permuterm_retriver.process_wildcard_query(query)
