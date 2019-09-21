@@ -1,9 +1,40 @@
+import constants
+import utils
 from graph import Node
-
+import shared
 
 def remove_from_frontier(frontier, search_algorithm):
+
     if search_algorithm == "bfs":
+        # return the first element in the list
         return frontier.pop(0)
+
+    elif search_algorithm == "dfs":
+        # return the last element in the frontier
+        return frontier.pop()
+
+    elif search_algorithm == "gbfs":
+
+        chosen_node = min(frontier, key=lambda node: utils.get_heuristic_value(node))
+        frontier.remove(chosen_node)
+        return chosen_node
+
+    elif search_algorithm == "astar":
+        def get_parent_distance(node):
+            for ndp in node.edges:
+                if ndp.node == node.parent:
+                    # print(ndp.node, ndp.distance)
+                    return ndp.distance
+
+            return constants.INF
+
+
+        chosen_node = min(frontier, key=lambda node:  get_parent_distance(node) +  utils.get_heuristic_value(node))
+        frontier.remove(chosen_node)
+        return chosen_node
+
+    else:
+        raise ValueError("Incorrect algorithm name")
 
 
 def graph_search(graph_nodes: dict, start_node: Node, goal_test, search_algorithm: str):
@@ -21,13 +52,15 @@ def graph_search(graph_nodes: dict, start_node: Node, goal_test, search_algorith
     frontier.append(start_node)
     explored_set = dict()
     explored_order = list()
-
+    steps_taken = 0
     chosen_node = Node
     while frontier:
 
         # this line changes depending on the algorithm
         chosen_node = remove_from_frontier(frontier, search_algorithm)
-        print(chosen_node, chosen_node.parent)
+        # print(chosen_node, chosen_node.parent)
+        steps_taken +=1
+        print(steps_taken)
         explored_set[chosen_node] = True # mark node as explored
         explored_order.append(chosen_node)
 

@@ -1,6 +1,6 @@
 class Node:
     class NodeDistancePair:
-        def __init__(self, node, distance: int):
+        def __init__(self, node, distance: float):
             self.node = node
             self.distance = distance
 
