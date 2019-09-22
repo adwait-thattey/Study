@@ -3,7 +3,7 @@ import graph
 import shared
 
 
-def build_graph():
+def build_problem1_graph():
     csv_file = open(constants.DATASET_FILE, mode="r")
     lines = csv_file.readlines()
     csv_file.close()
@@ -37,7 +37,7 @@ def build_graph():
         node2.add_edge(node1, float(l[3]))
 
 
-def build_heuristics(destination):
+def build_problem1_heuristics(destination):
     csv_file = open(constants.HEURISTICS_FILE, mode="r")
     lines = csv_file.readlines()
     csv_file.close()
@@ -49,10 +49,6 @@ def build_heuristics(destination):
         if l[1] == destination:
             if shared.GRAPH_NODES[l[0]] not in shared.HEURISTIC:
                 shared.HEURISTIC[shared.GRAPH_NODES[l[0]]] = float(l[2])
-
-
-def path_finding_goal_test():
-    pass
 
 
 def print_heuristics():
@@ -72,8 +68,24 @@ def get_heuristic_value(node):
 def print_action_sequence(action_seq: list):
     print("\n Action Sequence: \n")
     for a in action_seq[:len(action_seq) - 1]:
-        print(a.name, end=" --> ")
+        print(a.data, end=" --> ")
 
-    print(action_seq[-1].name)
+    print(action_seq[-1].data)
 
     print()
+
+
+def replace_string_character(string: str, pos: int, new_char: str):
+    return string[:pos] + new_char + string[pos + 1:]
+
+
+def print_puzzle_configuration(puzzle_configuration):
+    print()
+    for row in puzzle_configuration:
+        for col in row:
+            print(col, end=" ")
+
+        print()
+
+    print()
+

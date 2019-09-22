@@ -1,5 +1,16 @@
+"""
+This module defines the structure of node and edge
+"""
+
+
 class Node:
+    """
+    Structure of node
+    """
     class NodeDistancePair:
+        """
+            A pair of neighbour node and distance. This forms and edge
+        """
         def __init__(self, node, distance: float):
             self.node = node
             self.distance = distance
@@ -11,11 +22,11 @@ class Node:
         return f"<node {self.id}>"
 
     def __str__(self):
-        return f"<node {self.id}-{self.name}>"
+        return f"<node {self.id}-{self.data}>"
 
-    def __init__(self, node_id, node_name):
+    def __init__(self, node_id, node_data):
         self.id = node_id
-        self.name = node_name
+        self.data = node_data
         self.edges = list()
         self.parent = None  # will be updated in real time by the algorithm
 
