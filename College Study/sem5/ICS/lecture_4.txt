@@ -1,0 +1,5 @@
+OSI:
+    
+    
+    A switch has 3 computers connected to it. How many broadcast and collission domains ?
+        - 1 broadcast and 1 collission domain

@@ -33,8 +33,8 @@ def build_problem1_graph():
 
         node1 = shared.GRAPH_NODES[l[0]]
         node2 = shared.GRAPH_NODES[l[1]]
-        node1.add_edge(node2, float(l[3]))
-        node2.add_edge(node1, float(l[3]))
+        node1.add_edge(node2, float(l[2]))
+        node2.add_edge(node1, float(l[2]))
 
 
 def build_problem1_heuristics(destination):
@@ -46,7 +46,7 @@ def build_problem1_heuristics(destination):
     for l in split_lines:
         l[0] = l[0].lower().strip(' ')
         l[1] = l[1].lower().strip(' ')
-        if l[1] == destination:
+        if l[1] == destination.lower():
             if shared.GRAPH_NODES[l[0]] not in shared.HEURISTIC:
                 shared.HEURISTIC[shared.GRAPH_NODES[l[0]]] = float(l[2])
 

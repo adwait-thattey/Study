@@ -1,0 +1,102 @@
+Narayan Sir
+
+Fundamentals:
+    -Confidentiality
+    -Integrity
+    -Availability
+
+    
+
+    RIsk = f((Vulnerability,Threat,COnsequences)/COntrols)
+    
+    VULNERABILITY: weakness in code/hardware
+    threat: chance that someone could exploit thye vulnerability
+    
+    RIsk is the likelihood of a threat source exploiting the Vulnerability
+    
+    COntrol: A countermeasure that is put into place to reduce risk
+    
+    
+Quantitative Analysis
+    Terms:
+        Exposure factor: %loss organization would suffer if risk materializes
+        SIngle loss expectancy: cost associated with single ralized risk
+        Annualized rate of occurance
+        Annualized loss expectancy
+    
+    How:
+        assign asset value to elements of risk assesment
+        quantify all costs( asset value, impact , threat frequency, safeguard effectiveness, safeguard costs etc)
+        
+        Assign Asset value -> Calculate EF -
+        > calculate SLE -> Asses Rate  ->.. -> analyze
+        
+        
+    Example:
+        asset value of wareourse = 150k
+        if fire occurs: 25% is lost (EF)
+        therefore SLE = 150k * 25% = 37.5k
+        
+        ALE = SLE*Annualized rate of occurance 
+        Assume ARO = 0.1 (once in 10 years)
+        
+        therefore company can spend 37.5k * 0.1 = 3.75k
+        SO the company can spend less than 3.75k per year to protect the asset
+        
+Qualitative ANalysis:
+    Based only on experiance of individual
+    No numerical value
+    Rank serioness based on opinions
+    
+    
+    Qualify likelihood based on risk and consequence
+    Example:
+        management distributes scenerio to 5 teams/people.
+        They rank severity from 1 to 5
+        Based on compiled results, management decides whether to purchase firewall
+    
+    Policy: high level statement
+    process: 
+    
+    COntrols:
+        Admistrative controls
+    Defence in depth: Mechanism of applying controls in different layers.
+    
+    
+Standards:
+    ISO
+    
+    COntents of ISO 27001 Standards
+        -Asset management
+        - Access control
+        - Operations security
+        - Info security policies
+        - Cryptograohy
+        - Physical and environmental security
+        - HR security etc.
+        
+        
+    Plan Do Chk Act
+    Plan:
+        establish context
+        assess risk
+        develop Risk treatment plan
+        Accept risk
+        
+    
+        establish the ISMS
+        define ISMS policies
+        Identify key risks
+    DO:
+    
+        implement RTP
+    formulate risk treatment plan
+    
+    
+    NIST standards
+    
+    
+    Suggested Reading
+    Information Security Management Handbook - Harold f tipton
+    ALl in one CISSP - shon harris, fernaddo mayml
+    

@@ -1,0 +1,214 @@
+Problem 2:
+
+    Start State:
+
+    1 5 2 
+    7 4 3 
+    - 8 6 
+
+
+    End State:
+
+    1 2 3 
+    4 5 6 
+    7 8 -
+
+BFS:
+
+        Solving using bfs algorithm
+    This can be configured in the main.py -> problem2 method
+
+    Action Sequence: 
+
+
+    Action 0 :
+
+    1 5 2 
+    7 4 3 
+    - 8 6 
+
+    Action 1 :
+
+    1 5 2 
+    - 4 3 
+    7 8 6 
+
+    Action 2 :
+
+    1 5 2 
+    4 - 3 
+    7 8 6 
+
+    Action 3 :
+
+    1 - 2 
+    4 5 3 
+    7 8 6 
+
+    Action 4 :
+
+    1 2 - 
+    4 5 3 
+    7 8 6 
+
+    Action 5 :
+
+    1 2 3 
+    4 5 - 
+    7 8 6 
+
+    Action 6 :
+
+    1 2 3 
+    4 5 6 
+    7 8 - 
+
+    Took 80 iterations to find goal 
+    Total cost 6
+
+GBFS:
+
+        Solving using gbfs algorithm
+        This can be configured in the main.py -> problem2 method
+
+        Action Sequence: 
+
+
+        Action 0 :
+
+        1 5 2 
+        7 4 3 
+        - 8 6 
+
+        Action 1 :
+
+        1 5 2 
+        - 4 3 
+        7 8 6 
+
+        Action 2 :
+
+        1 5 2 
+        4 - 3 
+        7 8 6 
+
+        Action 3 :
+
+        1 - 2 
+        4 5 3 
+        7 8 6 
+
+        Action 4 :
+
+        1 2 - 
+        4 5 3 
+        7 8 6 
+
+        Action 5 :
+
+        1 2 3 
+        4 5 - 
+        7 8 6 
+
+        Action 6 :
+
+        1 2 3 
+        4 5 6 
+        7 8 - 
+
+        Took 11 iterations to find goal 
+        Total cost 6
+
+
+ASTAR:
+
+            Solving using astar algorithm
+        This can be configured in the main.py -> problem2 method
+
+        Action Sequence: 
+
+
+        Action 0 :
+
+        1 5 2 
+        7 4 3 
+        - 8 6 
+
+        Action 1 :
+
+        1 5 2 
+        - 4 3 
+        7 8 6 
+
+        Action 2 :
+
+        1 5 2 
+        4 - 3 
+        7 8 6 
+
+        Action 3 :
+
+        1 - 2 
+        4 5 3 
+        7 8 6 
+
+        Action 4 :
+
+        1 2 - 
+        4 5 3 
+        7 8 6 
+
+        Action 5 :
+
+        1 2 3 
+        4 5 - 
+        7 8 6 
+
+        Action 6 :
+
+        1 2 3 
+        4 5 6 
+        7 8 - 
+
+        Took 11 iterations to find goal 
+        Total cost 6
+        
+        
+DFS:
+
+    Changed start state and goal state for DFS as otherwise it takes a lot of time
+            
+        Start State:
+
+        1 2 3 
+        4 5 6 
+        7 8 - 
+
+
+        End State:
+
+        1 2 3 
+        4 5 6 
+        7 - 8 
+
+        Solving using dfs algorithm
+        This can be configured in the main.py -> problem2 method
+
+        Action Sequence: 
+
+
+        Action 0 :
+
+        1 2 3 
+        4 5 6 
+        7 8 - 
+
+        Action 1 :
+
+        1 2 3 
+        4 5 6 
+        7 - 8 
+
+        Took 2 iterations to find goal 
+        Total cost 1
+

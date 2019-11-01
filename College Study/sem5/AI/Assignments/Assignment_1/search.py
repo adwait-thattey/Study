@@ -27,7 +27,7 @@ def remove_from_frontier(frontier, search_algorithm):
         chosen_node = frontier.pop()
 
         # since only last node is chosen. Empty the frontier
-        frontier.clear()
+        # frontier.clear()
 
         return chosen_node
 
@@ -36,15 +36,15 @@ def remove_from_frontier(frontier, search_algorithm):
 
         # get the node with minimum heuristic value
         chosen_node = min(frontier, key=lambda node: utils.get_heuristic_value(node))
-
+        frontier.remove(chosen_node)
         # since only one is selected. clear the frontier
-        frontier.clear()
+        # frontier.clear()
 
         return chosen_node
 
     elif search_algorithm == "astar":
 
-        def get_distance(node):
+        def get_cumilitive_distance(node):
             # A function that returns g(x). Distance from current node to any child
             for ndp in node.edges:
                 if ndp.node == node.parent:
@@ -52,9 +52,10 @@ def remove_from_frontier(frontier, search_algorithm):
                     return ndp.distance
 
             return constants.INF
+            
 
         # choose the node with lowest g(x) + h(x) value. h(x) is the heuristic
-        chosen_node = min(frontier, key=lambda node: get_distance(node) + utils.get_heuristic_value(node))
+        chosen_node = min(frontier, key=lambda node:node.cumalative_distance + utils.get_heuristic_value(node))
         frontier.remove(chosen_node)
         return chosen_node
 
@@ -96,10 +97,18 @@ def graph_search(start_node: Node, goal_test, expander_function, search_algorith
         # expand the node
         next_nodes = expander_function(chosen_node)
         for n in next_nodes:
-            if n not in explored_set and n not in frontier:
-                n.parent = chosen_node
-                frontier.append(n)
-
+            if n not in explored_set:
+                if n not in frontier:
+                    n.parent = chosen_node
+                    n.cumalative_distance = chosen_node.cumalative_distance + [ndp for ndp in chosen_node.edges if ndp.node == n][0].distance
+                    frontier.append(n)
+                else:
+                    new_cumalative_distance = chosen_node.cumalative_distance + \
+                                            [ndp for ndp in chosen_node.edges if ndp.node == n][0].distance
+                    if new_cumalative_distance <= n.cumalative_distance:
+                        n.parent = chosen_node
+                        n.cumalative_distance = new_cumalative_distance
+                        frontier.append(n)
 
 
     else:

@@ -1,5 +1,5 @@
-DATASET_FILE = "./NS_Dataset_1.csv"
-HEURISTICS_FILE = "./Bangalore_distance.csv"
+DATASET_FILE = "./States.csv"
+HEURISTICS_FILE = "./heuristics_bangalore.csv"
 INF = 9999
 
 # for 8 puzzle

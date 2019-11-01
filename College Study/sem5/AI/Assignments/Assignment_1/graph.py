@@ -29,6 +29,7 @@ class Node:
         self.data = node_data
         self.edges = list()
         self.parent = None  # will be updated in real time by the algorithm
+        self.cumalative_distance = 0
 
     def add_edge(self, node, distance):
         if not isinstance(node, Node):

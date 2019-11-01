@@ -1,0 +1,48 @@
+Problem 1:
+
+BFS:
+
+        Starting from Shimla . Going till Bangalore. Using BFS Algorithm. 
+        This can be configured in main.py -> problem1 method
+
+        Action Sequence: 
+
+        shimla --> lucknow --> raipur --> hyderabad --> bangalore
+
+        Total cost 2715.0
+        Took 23 iterations to react goal
+
+
+DFS:
+        Starting from Shimla . Going till Bangalore. Using DFS Algorithm. 
+        This can be configured in main.py -> problem1 method
+
+        Action Sequence: 
+
+        shimla --> chandigarh --> jaipur --> bhopal --> raipur --> bhubaneswar --> amaravati --> bangalore
+
+        Total cost 3598.0
+        Took 21 iterations to react goal
+
+GBFS:
+        Starting from Shimla . Going till Bangalore. Using GBFS Algorithm. 
+        This can be configured in main.py -> problem1 method
+
+        Action Sequence: 
+
+        shimla --> lucknow --> raipur --> hyderabad --> bangalore
+
+        Total cost 2715.0
+        Took 5 iterations to react goal
+
+ASTAR:
+ 
+        Starting from Shimla . Going till Bangalore. Using ASTAR Algorithm. 
+        This can be configured in main.py -> problem1 method
+
+        Action Sequence: 
+
+        shimla --> chandigarh --> jaipur --> gandhinagar --> mumbai --> bangalore
+
+        Total cost 2700.0
+        Took 20 iterations to react goal

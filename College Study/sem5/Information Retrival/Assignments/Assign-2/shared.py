@@ -1,0 +1,2 @@
+STOP_WORDS = set()
+PARSED_WORDS = set()

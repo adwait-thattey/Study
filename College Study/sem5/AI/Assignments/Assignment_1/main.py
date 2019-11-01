@@ -26,12 +26,10 @@ def print_help_docs():
 
 
 def problem1():
-    source = "Jaipur"
+    source = "Shimla"
     dest = "Bangalore"
     algorithm = "astar"
 
-    print(
-        f"Starting from {source.title()} . Going till {dest.title()}. Using {algorithm.upper()} Algorithm. \n This can be configured in main.py -> problem1 method")
     utils.build_problem1_graph()
     utils.build_problem1_heuristics(dest)
 
@@ -57,6 +55,11 @@ def problem1():
     # expands all the children of the node. ndp stands for node_distance_pair
 
     # perform the actual search. Returns action sequence and iteration count
+
+
+    print(
+        f"Starting from {source.title()} . Going till {dest.title()}. Using {algorithm.upper()} Algorithm. \n This can be configured in main.py -> problem1 method")
+
     action_sequence, iter_count = search.graph_search(source_node, goal_test, expander_function,
                                                       algorithm)
 
@@ -65,6 +68,7 @@ def problem1():
         print(f"Took {iter_count} iterations but could not reach")
     else:
         utils.print_action_sequence(action_sequence)
+        print(f"Total cost {action_sequence[-1].cumalative_distance}")
         print(f"Took {iter_count} iterations to react goal ")
 
 
@@ -111,14 +115,14 @@ def problem2():
         print("No path found")
         print(f"Took {iter_count} iterations but couldn't reach")
     else:
-        print(f"Took {iter_count} iterations to find goal ")
         print("Action Sequence: \n\n")
         ix = 0
         for node in action_sequence:
             print(f"Action {ix} :")
             ix += 1
             utils.print_puzzle_configuration(node.data)
-
+        print(f"Took {iter_count} iterations to find goal ")
+        print(f"Total cost {action_sequence[-1].cumalative_distance}")
 
 if __name__ == "__main__":
     opening_question = '''
