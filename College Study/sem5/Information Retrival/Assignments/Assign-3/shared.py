@@ -1,0 +1,7 @@
+DOCUMENT_ID_MAP = dict()
+STOP_WORDS = set()
+INDEX_VECTORS = dict()
+CONTEXT_VECTORS = dict()
+CONTEXT_VECTORS_LENGTH= dict()
+COSINES = dict()
+SIMILAR_TERMS = dict()
