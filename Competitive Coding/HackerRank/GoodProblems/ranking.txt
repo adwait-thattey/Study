@@ -1,4 +1,0 @@
-
-DS - Largest Rectangle
-DS - Game of 2 stack
-DS - Dynamic Array
