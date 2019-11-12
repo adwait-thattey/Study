@@ -8,10 +8,10 @@ import shared
 
 
 def gen_seed_for_term(term):
-    sum = 0
-    for ix in range(len(term)):
-        asc_val = ord(term[ix])
-        sum += (ix + 1) * asc_val
+    # sum = 0
+    # for ix in range(len(term)):
+    #     asc_val = ord(term[ix])
+    #     sum += (ix + 1) * asc_val
 
     return int(id(term))
 
