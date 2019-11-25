@@ -1,0 +1,163 @@
+All vectors accumulated
+
+Normalizing...done
+Calculating Cosines...term:  oromis... done
+term:  finished... done
+term:  teaching... done
+term:  shift... done
+term:  objects... done
+term:  elf... done
+term:  asked... done
+term:  since... done
+term:  declined... done
+term:  lord... done
+term:  fiolr... done
+term:  offer... done
+term:  tamerlein... done
+term:  saphira... done
+term:  stay... done
+term:  ellesmera... done
+term:  much... done
+term:  longer... done
+term:  know... done
+term:  master... done
+term:  replied... done
+term:  eragon... done
+term:  something... done
+term:  wish... done
+term:  try... done
+term:  menoa... done
+term:  tree... done
+term:  succeed... done
+term:  suppose... done
+term:  choice... done
+term:  depart... done
+term:  varden... done
+term:  empty... done
+term:  handed... done
+term:  nodded... done
+term:  leave... done
+term:  return... done
+term:  one... done
+term:  last... done
+term:  time... done
+term:  work... done
+term:  must... done
+term:  besides... done
+term:  better... done
+term:  idea... done
+term:  like... done
+term:  might... done
+term:  react... done
+term:  remember... done
+term:  linnea... done
+term:  sang... done
+term:  killed... done
+term:  young... done
+term:  man... done
+term:  betrayed... done
+term:  affections... done
+term:  resort... done
+term:  violence... done
+term:  wo... done
+term:  dare... done
+term:  protect... done
+term:  faint... done
+term:  whisper... done
+term:  wind... done
+term:  alighted... done
+term:  upon... done
+term:  knuckle... done
+term:  root... done
+term:  several... done
+term:  hundred... done
+term:  feet... done
+term:  base... done
+term:  squirrels... done
+term:  enormous... done
+term:  pine... done
+done
+Finding Similar terms...done
+
+Displaying similar terms for 75
+
+oromis  :  ['oromis', 'brom', 'jeod', 'thank', 'nasuada', 'yes', 'orik', 'murtagh', 'arya', 'angela']
+finished  :  ['finished', 'said', 'nodded', 'replied', 'asked', 'frowned', 'saw', 'smiled', 'paused', 'cried']
+teaching  :  ['teaching', 'youhow', 'pups', 'fancy', 'lock', 'finish', 'memorizing', 'oval', 'patted', 'pestering']
+shift  :  ['shift', 'vowel', 'hear', 'see', 'whereinae', 'easily', 'discern', 'tell', 'withstand', 'stop']
+objects  :  ['objects', 'ablaze', 'leaching', 'recognizable', 'reflected', 'strike', 'bathe', 'believe', 'gave', 'move']
+elf  :  ['elf', 'arya', 'saphira', 'nasuada', 'orik', 'roran', 'rhunon', 'dwarf', 'eragon', 'oromis']
+asked  :  ['asked', 'watched', 'stared', 'said', 'protested', 'noticed', 'cried', 'saw', 'realized', 'thanked']
+since  :  ['since', 'deeper', 'spent', 'survived', 'gracefully', 'refers', 'last', 'prosperity', 'present', 'seen']
+declined  :  ['declined', 'fiolr', 'garrowsson', 'stronghammer', 'stroked', 'warmed', 'katrina', 'drenched', 'noonday', 'halted']
+lord  :  ['lord', 'fiolr', 'stroked', 'explaining', 'know', 'conditions', 'dathedr', 'declined', 'risthart', 'well']
+fiolr  :  ['fiolr', 'risthart', 'dathedr', 'jealous', 'tarrant', 'initiated', 'declined', 'conditions', 'lord', 'rustic']
+offer  :  ['offer', 'accept', 'send', 'prefer', 'require', 'allow', 'die', 'betray', 'think', 'need']
+tamerlein  :  ['tamerlein', 'naudra', 'notched', 'arvindr', 'flinging', 'bringer', 'blazing', 'viciously', 'thy', 'spin']
+saphira  :  ['saphira', 'arya', 'softly', 'orik', 'brom', 'murtagh', 'oromis', 'nasuada', 'frowning', 'yes']
+stay  :  ['stay', 'run', 'fly', 'get', 'slipped', 'leave', 'know', 'still', 'take', 'keep']
+ellesmera  :  ['ellesmera', 'shadeslayer', 'asked', 'reached', 'tried', 'realized', 'knew', 'surprised', 'protested', 'finiarel']
+much  :  ['much', 'seemed', 'nothing', 'lasted', 'cared', 'exactly', 'protected', 'also', 'first', 'could']
+longer  :  ['longer', 'less', 'easier', 'grief', 'damage', 'strife', 'garnered', 'hardship', 'older', 'traffic']
+know  :  ['know', 'understand', 'yes', 'saphira', 'brom', 'think', 'arya', 'please', 'well', 'oromis']
+master  :  ['master', 'yes', 'thank', 'ah', 'brom', 'oh', 'softly', 'oromis', 'arya', 'sorry']
+replied  :  ['replied', 'said', 'nodded', 'asked', 'frowned', 'exclaimed', 'paused', 'saw', 'watched', 'smiled']
+eragon  :  ['eragon', 'roran', 'brom', 'nasuada', 'jeod', 'orik', 'arya', 'oromis', 'murtagh', 'saphira']
+something  :  ['something', 'nothing', 'anything', 'anyone', 'everyone', 'someone', 'everything', 'one', 'look', 'know']
+wish  :  ['wish', 'tell', 'think', 'hear', 'see', 'imagine', 'help', 'stop', 'easily', 'react']
+try  :  ['try', 'say', 'think', 'wait', 'stop', 'go', 'ask', 'mean', 'find', 'tell']
+menoa  :  ['menoa', 'yew', 'fir', 'trunks', 'willow', 'fallen', 'house', 'trunk', 'juniper', 'nearby']
+tree  :  ['tree', 'random', 'scion', 'valtharos', 'behold', 'created', 'weight', 'grown', 'examine', 'apprehensive']
+succeed  :  ['succeed', 'able', 'mean', 'need', 'whoever', 'enjoy', 'happen', 'think', 'allow', 'profit']
+suppose  :  ['suppose', 'hoped', 'allow', 'knew', 'know', 'stop', 'think', 'leave', 'realized', 'please']
+choice  :  ['choice', 'arya', 'greetings', 'oromis', 'thank', 'know', 'sure', 'understand', 'yes', 'brom']
+depart  :  ['depart', 'flew', 'egg', 'soared', 'brightscales', 'landed', 'launched', 'dove', 'roared', 'glided']
+varden  :  ['varden', 'think', 'react', 'say', 'leave', 'doubt', 'galbatorix', 'want', 'still', 'lose']
+empty  :  ['empty', 'removed', 'land', 'except', 'surveyed', 'handed', 'brought', 'chairs', 'went', 'bowed']
+handed  :  ['handed', 'grabbed', 'saw', 'nodded', 'asked', 'exclaimed', 'thought', 'frowned', 'said', 'wondered']
+nodded  :  ['nodded', 'frowned', 'saw', 'wondered', 'hesitated', 'exclaimed', 'watched', 'thought', 'said', 'stared']
+leave  :  ['leave', 'think', 'know', 'come', 'doubt', 'allow', 'ask', 'want', 'die', 'give']
+return  :  ['return', 'respond', 'see', 'tell', 'ask', 'leave', 'think', 'protect', 'keep', 'help']
+one  :  ['one', 'person', 'think', 'right', 'magician', 'nothing', 'ask', 'stop', 'know', 'leave']
+last  :  ['last', 'first', 'every', 'day', 'another', 'little', 'comes', 'good', 'prepare', 'thing']
+time  :  ['time', 'day', 'moment', 'opportunity', 'met', 'stroke', 'strike', 'week', 'beheld', 'place']
+work  :  ['work', 'know', 'die', 'think', 'well', 'require', 'leave', 'agree', 'hoped', 'believe']
+must  :  ['must', 'would', 'shall', 'well', 'wo', 'may', 'question', 'could', 'might', 'cannot']
+besides  :  ['besides', 'perhaps', 'leave', 'trust', 'expect', 'knows', 'though', 'know', 'doubt', 'say']
+better  :  ['better', 'worse', 'want', 'guilty', 'like', 'get', 'never', 'good', 'could', 'keep']
+idea  :  ['idea', 'conscience', 'reason', 'fighters', 'job', 'naturedly', 'bowshot', 'fortune', 'manners', 'likeness']
+like  :  ['like', 'require', 'give', 'allow', 'rather', 'betray', 'prefer', 'say', 'want', 'take']
+might  :  ['might', 'would', 'may', 'done', 'acquainted', 'could', 'know', 'must', 'cannot', 'able']
+react  :  ['react', 'see', 'think', 'hear', 'respond', 'stop', 'tell', 'bring', 'imagine', 'hoped']
+remember  :  ['remember', 'tell', 'think', 'see', 'hear', 'ask', 'imagine', 'stop', 'find', 'discern']
+linnea  :  ['linnea', 'overreacted', 'sang', 'lords', 'choir', 'human', 'woman', 'dumbstruck', 'maids', 'elf']
+sang  :  ['sang', 'choir', 'linnea', 'elda', 'sensed', 'glumra', 'estimated', 'also', 'capital', 'returned']
+killed  :  ['killed', 'kill', 'defeated', 'allow', 'fight', 'destroyed', 'think', 'expect', 'give', 'dead']
+young  :  ['young', 'old', 'bald', 'honest', 'jack', 'lone', 'downed', 'honorable', 'fidgeted', 'burly']
+man  :  ['man', 'friend', 'year', 'woman', 'worrywart', 'crotchety', 'stubborn', 'ways', 'wily', 'tomcat']
+betrayed  :  ['betrayed', 'let', 'overtake', 'joining', 'join', 'help', 'killed', 'terrorizing', 'mortals', 'helping']
+affections  :  ['affections', 'ululation', 'obstacle', 'swig', 'subject', 'strutted', 'shamed', 'squall', 'person', 'vowel']
+resort  :  ['resort', 'promise', 'imagine', 'break', 'eat', 'confess', 'understand', 'learn', 'see', 'soldier']
+violence  :  ['violence', 'habitual', 'unprovoked', 'hmm', 'knew', 'hoped', 'soon', 'enjoy', 'taken', 'wondered']
+wo  :  ['wo', 'us', 'would', 'go', 'must', 'cannot', 'shall', 'please', 'going', 'might']
+dare  :  ['dare', 'prefer', 'require', 'betray', 'rather', 'allow', 'hatch', 'normally', 'otherwise', 'indicate']
+protect  :  ['protect', 'give', 'help', 'destroy', 'expect', 'allow', 'save', 'trust', 'catch', 'kill']
+faint  :  ['faint', 'wry', 'wan', 'appeared', 'grim', 'danced', 'ruddy', 'sad', 'broad', 'graced']
+whisper  :  ['whisper', 'voice', 'growl', 'glaedr', 'sound', 'humming', 'shouts', 'grunts', 'mesmerizing', 'yes']
+wind  :  ['wind', 'blustery', 'gust', 'howled', 'blotting', 'scoured', 'gentle', 'rushed', 'caused', 'ruffled']
+alighted  :  ['alighted', 'rely', 'based', 'insist', 'relied', 'chanced', 'bestowed', 'concentrate', 'dwell', 'advancing']
+upon  :  ['upon', 'took', 'said', 'toward', 'found', 'made', 'beside', 'rubbed', 'blinked', 'saw']
+knuckle  :  ['knuckle', 'bell', 'grotto', 'swooping', 'looks', 'glittered', 'snakes', 'beetle', 'smelled', 'giant']
+root  :  ['root', 'whirled', 'spun', 'chanted', 'cellar', 'protruded', 'clustered', 'straps', 'gathered', 'rag']
+several  :  ['several', 'ten', 'elapsed', 'fifteen', 'five', 'eight', 'three', 'twenty', 'thirty', 'passed']
+hundred  :  ['hundred', 'thousand', 'twenty', 'seventy', 'thirty', 'fifty', 'eight', 'sixty', 'forty', 'eighty']
+feet  :  ['feet', 'yards', 'crowns', 'miles', 'foot', 'years', 'draughts', 'swordsmen', 'inches', 'paces']
+base  :  ['base', 'peak', 'angled', 'dove', 'gestured', 'sprinted', 'motioned', 'center', 'top', 'west']
+squirrels  :  ['squirrels', 'scampered', 'chattered', 'cape', 'cherry', 'butterflies', 'clover', 'sable', 'wine', 'squirrel']
+enormous  :  ['enormous', 'surprising', 'influence', 'wields', 'guaranteed', 'load', 'total', 'pitiful', 'vast', 'amount']
+pine  :  ['pine', 'knitting', 'menoa', 'perfumed', 'crushed', 'fir', 'yew', 'trunks', 'willow', 'sap']
+
+Total unique terms (excluding stopwords):  18783
+Total documents:  928
+Total Memory Used:  737.38671875 MBs
+Total time taken:  179.40377185500256  seconds 

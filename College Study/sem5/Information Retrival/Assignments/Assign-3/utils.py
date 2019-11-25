@@ -40,13 +40,23 @@ def check_special_characters(word):
 
 def ret_document_dir_path():
     cur_dirpath = os.getcwd()
-    directory = os.path.join(cur_dirpath, constants.documents_directory_name)
+    directory = os.path.join(cur_dirpath, constants.original_documents_directory_path)
 
     return directory
 
 
-def map_document_ids():
-    directory = ret_document_dir_path()
+def ret_processed_document_dir_path():
+    cur_dirpath = os.getcwd()
+    directory = os.path.join(cur_dirpath, constants.parsed_documents_directory_path)
+
+    return directory
+
+
+def map_document_ids(type="original"):
+    if type.lower() == "processed":
+        directory = ret_processed_document_dir_path()
+    else:
+        directory = ret_document_dir_path()
 
     document_id_map = dict()
 
@@ -54,12 +64,10 @@ def map_document_ids():
 
     for filename in os.listdir(directory):
         if filename.endswith(".txt"):
-            document_id_map[idx] = filename
+            shared.DOCUMENT_ID_MAP[idx] = filename
             idx += 1
         else:
             continue
-
-    return document_id_map
 
 
 def pretty_print_dict(dict_instance):
@@ -89,4 +97,3 @@ def gen_stopwords():
         shared.STOP_WORDS = stop_words
     except LookupError:
         nltk.download('stopwords')
-

@@ -5,6 +5,9 @@ import random
 import constants
 import utils
 import shared
+from numba import jit, cuda, njit
+import numpy as np
+from timeit import default_timer as timer
 
 
 def gen_seed_for_term(term):
@@ -21,7 +24,11 @@ def make_index_vector(term):
         return
 
     shared.INDEX_VECTORS[term] = [0] * constants.VECTOR_SIZE
-    to_be_replaced = math.ceil(0.05 * constants.VECTOR_SIZE)
+    if term == "**" or term in shared.STOP_WORDS:
+        # keep iv of stop words as all 0s
+        return
+
+    to_be_replaced = math.ceil(constants.VECTOR_REPLACE_RATIO * constants.VECTOR_SIZE)
     random.seed(gen_seed_for_term(term))
 
     for _ in range(to_be_replaced):
@@ -31,24 +38,9 @@ def make_index_vector(term):
 
 
 def get_normalized_line(line):
-    line = line.strip('\n').strip().strip('.')
+    line = line.strip('\n').strip().strip('.').strip()
     line = line.split(' ')
-    for ix in range(len(line)):
-        split_words = line[ix].split('-')
-        if split_words:
-            line.pop(ix)
-            for s in split_words[::-1]:
-                line.insert(ix, s)
-            ix -= 1
-            continue
-        line[ix] = utils.strip_useless_characters(line[ix])
-
-        if line[ix][-2:] == "'s":
-            line[ix] = line[ix][:-2]
-            # line.pop(ix)
-            # print(line)
-        line[ix] = line[ix].lower()
-    line = [w for w in line if w not in shared.STOP_WORDS]
+    # line = [w for w in line if w not in shared.STOP_WORDS]
     return line
 
 
@@ -56,10 +48,13 @@ def make_initial_context_vector_for_line(line_list):
     for term in line_list:
         if term not in shared.CONTEXT_VECTORS:
             make_index_vector(term)
-            shared.CONTEXT_VECTORS[term] = shared.INDEX_VECTORS[term].copy()
+            if term not in shared.STOP_WORDS and term != "**":
+                shared.CONTEXT_VECTORS[term] = shared.INDEX_VECTORS[term].copy()
 
 
 def add_iv_to_cv(term1, term2, weight):
+    if term1 in shared.STOP_WORDS or term1 == "**":
+        return
     # adds iv of term2 to cv of term1 with weight
     for ix in range(len(shared.CONTEXT_VECTORS[term1])):
         shared.CONTEXT_VECTORS[term1][ix] += weight * shared.INDEX_VECTORS[term2][ix]
@@ -89,7 +84,7 @@ def process_document(doc):
     if not shared.STOP_WORDS:
         utils.gen_stopwords()
 
-    f = open(os.path.join(constants.documents_directory_name, doc), mode="r")
+    f = open(os.path.join(constants.parsed_documents_directory_path, doc), mode="r")
     lines = f.readlines()
     f.close()
 
@@ -107,24 +102,43 @@ def calc_length_of_cv(term):
     shared.CONTEXT_VECTORS_LENGTH[term] = length
 
 
+def normalize_term(term):
+    if term not in shared.CONTEXT_VECTORS_LENGTH:
+        calc_length_of_cv(term)
+
+    length = shared.CONTEXT_VECTORS_LENGTH[term]
+    shared.CONTEXT_VECTORS[term] = [val / length for val in shared.CONTEXT_VECTORS[term]]
+
+
+def normalize_all_terms():
+    for term in shared.CONTEXT_VECTORS:
+        normalize_term(term)
+
+
 def calc_length_of_all_terms():
     for term in shared.CONTEXT_VECTORS:
         calc_length_of_cv(term)
 
 
-def calc_cosine(term1, term2):
-    term1_cv = shared.CONTEXT_VECTORS[term1]
-    term2_cv = shared.CONTEXT_VECTORS[term2]
+# @jit(target="cuda")
+def calc_cosine(term1, term2, recalc=False):
+    if not recalc:
+        if term1 in shared.COSINES and term2 in shared.COSINES[term1]:
+            # already done. Dont calculate again
+            return
+
     term1_len = shared.CONTEXT_VECTORS_LENGTH.get(term1, None)
     term2_len = shared.CONTEXT_VECTORS_LENGTH.get(term2, None)
 
     if not (term1_len and term2_len):
-        raise ValueError(f"{term1} or {term2} lengths dont exist in dict")
+        raise ValueError(f"{term1} or {term2} lengths dont exist in dict. Term might not be normalized")
+    term1_cv = shared.CONTEXT_VECTORS[term1]
+    term2_cv = shared.CONTEXT_VECTORS[term2]
 
     dot_product = 0
     for ix in range(len(term1_cv)): dot_product += term1_cv[ix] * term2_cv[ix]
 
-    cosine = dot_product / (term1_len * term2_len)
+    cosine = dot_product
 
     if term1 not in shared.COSINES:
         shared.COSINES[term1] = dict()
@@ -146,11 +160,13 @@ def calc_all_cosines_for_term(term):
             calc_cosine(term, term2)
 
 
-def calc_cosines_for_all():
-    term_set = list(shared.CONTEXT_VECTORS.keys())
-    for term1 in term_set:
-        calc_all_cosines_for_term(term1)
+def calc_cosines_for_all(term_list=None):
+    # if not term_list: term_list = list(shared.CONTEXT_VECTORS.keys())
 
+    for term1 in term_list:
+        print("term: ", term1, end="... ")
+        calc_all_cosines_for_term(term1)
+        print("done")
 
 def gen_highest_similar_terms(term, limit):
     # print("calc similar", term)
@@ -165,29 +181,61 @@ def gen_highest_similar_terms(term, limit):
     shared.SIMILAR_TERMS[term] = all_terms[:limit]
 
 
+def gen_all_similar_terms(term_list, similar_limit=10):
+    """
+
+    :param term_list: No of terms to calculate for
+    :param similar_limit: No of similar terms to find
+    :return:
+    """
+    # if not term_list: term_list = list(shared.CONTEXT_VECTORS.keys())
+    for term in term_list:
+        gen_highest_similar_terms(term, similar_limit)
+
+
 if __name__ == "__main__":
-    doc_id_map = utils.map_document_ids()
+    start = timer()
+    no_docs = 1000  # if no_docs is more than total, no docs, only total will be used
+    no_similar_terms = 75
+    utils.map_document_ids(type="processed")
     DOC_DIR_PATH = utils.ret_document_dir_path()
-    raw_names = utils.get_raw_names(doc_id_map)
-    # print(raw_names)
+    raw_names = utils.get_raw_names(shared.DOCUMENT_ID_MAP)
+
     # print(raw_names[0][0], raw_names[0][1])
-    for d in raw_names:
+    print("Accumulating Vectors...")
+    ix = 1
+    for d in raw_names[:no_docs]:
+        print(str(ix) + ". file: " + d[0] + d[1] + "...", end="")
         process_document(d[0] + d[1])
+        print("done")
+        ix += 1
 
-    # utils.pretty_print_dict(shared.INDEX_VECTORS)
-    # print("----------")
+    print("All vectors accumulated")
+    print()
+    print("Normalizing...", end="")
+    normalize_all_terms()
+    print("done")
+    # term_list = random.choices(population=list(shared.CONTEXT_VECTORS.keys()), k=no_similar_terms)
+    term_list = list(shared.CONTEXT_VECTORS.keys())[:no_similar_terms]
+    print("Calculating Cosines...", end="")
+    calc_cosines_for_all(term_list)
+    print("done")
+    print("Finding Similar terms...", end="")
+    gen_all_similar_terms(term_list)
+    print("done")
+    print()
+    print("Displaying similar terms for " + str(no_similar_terms))
+    print()
     # utils.pretty_print_dict(shared.CONTEXT_VECTORS)
-    calc_length_of_all_terms()
-    # for key1 in list(shared.INDEX_VECTORS.keys()):
-    #     for key2 in list(shared.INDEX_VECTORS.keys()):
-    #         if key1 != key2 and shared.INDEX_VECTORS[key1] == shared.INDEX_VECTORS[key2]:
-    #             print("duplicate_found", key1, key2)
-    #             print("seed1", gen_seed_for_term(key1))
-    #             print("seed2", gen_seed_for_term(key2))
-
-    for term in list(shared.CONTEXT_VECTORS.keys())[:10]:
-        calc_all_cosines_for_term(term)
-        gen_highest_similar_terms(term, constants.SIMILAR_TERMS_LIMIT)
-
-    print(len(shared.INDEX_VECTORS))
     utils.pretty_print_dict(shared.SIMILAR_TERMS)
+
+    print()
+    print("Total unique terms (excluding stopwords): ", len(shared.CONTEXT_VECTORS))
+    print("Total documents: ", len(raw_names[:no_docs]))
+
+    import os
+    import psutil
+
+    process = psutil.Process(os.getpid())
+    print("Total Memory Used: ", process.memory_info().rss / (1024 ** 2), "MBs")  # in bytes
+    print("Total time taken: ", timer() - start, " seconds")
