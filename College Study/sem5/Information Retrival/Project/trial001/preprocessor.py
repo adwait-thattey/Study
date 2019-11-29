@@ -5,10 +5,10 @@ Then removes special characters and everything within brackets
 """
 import os
 
-import utils
 import shared
 import constants
 from unidecode import unidecode
+from string import punctuation
 
 DOC_DIR_PATH = ""
 
@@ -64,9 +64,24 @@ def process_word(word: str):
     return word.lower()
 
 
-def process_line(line):
-    line = unidecode(line)
-    line = line.strip().strip('.').strip()
+def replace_special_meaning_symbols(line):
+    if not constants.punctuations:
+        constants.punctuations = set(punctuation)
+
+    replace_dict = {
+        ',': '\n',
+        "'s": " is",
+        "'m": " am",
+        "can't": "can not",
+        "n't": " not",
+        "'ll": " will"
+    }
+
+    def replace_all(text, dic):
+        for i, j in dic.iteritems():
+            text = text.replace(i, j)
+        return text
+
     line = line.replace(',', '\n')
     line = line.replace(';', '\n')
 
@@ -82,6 +97,13 @@ def process_line(line):
     # convert " 'll" to " will "
     line = line.replace("'ll", " will")
 
+    return line
+
+
+def process_line(line):
+    line = unidecode(line)
+    line = line.strip().strip('.').strip()
+    line = replace_special_meaning_symbols(line)
     line = "".join([c if c not in constants.replaceable_special_characters else ' ' for c in line])
     line = line.replace("  ", " ")  # remove duplicate spaces
 
@@ -129,12 +151,6 @@ def preprocess_document(doc, ext, prepend_name=""):
 
 
 if __name__ == "__main__":
-    utils.map_document_ids()
-    raw_names = utils.get_raw_names(shared.DOCUMENT_ID_MAP)
-    print(raw_names)
 
-    for rn in raw_names:
-        print(f"Processsing {rn[0]}{rn[1]} ...", end=" ")
-        preprocess_document(rn[0], rn[1])
-        print("done")
+    pass
     # preprocess_document("part_3", ".txt")
