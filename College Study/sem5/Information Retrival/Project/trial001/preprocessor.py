@@ -9,6 +9,7 @@ import shared
 import constants
 from unidecode import unidecode
 from string import punctuation
+from collections import OrderedDict
 
 DOC_DIR_PATH = ""
 
@@ -59,44 +60,35 @@ def break_multiple_lines(line):
 
 
 def process_word(word: str):
-    if word.isdigit() or not word.isalnum():
-        return constants.null_word
-    return word.lower()
+    # if word.isdigit() or not word.isalnum():
+    #     return constants.null_word
+    word = word.lower()
+
+    if word in shared.STOP_WORDS:
+        return ""
+
+    return word
 
 
 def replace_special_meaning_symbols(line):
     if not constants.punctuations:
         constants.punctuations = set(punctuation)
 
-    replace_dict = {
-        ',': '\n',
-        "'s": " is",
-        "'m": " am",
-        "can't": "can not",
-        "n't": " not",
-        "'ll": " will"
-    }
+    replace_dict = OrderedDict([
+        (',', '\n'),
+        ("'s", " is"),
+        ("'m", " am"),
+        ("can't", "can not"),
+        ("n't", " not"),
+        ("'ll", " will")
+    ])
 
     def replace_all(text, dic):
-        for i, j in dic.iteritems():
+        for i, j in dic.items():
             text = text.replace(i, j)
         return text
 
-    line = line.replace(',', '\n')
-    line = line.replace(';', '\n')
-
-    # convert 's to ' is'
-    line = line.replace("'s", " is")
-    # convert 'm to " am"
-    line = line.replace("'m", " am")
-    # convert can't to " can not "
-    line = line.replace("can't", "can not")
-
-    # convert n't to " not "
-    line = line.replace("n't", " not")
-    # convert " 'll" to " will "
-    line = line.replace("'ll", " will")
-
+    line = replace_all(line, replace_dict)
     return line
 
 
@@ -104,53 +96,20 @@ def process_line(line):
     line = unidecode(line)
     line = line.strip().strip('.').strip()
     line = replace_special_meaning_symbols(line)
-    line = "".join([c if c not in constants.replaceable_special_characters else ' ' for c in line])
+    line = "".join([c if c not in constants.question_replaceable_special_characters else ' ' for c in line])
+    words = [process_word(w) for w in line.split()]
+    line = " ".join([w for w in words if w])
     line = line.replace("  ", " ")  # remove duplicate spaces
 
-    words = [process_word(w) for w in line.split()]
-
-    return " ".join(words)
+    return line
 
 
-def break_documents(lines):
-    ret_docs = list()
-    char_count = 0
-    cur_list = list()
-    for l in lines:
-        char_count += len(l)
-        cur_list.append(l)
-
-        if char_count >= constants.DOCUMENT_LENGTH_LIMIT:
-            ret_docs.append(cur_list)
-            cur_list = list()
-            char_count = 0
-
-    ret_docs.append(cur_list)
-    return ret_docs
-
-
-def preprocess_document(doc, ext, prepend_name=""):
-    # print(doc)
-
-    f = open(os.path.join(constants.original_documents_directory_path, doc + ext), mode="r")
-    lines = f.readlines()
-    f.close()
-    all_lines = list()
-    [all_lines.extend(break_multiple_lines(l)) for l in lines]
-    all_lines = [process_line(l) for l in all_lines]
-    all_lines = [l for l in all_lines if l]  # remove null lines
-
-    split_docs = break_documents(all_lines)
-    # print(split_docs)
-    idx = 1
-    for split_doc in split_docs:
-        f = open(os.path.join(constants.parsed_documents_directory_path, f"{prepend_name}{doc}_{idx}" + ext), mode="w")
-        f.write('\n'.join(split_doc))
-        f.close()
-        idx += 1
+def preprocess_question_content(content):
+    lines = break_multiple_lines(content)
+    processed_lines = [process_line(l) for l in lines]
+    return " ".join([l for l in processed_lines if l])
 
 
 if __name__ == "__main__":
-
     pass
     # preprocess_document("part_3", ".txt")
