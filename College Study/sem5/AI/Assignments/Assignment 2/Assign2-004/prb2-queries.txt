@@ -1,0 +1,8 @@
+?- reachable("braavaos", "dorne").
+   >> true
+
+?- improvedReachable("braavaos", "dorne", X).
+   >> X = ["braavaos", "gulltown", "tyrosh", "dorne"]
+      X = ["braavaos", "gulltown", "tyrosh", "volantis", "dorne"]
+      X = ["braavaos", "tyrosh", "dorne"]
+      X = ["braavaos", "tyrosh", "volantis", "dorne"]

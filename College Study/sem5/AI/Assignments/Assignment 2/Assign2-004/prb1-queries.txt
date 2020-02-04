@@ -1,0 +1,8 @@
+?- father('jon snow','eddard stark').
+    >> false
+
+?- father("rhaegar targaryen","jon snow").
+    >> true
+
+?- aunt("daenerys targaryen","jon snow").
+    >> true

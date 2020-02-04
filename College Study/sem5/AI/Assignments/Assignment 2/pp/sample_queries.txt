@@ -1,0 +1,18 @@
+// 	family tree
+q: husband("eddard stark","catelyn stark")
+o: true
+q: grandson("elia martell","lyarra stark")
+o: false
+q: brothers(X,'bran stark')
+o: X = "robb stark"
+   X = "rickon stark"
+   false
+
+// route
+q: fasterReachable("karhold", "dorne",["karhold","gulltown","tyrosh","dorne"])
+o: true
+q: reachable("karhold","dorne")
+o: true
+q: fasterReachable ( gulltown , volantis , X ) .
+o: X = [ gulltown , tyrosh , volantis ] ;
+   false
