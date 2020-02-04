@@ -3,17 +3,60 @@ import json
 
 class Index:
     def __init__(self):
-        self.term_count = dict()
-        self.length = 0
+        self._vector = dict()
+        self._magnitude = 0
+        self._is_magnitude_fresh = True
 
-    def calc_length(self):
+    def calc_magnitude(self):
         sum = 0
-        for x in self.term_count.values():
+        for x in self._vector.values():
             sum += x * x
 
         sum = sum ** 0.5
 
-        self.length = sum
+        self._magnitude = sum
+        self._is_magnitude_fresh = True
+
+    @property
+    def vector(self):
+        return self._vector
+
+    @vector.setter
+    def vector(self, values_dict):
+        if not isinstance(values_dict, dict):
+            raise AttributeError("values dict must be a dictionary")
+
+        self._vector = values_dict
+        self._is_magnitude_fresh = False
+
+    @vector.deleter
+    def vector(self):
+        self._vector.clear()
+        self._is_magnitude_fresh = False
+
+    def __len__(self):
+        return self._magnitude
+
+    @property
+    def magnitude(self):
+        if self._is_magnitude_fresh:
+            return self._magnitude
+        else:
+            raise ValueError("Magnitude is not fresh. Recalculate before calling")
+
+    @magnitude.setter
+    def magnitude(self, value):
+        raise TypeError("Magnitude can not be manually set. Call calc_magnitude method instead ")
+
+    def normalize(self):
+        if not self._is_magnitude_fresh:
+            self.calc_magnitude()
+
+        for key in self.vector:
+            self.vector[key] /= self.magnitude
+
+        self._magnitude = 1.0
+        self._is_magnitude_fresh = True
 
 
 class CodeSnippet:
@@ -140,3 +183,20 @@ class Question:
         # parse json and return object of class
         # return cls(...)
         return None
+
+
+class AnswerIndex:
+    def __init__(self, qid, index):
+        self.ques_id = qid
+        self.text = Index()
+        self.code = Index()
+        self.others = Index()
+
+
+class QuestionIndex:
+    def __init__(self, ques):
+        self.id = ques.id
+        self.text_index = Index()
+        self.code_index = Index()
+        self.others_index = Index()
+        self.answers_index = [AnswerIndex(ques.id, ix) for ix in range(len(ques.answers))]

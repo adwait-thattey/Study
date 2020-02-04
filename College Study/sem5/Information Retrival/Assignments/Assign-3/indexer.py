@@ -49,7 +49,7 @@ def make_initial_context_vector_for_line(line_list):
         if term not in shared.CONTEXT_VECTORS:
             make_index_vector(term)
             if term not in shared.STOP_WORDS and term != "**":
-                shared.CONTEXT_VECTORS[term] = shared.INDEX_VECTORS[term].copy()
+                shared.CONTEXT_VECTORS[term] = [0]*constants.VECTOR_SIZE
 
 
 def add_iv_to_cv(term1, term2, weight):
@@ -107,8 +107,10 @@ def normalize_term(term):
         calc_length_of_cv(term)
 
     length = shared.CONTEXT_VECTORS_LENGTH[term]
-    shared.CONTEXT_VECTORS[term] = [val / length for val in shared.CONTEXT_VECTORS[term]]
-
+    
+    if length > 0:
+        shared.CONTEXT_VECTORS[term] = [val / length for val in shared.CONTEXT_VECTORS[term]]
+    
 
 def normalize_all_terms():
     for term in shared.CONTEXT_VECTORS:
@@ -130,7 +132,7 @@ def calc_cosine(term1, term2, recalc=False):
     term1_len = shared.CONTEXT_VECTORS_LENGTH.get(term1, None)
     term2_len = shared.CONTEXT_VECTORS_LENGTH.get(term2, None)
 
-    if not (term1_len and term2_len):
+    if term1_len is None or term2_len is None:
         raise ValueError(f"{term1} or {term2} lengths dont exist in dict. Term might not be normalized")
     term1_cv = shared.CONTEXT_VECTORS[term1]
     term2_cv = shared.CONTEXT_VECTORS[term2]
@@ -195,7 +197,7 @@ def gen_all_similar_terms(term_list, similar_limit=10):
 
 if __name__ == "__main__":
     start = timer()
-    no_docs = 1000  # if no_docs is more than total, no docs, only total will be used
+    no_docs = 500  # if no_docs is more than total, no docs, only total will be used
     no_similar_terms = 75
     utils.map_document_ids(type="processed")
     DOC_DIR_PATH = utils.ret_document_dir_path()
@@ -215,6 +217,8 @@ if __name__ == "__main__":
     print("Normalizing...", end="")
     normalize_all_terms()
     print("done")
+    
+    #print(shared.CONTEXT_VECTORS["oromis"])
     # term_list = random.choices(population=list(shared.CONTEXT_VECTORS.keys()), k=no_similar_terms)
     term_list = list(shared.CONTEXT_VECTORS.keys())[:no_similar_terms]
     print("Calculating Cosines...", end="")
