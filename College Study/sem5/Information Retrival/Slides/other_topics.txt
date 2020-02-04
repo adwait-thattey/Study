@@ -1,0 +1,8 @@
+Other topics:
+Read from book
+
+Query Expansion
+Information Extraction
+Relevance Feedback
+Pseudo Relevance Feedback
+Web Search Basics

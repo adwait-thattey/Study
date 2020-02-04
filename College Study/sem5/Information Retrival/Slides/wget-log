@@ -1,0 +1,12 @@
+--2019-11-30 11:31:52--  https://www.2power3.com/rajendra/courses/ir2019/slides/012-M2019-IR-BasicIRModels.pdf
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving www.2power3.com (www.2power3.com)... 162.215.253.119
+Connecting to www.2power3.com (www.2power3.com)|162.215.253.119|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 517098 (505K) [application/pdf]
+Saving to: ‘012-M2019-IR-BasicIRModels.pdf’
+
+012-M2019-IR-BasicIRModels.pdf            0%[                                                                             ]       0  --.-KB/s               012-M2019-IR-BasicIRModels.pdf            1%[>                                                                            ]   8.00K  14.7KB/s               012-M2019-IR-BasicIRModels.pdf            7%[=====>                                                                       ]  40.00K  46.3KB/s               012-M2019-IR-BasicIRModels.pdf           20%[==============>                                                              ] 104.00K  88.7KB/s               012-M2019-IR-BasicIRModels.pdf           30%[======================>                                                      ] 152.00K   102KB/s               012-M2019-IR-BasicIRModels.pdf           36%[===========================>                                                 ] 184.00K   103KB/s               012-M2019-IR-BasicIRModels.pdf           77%[==========================================================>                  ] 392.00K   187KB/s               012-M2019-IR-BasicIRModels.pdf           99%[===========================================================================> ] 504.00K   214KB/s               012-M2019-IR-BasicIRModels.pdf          100%[============================================================================>] 504.98K   214KB/s    in 2.4s    
+
+2019-11-30 11:31:56 (214 KB/s) - ‘012-M2019-IR-BasicIRModels.pdf’ saved [517098/517098]
+
