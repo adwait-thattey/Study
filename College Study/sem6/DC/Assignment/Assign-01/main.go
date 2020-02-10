@@ -36,6 +36,17 @@ type Algorithm interface {
 	runAlgo()
 }
 
+/**
+***********************************************
+**** Sorting Algorithms Begin *****************
+***********************************************
+**/
+
+/**
+***********************************************
+**** Odd Even Transposition Sort **************
+***********************************************
+**/
 type OddEvenTranspositionSort struct {
 	nodes []Processor
 }
@@ -107,7 +118,7 @@ func (algoPtr *OddEvenTranspositionSort) runAlgo() {
 				algo.runNode(&algo.nodes[i])
 				algo.nodes[i].round += 1
 			}
-			// node cun complete. Send final message to observer
+			// node run complete. Send final message to observer
 			node := algo.nodes[i]
 			// fmt.Println("Sending final to observer", node.round)
 			node.channels["observer"] <- Message{pid: node.id, round: node.round, msg: "Final Output", val: node.data["val"]}
@@ -119,6 +130,12 @@ func (algoPtr *OddEvenTranspositionSort) runAlgo() {
 func (algoPtr *OddEvenTranspositionSort) getMaxRounds() int {
 	return len((*algoPtr).nodes)
 }
+
+/**
+***********************************************
+**** Sasaki N-1 Round Sort ********************
+***********************************************
+**/
 
 type SasakiSort struct {
 	nodes []Processor
@@ -320,6 +337,184 @@ func (algoPtr *SasakiSort) runAlgo() {
 	}
 }
 
+/**
+***********************************************
+**** Median Based N-1 Round Sort **************
+***********************************************
+**/
+
+type MedianSort struct {
+	nodes []Processor
+}
+
+func (algoPtr *MedianSort) getMaxRounds() int {
+	algo := *algoPtr
+	return len(algo.nodes) - 1
+}
+
+func (algoPtr *MedianSort) buildNodes(nodes []Processor) {
+	(*algoPtr).nodes = nodes
+	for i, _ := range nodes {
+		nodes[i].data["mval"] = (i + 1) % 3
+	}
+}
+
+func (algoPtr *MedianSort) runNode(nodePtr *Processor) {
+	/*
+		if media_val is 0, send to right
+		if median_val is 2, send to left
+		if median_val is 1, receive from both ends, compute and send back
+	*/
+
+	node := *nodePtr
+
+	switch node.data["mval"] {
+	case 0:
+		{
+			if rchan, ok := node.channels["right"]; ok {
+				// send to right
+				rchan <- Message{
+					pid:   node.id,
+					round: node.round,
+					msg:   "Sending to right",
+					val:   node.data["val"],
+				}
+
+				// receive from right
+				rmsg := <-rchan
+				node.data["val"], _ = rmsg.val.(int)
+			}
+		}
+
+	case 2:
+		{
+			if lchan, ok := node.channels["left"]; ok {
+				// send to left
+				lchan <- Message{
+					pid:   node.id,
+					round: node.round,
+					msg:   "Sending to left",
+					val:   node.data["val"],
+				}
+
+				// receive from left
+				lmsg := <-lchan
+				node.data["val"], _ = lmsg.val.(int)
+			}
+		}
+
+	case 1:
+		{
+			lchan, lok := node.channels["left"]
+			rchan, rok := node.channels["right"]
+			var lval, rval int
+
+			// receive from left
+			if lok {
+				lmsg := <-lchan
+				lval = lmsg.val.(int)
+			}
+			if rok {
+				rmsg := <-rchan
+				rval = rmsg.val.(int)
+			}
+
+			if lok && rok {
+				// both channels present. Sort 3 numbers
+				a := lval
+				b := node.data["val"]
+				c := rval
+
+				if a > b {
+					a, b = b, a
+				}
+
+				if b > c {
+					b, c = c, b
+				}
+
+				if a > b {
+					a, b = b, a
+				}
+
+				lval = a
+				node.data["val"] = b
+				rval = c
+			} else if lok {
+				// only left channel present. Sort 2 numbers
+				if lval > node.data["val"] {
+					lval, node.data["val"] = node.data["val"], lval
+				}
+			} else if rok {
+				// only right channel present. Sort 2 numbers
+				if node.data["val"] > rval {
+					node.data["val"], rval = rval, node.data["val"]
+				}
+			}
+
+			if lok {
+				// send to left
+				lchan <- Message{
+					pid:   node.id,
+					round: node.round,
+					msg:   "Sending Least",
+					val:   lval,
+				}
+			}
+
+			if rok {
+				// send to left
+				rchan <- Message{
+					pid:   node.id,
+					round: node.round,
+					msg:   "Sending Least",
+					val:   rval,
+				}
+			}
+
+		}
+
+	}
+
+	node.channels["observer"] <- Message{
+		pid:   node.id,
+		round: node.round,
+		msg:   "Sending Val",
+		val:   node.data["val"],
+	}
+
+}
+
+func (algoPtr *MedianSort) runAlgo() {
+	fmt.Printf("[Algo] Starting Median n-1 round  Sort\n ` refers to the marked element\n\n")
+	algo := *algoPtr
+
+	for i := 0; i < len(algo.nodes); i++ {
+		go func(i int) {
+			// fmt.Printf("[Algo] Starting Node %d \n", algo.nodes[i].id)
+			for j := 0; j < algo.getMaxRounds(); j++ {
+				algo.runNode(&algo.nodes[i])
+				algo.nodes[i].round += 1
+				algo.nodes[i].data["mval"] += 1
+				algo.nodes[i].data["mval"] %= 3
+
+			}
+			// node run complete. Send final message to observer
+			node := algo.nodes[i]
+			// fmt.Println("Sending final to observer", node.round)
+			node.channels["observer"] <- Message{pid: node.id, round: node.round, msg: "Final Output", val: node.data["val"]}
+
+		}(i)
+
+	}
+}
+
+/**
+***********************************************
+**** Sorting Algorithms End *******************
+***********************************************
+**/
+
 func central_observer(algo Algorithm, observer_channel chan Message, n int) {
 	max_rounds := algo.getMaxRounds()
 	rounds := make([]map[int]interface{}, 0, max_rounds+1) // max_rounds +1 to hold the final state
@@ -345,7 +540,7 @@ func central_observer(algo Algorithm, observer_channel chan Message, n int) {
 		} else {
 			fmt.Printf("-----\n[Observer] Algo run complete. Final Output:\n")
 		}
-		fmt.Printf("[Observer] %v\n\n", round_printer)
+		// fmt.Printf("[Observer] %v\n\n", round_printer)
 	}
 
 }
@@ -452,7 +647,7 @@ func parseArgs() (Algorithm, []int) {
 		algo = &SasakiSort{}
 	} else if al_type == 3 {
 		// median sort
-		algo = &OddEvenTranspositionSort{}
+		algo = &MedianSort{}
 	} else {
 		fmt.Println("Invalid Input for algo type")
 		os.Exit(-1)
