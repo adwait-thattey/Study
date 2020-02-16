@@ -540,7 +540,7 @@ func central_observer(algo Algorithm, observer_channel chan Message, n int) {
 		} else {
 			fmt.Printf("-----\n[Observer] Algo run complete. Final Output:\n")
 		}
-		// fmt.Printf("[Observer] %v\n\n", round_printer)
+		fmt.Printf("[Observer] %v\n\n", round_printer)
 	}
 
 }
