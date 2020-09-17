@@ -22,6 +22,7 @@ alias_dict=(
     ["gst"]="git status"
     ["gcl"]="git clone"
     ["gcm"]="git commit"
+    ["gcma"]="git commit --amend"
     ["gcmm"]="git commit -m"
     ["gd"]="git diff"
     ["gl"]="git log"

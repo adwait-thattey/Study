@@ -103,6 +103,17 @@ drcl() {
 # params=()
 #     for i; do params+="${i@Q} "; done;
 
+gcma() {
+    
+    echo "git commit --amend" "$@"
+    git commit --amend "$@"
+}
+
+
+
+# params=()
+#     for i; do params+="${i@Q} "; done;
+
 gp() {
     
     echo "git push" "$@"

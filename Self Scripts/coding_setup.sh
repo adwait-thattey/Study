@@ -1,11 +1,11 @@
 print_help() {
     echo "There are 2 available commands 'gp' and 'gpp' "
     echo "Usage:"
-    echo "       gpp [code-file] [input-file]"
+    echo "       gccpp [code-file] [input-file]"
     echo "       OR"
-    echo "       gp [code-file] [input-file]"
-    echo "gpp runs faster but does not check for errors like memory leaks"
-    echo "gp runs slower but checks for all errors"
+    echo "       gccp [code-file] [input-file]"
+    echo "gccpp runs faster but does not check for errors like memory leaks"
+    echo "gccp runs slower but checks for all errors"
     echo ""
     
     echo "List of available parameters:"
@@ -96,15 +96,15 @@ postprocess_params() {
 
 set -a
 
-gpp() {
+gccpp() {
 
     filter_inp "$@"
     preprocess_params
     case ${#files[@]} in
     0) 
         if [ ${#params[@]} -eq 0 ]; then
-        echo "Usage: gpp <code_file> [input_file] [parameters]"
-        echo "Run gpp --help to get full list of params"
+        echo "Usage: gccpp <code_file> [input_file] [parameters]"
+        echo "Run gccpp --help to get full list of params"
         fi
         ;;
     1)
@@ -120,15 +120,15 @@ gpp() {
     postprocess_params
 }       
 
-gp() {
+gccp() {
 
     filter_inp "$@"
     preprocess_params
 
     case ${#files[@]} in
     0) 
-        echo "Usage: gp <code_file> [input_file] [parameters]"
-        echo "Run gp --help to get full list of params"
+        echo "Usage: gccp <code_file> [input_file] [parameters]"
+        echo "Run gccp --help to get full list of params"
         ;;
     1)
         g++ --std=c++$gppversion -Wshadow -Wall -o $out_file ${files[0]} -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && \

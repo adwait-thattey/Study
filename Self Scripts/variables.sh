@@ -39,6 +39,15 @@ else
 
 fi
 
+DRIVE_ADTHEXT4="$DRIVES_PREFIX/$USER/adthext4"
+
+if [ -d $DRIVE_ADTHEXT4 ]; then
+        GOPATH="$DRIVE_ADTHEXT4/manjaromain/go"
+else
+        echo "Drive adth-ext4 not found"
+fi
+
 DRIVE_TOSHIBA="$DRIVES_PREFIX/$USER/TOSHIBA EXT"
+
 
 set +a
