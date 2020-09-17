@@ -486,7 +486,7 @@ func (algoPtr *MedianSort) runNode(nodePtr *Processor) {
 }
 
 func (algoPtr *MedianSort) runAlgo() {
-	fmt.Printf("[Algo] Starting Median n-1 round  Sort\n ` refers to the marked element\n\n")
+	fmt.Printf("[Algo] Starting Median n-1 round  Sort\n \n")
 	algo := *algoPtr
 
 	for i := 0; i < len(algo.nodes); i++ {

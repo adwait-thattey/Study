@@ -1,0 +1,5 @@
+Mitigation strategies:
+    - Application Whitelisting
+    - Patch Application
+    - Patch OS
+    - Restrict Admin Privileges
