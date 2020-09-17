@@ -85,6 +85,7 @@ int main(){
         }
 
         board.push_back(sudoku_line);
+        
     }
 
     cout << isValidSudoku(board);
