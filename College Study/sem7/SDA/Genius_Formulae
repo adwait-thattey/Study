@@ -1,0 +1,5 @@
+for MLE
+
+Binomial(n,x)*(th^x)*((1-th)^(n-x)) 
+
+
