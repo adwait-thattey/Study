@@ -138,8 +138,8 @@ gcmm() {
 
 cdprj() {
     
-    echo "cd /run/media/coderdude/Adwait/Projects" "$@"
-    cd /run/media/coderdude/Adwait/Projects "$@"
+    echo "cd " "$@"
+    cd  "$@"
 }
 
 
@@ -160,8 +160,19 @@ drcup() {
 
 cdad() {
     
-    echo "cd /run/media/coderdude/Adwait" "$@"
-    cd /run/media/coderdude/Adwait "$@"
+    echo "cd " "$@"
+    cd  "$@"
+}
+
+
+
+# params=()
+#     for i; do params+="${i@Q} "; done;
+
+cdadth() {
+    
+    echo "cd " "$@"
+    cd  "$@"
 }
 
 
@@ -193,8 +204,8 @@ drclf() {
 
 cdsec() {
     
-    echo "cd /run/media/coderdude/Secondry" "$@"
-    cd /run/media/coderdude/Secondry "$@"
+    echo "cd " "$@"
+    cd  "$@"
 }
 
 
@@ -325,8 +336,8 @@ drsp() {
 
 cdstudy() {
     
-    echo "cd /run/media/coderdude/Adwait/Study" "$@"
-    cd /run/media/coderdude/Adwait/Study "$@"
+    echo "cd " "$@"
+    cd  "$@"
 }
 
 

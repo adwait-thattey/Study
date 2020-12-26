@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount adth Partition at /run/media/coderdude/adth
+
+[Mount]
+What=/dev/disk/by-uuid/72dde5be-10e8-449e-823c-d37c51d18e6c
+Where=/run/media/coderdude/adth
+Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target

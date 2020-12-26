@@ -9,6 +9,7 @@ alias_dict=(
     # cd alias
     ["cdad"]="cd $DRIVE_ADWAIT"
     ["cdsec"]="cd $DRIVE_SECONDRY"
+    ["cdadth"]="cd $DRIVE_ADTH"
     ["cdprj"]="cd $DIR_PROJECTS"
     ["cdstudy"]="cd $DIR_STUDY"
 
