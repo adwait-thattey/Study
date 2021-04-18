@@ -48,12 +48,12 @@ def print_shuffle_chars(original, shuffled):
 
 
 
-f = open("liked_tracks.json", mode="r")
+f = open("frozen_shuffled/filtered_till_2021-04-14.json", mode="r")
 j = f.read()
 f.close()
 
 original_liked_tracks = json.loads(j)
-original_liked_tracks = [o["videoId"] for o in original_liked_tracks]
+# original_liked_tracks = [o["videoId"] for o in original_liked_tracks]
 
 
 shuffled_lists = list()
