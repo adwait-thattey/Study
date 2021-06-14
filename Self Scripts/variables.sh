@@ -10,7 +10,7 @@ if [ -d "/run/media" ]; then
 	echo "${BOLD}${BLUE}Arch${RESET_COLOR} Shell"
 	DRIVES_PREFIX="/run/media"
 elif [ -d "/media" ]; then
-	echo "Using Ubuntu Path"
+	echo "${BOLD}${BLUE}Ubuntu${RESET_COLOR} Shell"
 	DRIVES_PREFIX="/media"
 
 else 
@@ -24,7 +24,6 @@ if [ -d $DRIVE_ADWAIT ]; then
 
 	DIR_STUDY="$DRIVE_ADWAIT/Study"
 	DIR_COLLEGE_STUDY="$DIR_STUDY/College Study"
-	DIR_CURRENT_SEM="$DIR_COLLEGE_STUDY/sem7"
 	DIR_PROJECTS="$DRIVE_ADWAIT/Projects"
 	DIR_SOFTWARES="$DRIVE_ADWAIT/Softwares"
 

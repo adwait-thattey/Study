@@ -36,7 +36,7 @@ else
     printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' \*
     echo "$(tput sgr0)"
 
-     PS1="[$BOLD$DEEPRED$USER$WHITE@$YELLOW$HOSTNAME$ORANGE \W$WHITE] $DEEPRED#$RESET_COLOR "
+     PS1="[$BOLD$BLUE$(date +%b-%d)$WHITE@$BLUE\t $BOLD$DEEPRED$USER$WHITE@$YELLOW$HOSTNAME$ORANGE \W$WHITE] $DEEPRED#$RESET_COLOR "
 #    PS1='[\[${DEEPRED}\]\[\e[1m\]\u\[${WHITE}\]@\[${YELLOW}\]\h \[${ORANGE}\]\W\[${RESET_COLOR}\]]\[\e[0m\]\$ '
 
 fi
